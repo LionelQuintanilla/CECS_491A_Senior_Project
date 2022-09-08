@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\lione\\StudioProjects\\medium_demo\\build\\amplify_flutter_android\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_out.xml",
+        "source": "C:\\Users\\lione\\.gradle\\caches\\transforms-2\\files-2.1\\f9fffcd81cbe8acbd7f51804fefee451\\material-1.0.0\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\lione\\StudioProjects\\medium_demo\\build\\amplify_flutter_android\\intermediates\\res\\merged\\debug\\anim-v21\\fragment_fast_out_extra_slow_in.xml",
+        "source": "C:\\Users\\lione\\.gradle\\caches\\transforms-2\\files-2.1\\09669aa1fa354d165e2cf1c25620600b\\fragment-1.2.4\\res\\anim-v21\\fragment_fast_out_extra_slow_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\lione\\StudioProjects\\medium_demo\\build\\amplify_flutter_android\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\lione\\.gradle\\caches\\transforms-2\\files-2.1\\f9fffcd81cbe8acbd7f51804fefee451\\material-1.0.0\\res\\anim-v21\\design_bottom_sheet_slide_in.xml"
+    }
+]
