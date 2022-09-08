@@ -1,0 +1,152 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.medium_demo"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="31" />
+10    <!--
+11         Flutter needs it to communicate with the running application
+12         to allow setting breakpoints, to provide hot reload, etc.
+13    -->
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->C:\Users\lione\StudioProjects\medium_demo\android\app\src\debug\AndroidManifest.xml:6:5-66
+14-->C:\Users\lione\StudioProjects\medium_demo\android\app\src\debug\AndroidManifest.xml:6:22-64
+15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Permission will be merged into the manifest of the hosting app. -->
+15-->[com.amazonaws:aws-android-sdk-mobile-client:2.51.0] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\b2be66bd308b990cafae0c57a9620aee\jetified-aws-android-sdk-mobile-client-2.51.0\AndroidManifest.xml:18:5-79
+15-->[com.amazonaws:aws-android-sdk-mobile-client:2.51.0] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\b2be66bd308b990cafae0c57a9620aee\jetified-aws-android-sdk-mobile-client-2.51.0\AndroidManifest.xml:18:22-76
+16    <!-- Is required to launch foreground extraction service for targetSdkVersion 28+. -->
+17    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+17-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:8:3-74
+17-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:8:20-72
+18
+19    <application
+20        android:name="android.app.Application"
+21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+21-->[androidx.core:core:1.6.0] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\122df2e57d294d1a53db26bbc3b813c1\core-1.6.0\AndroidManifest.xml:24:18-86
+22        android:debuggable="true"
+23        android:icon="@mipmap/ic_launcher"
+24        android:label="medium_demo" >
+25        <activity
+26            android:name="com.example.medium_demo.MainActivity"
+27            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+28            android:exported="true"
+29            android:hardwareAccelerated="true"
+30            android:launchMode="singleTop"
+31            android:theme="@style/LaunchTheme"
+32            android:windowSoftInputMode="adjustResize" >
+33
+34            <!--
+35                 Specifies an Android theme to apply to this Activity as soon as
+36                 the Android process has started. This theme is visible to the user
+37                 while the Flutter UI initializes. After that, this theme continues
+38                 to determine the Window background behind the Flutter UI.
+39            -->
+40            <meta-data
+41                android:name="io.flutter.embedding.android.NormalTheme"
+42                android:resource="@style/NormalTheme" />
+43
+44            <intent-filter>
+45                <action android:name="android.intent.action.MAIN" />
+46
+47                <category android:name="android.intent.category.LAUNCHER" />
+48            </intent-filter>
+49        </activity>
+50        <!--
+51             Don't delete the meta-data below.
+52             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+53        -->
+54        <meta-data
+55            android:name="flutterEmbedding"
+56            android:value="2" />
+57
+58        <uses-library
+58-->[androidx.window:window:1.0.0-beta04] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\03c633e46d75bfb21f082f0417f55161\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+59            android:name="androidx.window.extensions"
+59-->[androidx.window:window:1.0.0-beta04] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\03c633e46d75bfb21f082f0417f55161\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+60            android:required="false" />
+60-->[androidx.window:window:1.0.0-beta04] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\03c633e46d75bfb21f082f0417f55161\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+61        <uses-library
+61-->[androidx.window:window:1.0.0-beta04] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\03c633e46d75bfb21f082f0417f55161\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+62            android:name="androidx.window.sidecar"
+62-->[androidx.window:window:1.0.0-beta04] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\03c633e46d75bfb21f082f0417f55161\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+63            android:required="false" />
+63-->[androidx.window:window:1.0.0-beta04] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\03c633e46d75bfb21f082f0417f55161\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+64
+65        <activity
+65-->[com.amplifyframework:core:1.37.2] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3915440b8e7160fe3f4c05b6d0101715\jetified-core-1.37.2\AndroidManifest.xml:27:9-29:54
+66            android:name="com.amplifyframework.devmenu.DeveloperMenuActivity"
+66-->[com.amplifyframework:core:1.37.2] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3915440b8e7160fe3f4c05b6d0101715\jetified-core-1.37.2\AndroidManifest.xml:28:13-78
+67            android:theme="@style/OverlayActivity" />
+67-->[com.amplifyframework:core:1.37.2] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3915440b8e7160fe3f4c05b6d0101715\jetified-core-1.37.2\AndroidManifest.xml:29:13-51
+68        <activity
+68-->[com.amazonaws:aws-android-sdk-cognitoauth:2.51.0] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\7b37016e09719fedb5103ba44fab494b\jetified-aws-android-sdk-cognitoauth-2.51.0\AndroidManifest.xml:12:9-16:75
+69            android:name="com.amazonaws.mobileconnectors.cognitoauth.activities.CustomTabsManagerActivity"
+69-->[com.amazonaws:aws-android-sdk-cognitoauth:2.51.0] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\7b37016e09719fedb5103ba44fab494b\jetified-aws-android-sdk-cognitoauth-2.51.0\AndroidManifest.xml:13:13-107
+70            android:exported="false"
+70-->[com.amazonaws:aws-android-sdk-cognitoauth:2.51.0] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\7b37016e09719fedb5103ba44fab494b\jetified-aws-android-sdk-cognitoauth-2.51.0\AndroidManifest.xml:14:13-37
+71            android:launchMode="singleTask"
+71-->[com.amazonaws:aws-android-sdk-cognitoauth:2.51.0] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\7b37016e09719fedb5103ba44fab494b\jetified-aws-android-sdk-cognitoauth-2.51.0\AndroidManifest.xml:15:13-44
+72            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+72-->[com.amazonaws:aws-android-sdk-cognitoauth:2.51.0] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\7b37016e09719fedb5103ba44fab494b\jetified-aws-android-sdk-cognitoauth-2.51.0\AndroidManifest.xml:16:13-72
+73
+74        <uses-library
+74-->[com.amazonaws:aws-android-sdk-core:2.51.0] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\93d9d3697f7b3009185bc3d8a490783e\jetified-aws-android-sdk-core-2.51.0\AndroidManifest.xml:11:9-13:40
+75            android:name="org.apache.http.legacy"
+75-->[com.amazonaws:aws-android-sdk-core:2.51.0] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\93d9d3697f7b3009185bc3d8a490783e\jetified-aws-android-sdk-core-2.51.0\AndroidManifest.xml:12:13-50
+76            android:required="false" /> <!-- The activities will be merged into the manifest of the hosting app. -->
+76-->[com.amazonaws:aws-android-sdk-core:2.51.0] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\93d9d3697f7b3009185bc3d8a490783e\jetified-aws-android-sdk-core-2.51.0\AndroidManifest.xml:13:13-37
+77        <activity
+77-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:12:5-271
+78            android:name="com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity"
+78-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:12:15-102
+79            android:enabled="false"
+79-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:12:103-126
+80            android:exported="false"
+80-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:12:127-151
+81            android:launchMode="singleInstance"
+81-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:12:204-239
+82            android:process=":playcore_missing_splits_activity"
+82-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:12:152-203
+83            android:stateNotNeeded="true" />
+83-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:12:240-269
+84        <activity
+84-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:13:5-226
+85            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+85-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:13:15-95
+86            android:enabled="false"
+86-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:13:96-119
+87            android:exported="false"
+87-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:13:120-144
+88            android:stateNotNeeded="true"
+88-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:13:145-174
+89            android:theme="@style/Theme.PlayCore.Transparent" /> <!-- The services will be merged into the manifest of the hosting app. -->
+89-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:13:175-224
+90        <service
+90-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:16:5-18:15
+91            android:name="com.google.android.play.core.assetpacks.AssetPackExtractionService"
+91-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:16:14-95
+92            android:enabled="false"
+92-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:16:96-119
+93            android:exported="true" >
+93-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:16:120-143
+94            <meta-data
+94-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:17:7-108
+95                android:name="com.google.android.play.core.assetpacks.versionCode"
+95-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:17:18-84
+96                android:value="10901" />
+96-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:17:85-106
+97        </service>
+98        <service
+98-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:19:5-147
+99            android:name="com.google.android.play.core.assetpacks.ExtractionForegroundService"
+99-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:19:14-96
+100            android:enabled="false"
+100-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:19:97-120
+101            android:exported="false" />
+101-->[com.google.android.play:core:1.9.1] C:\Users\lione\.gradle\caches\transforms-2\files-2.1\3c3c9433f62f9d9104016283ed589cb9\jetified-core-1.9.1\AndroidManifest.xml:19:121-145
+102    </application>
+103
+104</manifest>
