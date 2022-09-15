@@ -48,10 +48,10 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  GestureDetector(
+                  /* GestureDetector(
                     onTap: () => Navigator.pop(context),
                     child: const Icon(Icons.close),
-                  ),
+                  ),*/
                   const Expanded(child: SizedBox(height: 70)),
                   const Text(
                     'Sign into your Account',
