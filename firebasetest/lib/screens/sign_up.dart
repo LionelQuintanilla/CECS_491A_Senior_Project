@@ -121,7 +121,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     hintText: '******',
                     obscureText: true,
                     maxLength: 32,
-                    keyboardType: TextInputType.number,
+                    keyboardType: TextInputType.visiblePassword,
                     textCapitalization: TextCapitalization.none,
                     controller: _passwordController,
                     validator: (value) =>
