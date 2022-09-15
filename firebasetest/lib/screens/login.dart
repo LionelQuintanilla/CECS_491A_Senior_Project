@@ -99,8 +99,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   CustomTextField(
                     hintText: '********',
                     obscureText: true,
-                    keyboardType: TextInputType.number,
-                    maxLength: 6,
+                    keyboardType: TextInputType.visiblePassword,
+                    maxLength: 32,
                     controller: _passwordController,
                     textCapitalization: TextCapitalization.none,
                   ),

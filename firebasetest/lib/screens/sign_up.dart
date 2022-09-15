@@ -120,7 +120,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   CustomTextField(
                     hintText: '******',
                     obscureText: true,
-                    maxLength: 6,
+                    maxLength: 32,
                     keyboardType: TextInputType.number,
                     textCapitalization: TextCapitalization.none,
                     controller: _passwordController,
