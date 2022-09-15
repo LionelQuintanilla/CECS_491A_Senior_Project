@@ -162,7 +162,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   const SizedBox(height: 20),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, VerifyScreen.id);
+                      Navigator.pushNamed(context, LoginScreen.id);
                     },
                     child: RichText(
                       textScaleFactor: 0.8,
@@ -176,7 +176,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           TextSpan(
                             text: 'Sign in here',
                             style: TextStyle(
-                              color: Colors.black,
+                              color: Colors.blue,
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
                             ),
