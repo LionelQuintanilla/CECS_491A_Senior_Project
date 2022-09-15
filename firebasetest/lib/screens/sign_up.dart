@@ -1,3 +1,5 @@
+import 'package:firebasetest/screens/verification_screen.dart';
+
 import '/components/custom_button.dart';
 import '/components/custom_textfield.dart';
 import '/components/snackbar.dart';
@@ -140,7 +142,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                         if (_status == AuthStatus.successful) {
                           LoaderX.hide();
-                          Navigator.pushNamed(context, LoginScreen.id);
+                          Navigator.pushNamed(context, VerifyScreen.id);
                         } else {
                           LoaderX.hide();
                           final error =
@@ -160,7 +162,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   const SizedBox(height: 20),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, LoginScreen.id);
+                      Navigator.pushNamed(context, VerifyScreen.id);
                     },
                     child: RichText(
                       textScaleFactor: 0.8,

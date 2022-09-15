@@ -6,6 +6,7 @@ import '/core/firebase_exceptions.dart';
 import '/screens/home_screen.dart';
 import '/screens/reset_password.dart';
 import '/screens/sign_up.dart';
+import '/screens/verification_screen.dart';
 import '/utils/loader.dart';
 import '/utils/validator.dart';
 import 'package:flutter/material.dart';
@@ -144,8 +145,14 @@ class _LoginScreenState extends State<LoginScreen> {
 
                         if (_status == AuthStatus.successful) {
                           LoaderX.hide();
-                          Navigator.pushNamed(context, HomeScreen.id);
-                        } else {
+                          if (AuthenticationService.auth.currentUser!.emailVerified == true) {
+                            Navigator.pushNamed(context, HomeScreen.id);
+                          }
+                          else {
+                            Navigator.pushNamed(context, VerifyScreen.id);
+                          }
+                        }
+                        else {
                           LoaderX.hide();
                           final error =
                           AuthExceptionHandler.generateErrorMessage(_status);

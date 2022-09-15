@@ -1,3 +1,5 @@
+import 'package:firebasetest/screens/verification_screen.dart';
+
 import '/screens/home_screen.dart';
 import '/screens/login.dart';
 import '/screens/reset_password.dart';
@@ -19,13 +21,8 @@ class MyRouter {
       case HomeScreen.id:
         return MaterialPageRoute(builder: (_) => const HomeScreen());
 
-    //case VerifyAccountScreen.id:
-    //dynamic args = settings.arguments;
-    //   return MaterialPageRoute(
-    //       builder: (_) => VerifyAccountScreen(
-    //             token: args['token'],
-    //             uid: args['uid'],
-    //           ));
+      case VerifyScreen.id:
+        return MaterialPageRoute(builder: (_) => const VerifyScreen());
 
       default:
         return MaterialPageRoute(
