@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import '/components/custom_button.dart';
 import '/components/custom_textfield.dart';
 import '/components/snackbar.dart';
@@ -31,6 +33,42 @@ class _LoginScreenState extends State<LoginScreen> {
     _passwordController.dispose();
     super.dispose();
   }
+
+  Timer? countdownTimer;
+  Duration myDuration = Duration(minutes: 2);
+  @override
+  void initState() {
+    super.initState();
+  }
+  /// Timer related methods ///
+  // Step 3
+  void startTimer() {
+    countdownTimer =
+        Timer.periodic(Duration(seconds: 1), (_) => setCountDown());
+  }
+  // Step 4
+  void stopTimer() {
+    setState(() => countdownTimer!.cancel());
+  }
+  // Step 5
+  void resetTimer() {
+    stopTimer();
+    setState(() => myDuration = Duration(minutes: 2));
+  }
+  // Step 6
+  void setCountDown() {
+    final reduceSecondsBy = 1;
+    setState(() {
+      final seconds = myDuration.inSeconds - reduceSecondsBy;
+      if (seconds < 0) {
+        countdownTimer!.cancel();
+      } else {
+        myDuration = Duration(seconds: seconds);
+      }
+    });
+  }
+
+  int failedLogins = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -136,31 +174,51 @@ class _LoginScreenState extends State<LoginScreen> {
                     label: 'LOG IN',
                     color: Colors.black,
                     onPressed: () async {
-                      if (_key.currentState!.validate()) {
-                        LoaderX.show(context);
-                        final _status = await _authService.login(
-                          email: _emailController.text.trim(),
-                          password: _passwordController.text,
-                        );
+                      if (myDuration == Duration(minutes: 2) || myDuration == Duration(seconds: 0)){
 
-                        if (_status == AuthStatus.successful) {
-                          LoaderX.hide();
-                          if (AuthenticationService.auth.currentUser!.emailVerified == true) {
-                            Navigator.pushNamed(context, HomeScreen.id);
+                        if (myDuration == Duration(seconds: 0)) {
+                          resetTimer();
+                        }
+
+                        if (_key.currentState!.validate()) {
+                          LoaderX.show(context);
+                          final _status = await _authService.login(
+                            email: _emailController.text.trim(),
+                            password: _passwordController.text,
+                          );
+
+                          if (_status == AuthStatus.successful) {
+                            LoaderX.hide();
+                            if (AuthenticationService.auth.currentUser!
+                                .emailVerified == true) {
+                              Navigator.pushNamed(context, HomeScreen.id);
+                            }
+                            else {
+                              Navigator.pushNamed(context, VerifyScreen.id);
+                            }
                           }
                           else {
-                            Navigator.pushNamed(context, VerifyScreen.id);
+                            LoaderX.hide();
+                            failedLogins += 1;
+                            final error =
+                            AuthExceptionHandler.generateErrorMessage(_status);
+                            CustomSnackBar.showErrorSnackBar(
+                              context,
+                              message: (error + " Login attemps left: " +
+                                  (5 - failedLogins).toString()),
+                            );
+                            if (failedLogins == 5) {
+                              failedLogins = 0;
+                              startTimer();
+                            }
                           }
                         }
-                        else {
-                          LoaderX.hide();
-                          final error =
-                          AuthExceptionHandler.generateErrorMessage(_status);
-                          CustomSnackBar.showErrorSnackBar(
-                            context,
-                            message: error,
-                          );
-                        }
+                      }
+                      else {
+                        CustomSnackBar.showErrorSnackBar(
+                          context,
+                          message: ("Max login attempts reached. Please try again in " + myDuration.inSeconds.toString() + " seconds."),
+                        );
                       }
                     },
                     size: size,
@@ -197,4 +255,7 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ));
   }
+
+
+
 }
