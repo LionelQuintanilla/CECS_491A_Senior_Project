@@ -59,7 +59,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   const Text(
                     'New Account',
                     style: TextStyle(
-                      fontFamily: 'CherryBomb-Regular',
+                      fontFamily: 'Cherry',
                       fontSize: 35,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
