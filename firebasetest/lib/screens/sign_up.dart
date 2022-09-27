@@ -55,23 +55,25 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     onTap: () => Navigator.pop(context),
                     child: const Icon(Icons.close),
                   ),
-                  const SizedBox(height: 70),
+                  const SizedBox(height: 0),
                   const Text(
                     'New Account',
                     style: TextStyle(
                       fontFamily: 'Cherry',
-                      fontSize: 35,
+                      fontSize: 70,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
+                    textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 20),
                   const Text(
                     'Enter new account info:',
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 30,
                       color: Colors.black,
                     ),
+                    textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 40),
                   const Text(
@@ -82,7 +84,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 5),
                   CustomTextField(
                     hintText: 'Enter your name',
                     keyboardType: TextInputType.name,
