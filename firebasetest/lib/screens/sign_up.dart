@@ -57,8 +57,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   const SizedBox(height: 70),
                   const Text(
-                    'Create Account',
+                    'New Account',
                     style: TextStyle(
+                      fontFamily: 'CherryBomb-Regular',
                       fontSize: 35,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
@@ -66,7 +67,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   const SizedBox(height: 10),
                   const Text(
-                    'Open an account with a few details.',
+                    'Enter new account info:',
                     style: TextStyle(
                       fontSize: 15,
                       color: Colors.black,
