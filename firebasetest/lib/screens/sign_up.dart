@@ -66,16 +66,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 20),
-                  const Text(
+                  const SizedBox(height: 40),
+                  const Align(
+                    alignment: Alignment.center,
+                    child:  Text(
                     'Enter new account info:',
                     style: TextStyle(
-                      fontSize: 30,
+                      fontSize: 20.0,
                       color: Colors.black,
+                      ),
+                    textAlign: TextAlign.right,
                     ),
-                    textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 40),
+                  const SizedBox( height: 40),
                   const Text(
                     'Name',
                     style: TextStyle(
@@ -130,10 +133,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     validator: (value) =>
                         Validator.validatePassword(value ?? ""),
                   ),
-                  const SizedBox(height: 20),
-                  CustomButton(
-                    label: 'CREATE YOUR ACCOUNT',
-                    color: Colors.black,
+                  const SizedBox(height: 30),
+                  OutlinedButton(
                     onPressed: () async {
                       if (_key.currentState!.validate()) {
                         LoaderX.show(context);
@@ -158,10 +159,25 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         }
                       }
                     },
-                    size: size,
-                    textColor: Colors.white,
-                    borderSide: BorderSide.none,
+                    //Creates the text within the button
+                    child: Text('CREATE ACCOUNT'),
+                    //Button style, outlined to match our figma
+                    style: OutlinedButton.styleFrom(
+                      //Button size in order to take up the whole screen
+                      minimumSize: Size.fromHeight(35),
+                      shape: StadiumBorder(),
+                      //colors
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.black,
+                      //width of the border for our button
+                      side: BorderSide(width: 5.0, color: Colors.black),
+                      //centers text
+                      alignment: Alignment.center,
+                      textStyle: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
+                    ),
+
                   ),
+
                   const SizedBox(height: 20),
                   GestureDetector(
                     onTap: () {
@@ -170,21 +186,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     child: RichText(
                       textScaleFactor: 0.8,
                       text: const TextSpan(
-                        text: "Do you already have an acccount? ",
+                        text: "Already Have An Account? ",
+
                         style: TextStyle(
+                          decoration: TextDecoration.underline,
                           color: Colors.black,
                           fontSize: 15,
+
                         ),
-                        children: [
-                          TextSpan(
-                            text: 'Sign in here',
-                            style: TextStyle(
-                              color: Colors.blue,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
+
                       ),
                     ),
                   ),
