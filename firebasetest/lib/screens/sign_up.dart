@@ -183,35 +183,48 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     onTap: () {
                       Navigator.pushNamed(context, LoginScreen.id);
                     },
-                    child: RichText(
-                      textScaleFactor: .9,
-                      text: const TextSpan(
-                        text: "Already Have An Account? ",
-                        style: TextStyle(
-                          decoration: TextDecoration.underline,
-                          color: Colors.black,
-                          fontSize: 20,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        RichText(
+                          textScaleFactor: .9,
+                          text: const TextSpan(
 
+                            text: "Already Have An Account? ",
+                            style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              color: Colors.black,
+                              fontSize: 20,
+
+                            ),
+
+                          ),
                         ),
-
-                      ),
-                    ),
+                      ],
+                    )
                   ),
                   const SizedBox(height: 20),
                   GestureDetector(
                     onTap: (){
                       //Navigator.pushNamed(context, CustomerSupport.id);
                     },
-                    child: RichText(
-                      textScaleFactor: .9,
-                      text: const TextSpan(
-                        text: "Customer Support",
-                        style: TextStyle(
-                          decoration: TextDecoration.underline,
-                          color: Colors.black,
-                          fontSize: 20,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        RichText(
+                            textScaleFactor: .9,
+                            text: const TextSpan(
+                                text: "Customer Support",
+                                style: TextStyle(
+                                  decoration: TextDecoration.underline,
+                                  color: Colors.black,
+                                  fontSize: 20,
+                                )
+                            )
                         )
-                      )
+                      ],
                     )
                   )
                 ],
