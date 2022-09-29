@@ -160,20 +160,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       }
                     },
                     //Creates the text within the button
-                    child: Text('CREATE ACCOUNT'),
+                    child: const Text('CREATE ACCOUNT'),
                     //Button style, outlined to match our figma
                     style: OutlinedButton.styleFrom(
                       //Button size in order to take up the whole screen
-                      minimumSize: Size.fromHeight(35),
-                      shape: StadiumBorder(),
+                      minimumSize: const Size.fromHeight(35),
+                      shape: const StadiumBorder(),
                       //colors
                       backgroundColor: Colors.white,
                       foregroundColor: Colors.black,
                       //width of the border for our button
-                      side: BorderSide(width: 5.0, color: Colors.black),
+                      side: const BorderSide(width: 5.0, color: Colors.black),
                       //centers text
                       alignment: Alignment.center,
-                      textStyle: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
+                      textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
                     ),
 
                   ),
@@ -204,11 +204,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ],
                     )
                   ),
+
+                  //Creates the Customer Support Link
                   const SizedBox(height: 20),
                   GestureDetector(
                     onTap: (){
+                      //On tap needs to be programmed for backend to meet customer support
                       //Navigator.pushNamed(context, CustomerSupport.id);
                     },
+                      //Creates a row centered in the middle of the screen
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
