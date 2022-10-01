@@ -80,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
           color: Colors.white,
           child: Padding(
             padding: const EdgeInsets.only(
-                left: 16.0, right: 16.0, top: 50.0, bottom: 25.0),
+                left: 16.0, right: 16.0, top: 0, bottom: 25.0),
             child: Form(
               key: _key,
               child: Column(
@@ -90,13 +90,17 @@ class _LoginScreenState extends State<LoginScreen> {
                     onTap: () => Navigator.pop(context),
                     child: const Icon(Icons.close),
                   ),*/
-                  const Expanded(child: SizedBox(height: 70)),
-                  const Text(
-                    'Sign into your Account',
-                    style: TextStyle(
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                  const Expanded(child: SizedBox(height: 0)),
+                  const Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Wuphf',
+                      style: TextStyle(
+                        fontSize: 100,
+                        fontFamily: 'Cherry',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 10),
