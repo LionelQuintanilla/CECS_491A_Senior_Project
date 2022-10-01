@@ -105,7 +105,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey,
-                          blurRadius: 25,
+                          blurRadius: 15,
                           offset: Offset(1, 5)
                         )
                       ]
@@ -137,7 +137,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       boxShadow: [
                          BoxShadow(
                           color: Colors.grey,
-                          blurRadius: 25,
+                          blurRadius: 15,
                           offset: Offset(1, 5)
                         )
                       ]
@@ -172,55 +172,66 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey,
-                          blurRadius: 25,
+                          blurRadius: 15,
                           offset: Offset(1, 5)
                         )
                       ]
                     ),
                   ),
                   const SizedBox(height: 30),
-                  OutlinedButton(
-                    onPressed: () async {
-                      if (_key.currentState!.validate()) {
-                        LoaderX.show(context);
-                        final _status = await _authService.createAccount(
-                          email: _emailController.text.trim(),
-                          password: _passwordController.text,
-                          name: _nameController.text,
-                        );
-
-                        if (_status == AuthStatus.successful) {
-                          LoaderX.hide();
-                          Navigator.pushNamed(context, VerifyScreen.id);
-                        } else {
-                          LoaderX.hide();
-                          final error =
-                          AuthExceptionHandler.generateErrorMessage(
-                              _status);
-                          CustomSnackBar.showErrorSnackBar(
-                            context,
-                            message: error,
+                  Container(
+                    child:  OutlinedButton(
+                      onPressed: () async {
+                        if (_key.currentState!.validate()) {
+                          LoaderX.show(context);
+                          final _status = await _authService.createAccount(
+                            email: _emailController.text.trim(),
+                            password: _passwordController.text,
+                            name: _nameController.text,
                           );
-                        }
-                      }
-                    },
-                    //Creates the text within the button
-                    child: const Text('CREATE ACCOUNT'),
-                    //Button style, outlined to match our figma
-                    style: OutlinedButton.styleFrom(
-                      //Button size in order to take up the whole screen
-                      minimumSize: const Size.fromHeight(75),
-                      shape: const StadiumBorder(),
-                      //colors
-                      backgroundColor: Colors.white,
-                      foregroundColor: Colors.black,
-                      //width of the border for our button
-                      side: const BorderSide(width: 5.0, color: Colors.black),
-                      //centers text
-                      alignment: Alignment.center,
-                      textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
-                    ),
 
+                          if (_status == AuthStatus.successful) {
+                            LoaderX.hide();
+                            Navigator.pushNamed(context, VerifyScreen.id);
+                          } else {
+                            LoaderX.hide();
+                            final error =
+                            AuthExceptionHandler.generateErrorMessage(
+                                _status);
+                            CustomSnackBar.showErrorSnackBar(
+                              context,
+                              message: error,
+                            );
+                          }
+                        }
+                      },
+                      //Creates the text within the button
+                      child: const Text('CREATE ACCOUNT'),
+                      //Button style, outlined to match our figma
+                      style: OutlinedButton.styleFrom(
+                        //Button size in order to take up the whole screen
+                        minimumSize: const Size.fromHeight(75),
+                        shape: const StadiumBorder(),
+                        //colors
+                        backgroundColor: Colors.white,
+                        foregroundColor: Colors.black,
+                        //width of the border for our button
+                        side: const BorderSide(width: 5.0, color: Colors.black),
+                        //centers text
+                        alignment: Alignment.center,
+                        textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
+                      ),
+
+                    ),
+                    decoration: const BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 15,
+                              offset: Offset(1, 5)
+                          )
+                        ]
+                    ),
                   ),
 
                   const SizedBox(height: 20),
