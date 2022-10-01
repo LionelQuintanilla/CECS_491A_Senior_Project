@@ -53,7 +53,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 children: [
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
-                    child: const Icon(Icons.close),
+                    child: const Icon(Icons.arrow_back),
                   ),
                   const SizedBox(height: 0),
                   const Text(
