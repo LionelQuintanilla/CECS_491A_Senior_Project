@@ -79,12 +79,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                   ),
                   const SizedBox( height: 40),
-                  const Text(
-                    'Name',
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
+                  const Align(
+                    alignment: Alignment(-.9,-1),
+                    child:
+                     Text(
+                      'Name',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 5),
@@ -97,12 +101,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     controller: _nameController,
                   ),
                   const SizedBox(height: 16),
-                  const Text(
-                    'Email',
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
+                  const Align(
+                    alignment: Alignment(-.9, -1),
+                    child:
+                     Text(
+                      'Email',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 10),
@@ -114,12 +122,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     controller: _emailController,
                   ),
                   const SizedBox(height: 16),
-                  const Text(
-                    'Password',
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
+                  const Align(
+                    alignment: Alignment(-.9, -1),
+                    child:
+                    Text(
+                      'Password',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 10),
