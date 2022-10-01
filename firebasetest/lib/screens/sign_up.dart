@@ -53,7 +53,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 children: [
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
-                    child: const Icon(Icons.arrow_back),
+                    child: Image.asset('assets/images/backArrow.png',
+                           height: 25,
+                           width: 40)
                   ),
                   const SizedBox(height: 0),
                   const Text(

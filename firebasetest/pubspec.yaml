@@ -65,6 +65,7 @@ flutter:
 
   assets:
     - assets/images/wuphf.jpg
+    - assets/images/backArrow.png
   fonts:
     - family: Cherry
       fonts:
