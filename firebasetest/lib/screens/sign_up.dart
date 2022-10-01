@@ -54,7 +54,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
                     child: Image.asset('assets/images/backArrow.png',
-                           height: 25,
+                           height: 40,
                            width: 40)
                   ),
                   const SizedBox(height: 0),
@@ -68,7 +68,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20),
                   const Align(
                     alignment: Alignment.center,
                     child:  Text(
