@@ -57,7 +57,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                            height: 40,
                            width: 40)
                   ),
-                  const SizedBox(height: 0),
                   const Text(
                     'New Account',
                     style: TextStyle(
@@ -68,7 +67,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 25),
                   const Align(
                     alignment: Alignment.center,
                     child:  Text(
@@ -80,40 +79,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     textAlign: TextAlign.right,
                     ),
                   ),
-                  const SizedBox( height: 40),
-                  const Align(
-                    alignment: Alignment(-.9,-1),
-                    child:
-                     Text(
-                      'Name',
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 5),
-                  Container(
-                   child: CustomTextField(
-                     hintText: 'Enter your name',
-                     keyboardType: TextInputType.name,
-                     textCapitalization: TextCapitalization.sentences,
-                     validator: (value) =>
-                         Validator.fullNameValidate(value ?? ""),
-                     controller: _nameController,
-                   ),
-                    decoration: const BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey,
-                          blurRadius: 15,
-                          offset: Offset(1, 5)
-                        )
-                      ]
-                    ),
-                  ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 25),
                   const Align(
                     alignment: Alignment(-.9, -1),
                     child:
@@ -143,6 +109,39 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           offset: Offset(1, 5)
                         )
                       ]
+                    ),
+                  ),
+                  const SizedBox( height: 16),
+                  const Align(
+                    alignment: Alignment(-.9,-1),
+                    child:
+                    Text(
+                      'Username',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 5),
+                  Container(
+                    child: CustomTextField(
+                      hintText: 'Enter your username',
+                      keyboardType: TextInputType.name,
+                      textCapitalization: TextCapitalization.sentences,
+                      validator: (value) =>
+                          Validator.fullNameValidate(value ?? ""),
+                      controller: _nameController,
+                    ),
+                    decoration: const BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 15,
+                              offset: Offset(1, 5)
+                          )
+                        ]
                     ),
                   ),
                   const SizedBox(height: 16),
