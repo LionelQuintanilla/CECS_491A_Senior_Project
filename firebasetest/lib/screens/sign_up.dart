@@ -92,13 +92,24 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                   ),
                   const SizedBox(height: 5),
-                  CustomTextField(
-                    hintText: 'Enter your name',
-                    keyboardType: TextInputType.name,
-                    textCapitalization: TextCapitalization.sentences,
-                    validator: (value) =>
-                        Validator.fullNameValidate(value ?? ""),
-                    controller: _nameController,
+                  Container(
+                   child: CustomTextField(
+                     hintText: 'Enter your name',
+                     keyboardType: TextInputType.name,
+                     textCapitalization: TextCapitalization.sentences,
+                     validator: (value) =>
+                         Validator.fullNameValidate(value ?? ""),
+                     controller: _nameController,
+                   ),
+                    decoration: const BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 25,
+                          offset: Offset(1, 5)
+                        )
+                      ]
+                    ),
                   ),
                   const SizedBox(height: 16),
                   const Align(
@@ -113,13 +124,24 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 10),
-                  CustomTextField(
-                    hintText: 'Enter your email',
-                    keyboardType: TextInputType.emailAddress,
-                    textCapitalization: TextCapitalization.none,
-                    validator: (value) => Validator.validateEmail(value ?? ""),
-                    controller: _emailController,
+                  const SizedBox(height: 5.0),
+                  Container(
+                    child: CustomTextField(
+                      hintText: 'Enter your email',
+                      keyboardType: TextInputType.emailAddress,
+                      textCapitalization: TextCapitalization.none,
+                      validator: (value) => Validator.validateEmail(value ?? ""),
+                      controller: _emailController,
+                    ),
+                    decoration:const BoxDecoration(
+                      boxShadow: [
+                         BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 25,
+                          offset: Offset(1, 5)
+                        )
+                      ]
+                    ),
                   ),
                   const SizedBox(height: 16),
                   const Align(
@@ -135,15 +157,26 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                   ),
                   const SizedBox(height: 10),
-                  CustomTextField(
-                    hintText: '******',
-                    obscureText: true,
-                    maxLength: 32,
-                    keyboardType: TextInputType.visiblePassword,
-                    textCapitalization: TextCapitalization.none,
-                    controller: _passwordController,
-                    validator: (value) =>
-                        Validator.validatePassword(value ?? ""),
+                  Container(
+                    child: CustomTextField(
+                      hintText: '******',
+                      obscureText: true,
+                      maxLength: 32,
+                      keyboardType: TextInputType.visiblePassword,
+                      textCapitalization: TextCapitalization.none,
+                      controller: _passwordController,
+                      validator: (value) =>
+                          Validator.validatePassword(value ?? ""),
+                    ),
+                    decoration: const BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 25,
+                          offset: Offset(1, 5)
+                        )
+                      ]
+                    ),
                   ),
                   const SizedBox(height: 30),
                   OutlinedButton(
@@ -176,7 +209,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     //Button style, outlined to match our figma
                     style: OutlinedButton.styleFrom(
                       //Button size in order to take up the whole screen
-                      minimumSize: const Size.fromHeight(35),
+                      minimumSize: const Size.fromHeight(75),
                       shape: const StadiumBorder(),
                       //colors
                       backgroundColor: Colors.white,
