@@ -92,7 +92,7 @@ class _CustomerSupport extends State<CustomerSupport>{
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  const SizedBox(height: 25),
+                  const SizedBox(height: 15),
                   const Align(
                     alignment: Alignment(-.9, -1),
                     child:
@@ -114,7 +114,7 @@ class _CustomerSupport extends State<CustomerSupport>{
                       controller: _emailController,
                     )
                   ),
-                  const SizedBox(height: 15),
+                  const SizedBox(height: 10),
                   const Align(
                     alignment: Alignment(-.9, -1),
                     child:
@@ -127,6 +127,68 @@ class _CustomerSupport extends State<CustomerSupport>{
                       ),
                     ),
                   ),
+                  TextFormField(
+                    minLines: 6,
+                    maxLines: 15,
+                    keyboardType: TextInputType.multiline,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30),
+                          borderSide: const BorderSide(color: Colors.black, width: 5)),
+                      focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30),
+                          borderSide: const BorderSide(color: Colors.black, width: 5)),
+                      hintText: 'Enter description of your problem here',
+                      hintStyle: const TextStyle(
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+                  Container(
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: SizedBox(
+                        width: 300,
+                        height: 75,
+                        child: OutlinedButton(
+                          onPressed: () async{
+
+                          },
+                          child: const Text('Submit'),
+                          style: OutlinedButton.styleFrom(
+                            minimumSize: const Size.fromHeight(75),
+                            shape: const StadiumBorder(),
+                            backgroundColor: Colors.white,
+                            foregroundColor: Colors.black,
+                            side: const BorderSide(width: 5.0, color: Colors.black),
+                            alignment: Alignment.center,
+                            textStyle: const TextStyle( fontWeight: FontWeight.bold, fontSize: 40.0),
+                          ),
+                        ),
+                      ),
+                    )
+                  ),
+                  const SizedBox(height:20),
+                  GestureDetector(
+                    onTap: () => Navigator.pop(context),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: RichText(
+                        textScaleFactor: .9,
+                        text: const TextSpan(
+                          text: "Cancel",
+                          style: TextStyle(
+                            decoration: TextDecoration.underline,
+                            color: Colors.black,
+                            fontSize: 30,
+                          )
+                        ),
+                      ),
+                    )
+                  )
                 ],
               ),
             ),
