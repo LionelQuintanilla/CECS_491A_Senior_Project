@@ -10,6 +10,8 @@ import '/utils/loader.dart';
 import '/utils/validator.dart';
 import 'package:flutter/material.dart';
 
+import 'customer_support.dart';
+
 class SignUpScreen extends StatefulWidget {
   static const String id = 'signup_screen';
   const SignUpScreen({Key? key}) : super(key: key);
@@ -267,7 +269,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   GestureDetector(
                     onTap: (){
                       //On tap needs to be programmed for backend to meet customer support
-                      //Navigator.pushNamed(context, CustomerSupport.id);
+                      Navigator.pushNamed(context, CustomerSupport.id);
                     },
                       //Creates a row centered in the middle of the screen
                     child: Row(
