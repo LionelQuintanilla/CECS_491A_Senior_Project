@@ -265,7 +265,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
 
                   //Creates the Customer Support Link
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 21),
                   GestureDetector(
                     onTap: (){
                       //On tap needs to be programmed for backend to meet customer support

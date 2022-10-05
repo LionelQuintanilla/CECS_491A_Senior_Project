@@ -12,69 +12,30 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      body: SafeArea(
-        child: SizedBox(
-          height: size.height,
-          width: size.width,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: 100,
-                height: 100,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/blank-dp.png'),
-                  ),
-                ),
+      body: Container(
+        width: size.width,
+        height: size.height,
+        color: Colors.white,
+        child: const SingleChildScrollView(
+          child: Padding(
+            padding:  EdgeInsets.only(
+                left: 16.0, right: 16.0, top: 50.0, bottom: 25.0),
+          child:  Align(
+            child:  Text(
+              'HOME',
+              style: TextStyle(
+                fontFamily: 'Cherry',
+                fontSize: 70,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
               ),
-              const SizedBox(height: 10),
-              Text(
-                'Hi ${AuthenticationService.auth.currentUser!.displayName}',
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 10),
-              const Text(
-                'Welcome to your profile',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 10),
-              Text(
-                'Email: ${AuthenticationService.auth.currentUser!.email}',
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 30),
-              SizedBox(
-                width: 100,
-                child: CustomButton(
-                  label: 'LOGOUT',
-                  color: Colors.black,
-                  onPressed: () async {
-                    LoaderX.show(context);
-                    await AuthenticationService.auth.signOut().then((value) {
-                      LoaderX.hide();
-                      Navigator.pushNamedAndRemoveUntil(
-                          context, LoginScreen.id, (route) => false);
-                    });
-                  },
-                  size: size,
-                  textColor: Colors.white,
-                  borderSide: BorderSide.none,
-                ),
-              )
-            ],
+              textAlign: TextAlign.center,
+            )
           ),
-        ),
-      ),
+
+          ),
+        )
+      )
     );
   }
 }
