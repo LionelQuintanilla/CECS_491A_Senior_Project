@@ -27,14 +27,14 @@ class HomeScreen extends StatelessWidget {
                     'Home',
                     style: TextStyle(
                       fontFamily: 'Cherry',
-                      fontSize: 70,
+                      fontSize: 80,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
                     textAlign: TextAlign.center,
                   )
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 60),
               OutlinedButton.icon(
                 onPressed: () {},
                 icon: const Icon(
@@ -44,7 +44,7 @@ class HomeScreen extends StatelessWidget {
                 label: const Text('Create a Post'),
                 style: OutlinedButton.styleFrom(
                   //Button size in order to take up the whole screen
-                  minimumSize: const Size.fromHeight(75),
+                  minimumSize: const Size.fromHeight(100),
                   shape: const StadiumBorder(),
                   //colors
                   backgroundColor: Colors.white,
@@ -56,7 +56,7 @@ class HomeScreen extends StatelessWidget {
                   textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 60),
               OutlinedButton.icon(
                 onPressed: () {},
                 icon: const Icon(
@@ -66,7 +66,7 @@ class HomeScreen extends StatelessWidget {
                 label: const Text('Manage Accounts'),
                 style: OutlinedButton.styleFrom(
                   //Button size in order to take up the whole screen
-                  minimumSize: const Size.fromHeight(75),
+                  minimumSize: const Size.fromHeight(100),
                   shape: const StadiumBorder(),
                   //colors
                   backgroundColor: Colors.white,
@@ -78,7 +78,7 @@ class HomeScreen extends StatelessWidget {
                   textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 60),
               OutlinedButton.icon(
                   onPressed: (){},
                   icon: const Icon(
@@ -86,6 +86,30 @@ class HomeScreen extends StatelessWidget {
                     size: 24.0,
                   ),
                   label: const Text('App Settings'),
+                  style: OutlinedButton.styleFrom(
+                    //Button size in order to take up the whole screen
+                    minimumSize: const Size.fromHeight(100),
+                    shape: const StadiumBorder(),
+                    //colors
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.black,
+                    //width of the border for our button
+                    side: const BorderSide(width: 5.0, color: Colors.black),
+                    //centers text
+                    alignment: Alignment.center,
+                    textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
+                  ),
+              ),
+              const SizedBox(height: 100),
+              OutlinedButton(
+                  onPressed: () {},
+                  child: const Text(
+                      'Log Out',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20.0,
+                      ),
+                  ),
                   style: OutlinedButton.styleFrom(
                     //Button size in order to take up the whole screen
                     minimumSize: const Size.fromHeight(75),
@@ -98,18 +122,7 @@ class HomeScreen extends StatelessWidget {
                     //centers text
                     alignment: Alignment.center,
                     textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
-                  ),
-              ),
-              const SizedBox(height: 60),
-              OutlinedButton(
-                  onPressed: () {},
-                  child: const Text(
-                      'Log Out',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20.0,
-                      ),
-                  ),
+                  )
               )
             ],
           ),
