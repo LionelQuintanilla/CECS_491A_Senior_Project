@@ -88,6 +88,43 @@ class _CreatePost extends State<CreatePost>{
                         ),
                             alignment: Alignment.center
                   ),
+                  Row(
+                    children: [
+                      ElevatedButton(
+                        onPressed: (){},
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor : Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(40),
+                              side: const BorderSide(color: Colors.black),
+                            )
+                        ),
+                        child: const Icon(
+                          Icons.camera_alt_outlined,
+                          color: Colors.black,
+                          size: 50,
+
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: (){},
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor : Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(40),
+                              side: const BorderSide(color: Colors.black),
+                            )
+                        ),
+                        child: const Icon(
+                          Icons.add_to_photos_outlined,
+                          color: Colors.black,
+                          size: 50,
+
+                        ),
+                      ),
+                    ],
+                  ),
+
                   const SizedBox(height: 40),
                   Container(
                       child: Align(
@@ -101,7 +138,7 @@ class _CreatePost extends State<CreatePost>{
                               Icons.upload,
                               size: 24.0,
                             ),
-                            label: const Text('Import Saved Post'),
+                            label: const Text('Upload Draft'),
                             style: OutlinedButton.styleFrom(
                               //Button size in order to take up the whole screen
                               minimumSize: const Size.fromHeight(100),
