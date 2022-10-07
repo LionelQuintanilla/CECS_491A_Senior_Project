@@ -3,6 +3,7 @@ import '/core/authentication_service.dart';
 import '/screens/login.dart';
 import '/utils/loader.dart';
 import 'package:flutter/material.dart';
+import '/screens/create_post.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -36,7 +37,7 @@ class HomeScreen extends StatelessWidget {
               ),
               const SizedBox(height: 60),
               OutlinedButton.icon(
-                onPressed: () {},
+                onPressed: () => Navigator.pushNamed(context, CreatePost.id),
                 icon: const Icon(
                   Icons.add,
                   size: 24.0,

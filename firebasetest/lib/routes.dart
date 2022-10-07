@@ -1,3 +1,4 @@
+import 'package:firebasetest/screens/create_post.dart';
 import 'package:firebasetest/screens/customer_support.dart';
 import 'package:firebasetest/screens/verification_screen.dart';
 
@@ -10,6 +11,8 @@ import 'package:flutter/material.dart';
 class MyRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case CreatePost.id:
+        return MaterialPageRoute(builder: (_) => const CreatePost());
       case CustomerSupport.id:
         return MaterialPageRoute(builder: (_) => const CustomerSupport());
       case SignUpScreen.id:
