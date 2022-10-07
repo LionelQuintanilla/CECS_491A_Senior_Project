@@ -76,6 +76,58 @@ class _CreatePost extends State<CreatePost>{
                       textAlign: TextAlign.center,
                     ),
                   ),
+                  const SizedBox(height: 20),
+                  Align(
+                        child: ConstrainedBox(
+                            constraints: const BoxConstraints(minHeight: 200),
+                            child: const Icon(
+                              Icons.add,
+                              size: 300,
+                              color: Colors.red,
+                            ),
+                        ),
+                            alignment: Alignment.center
+                  ),
+                  const SizedBox(height: 40),
+                  Container(
+                    child:  OutlinedButton(
+                      onPressed: () {},
+                        child: const Text('Import Saved Post'),
+                        style: OutlinedButton.styleFrom(
+                          //Button size in order to take up the whole screen
+                          minimumSize: const Size.fromHeight(75),
+                          shape: const StadiumBorder(),
+                          //colors
+                          backgroundColor: Colors.white,
+                          foregroundColor: Colors.black,
+                          //width of the border for our button
+                          side: const BorderSide(width: 5.0, color: Colors.black),
+                          //centers text
+                          alignment: Alignment.center,
+                          textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
+                        ),
+                      ),
+                    ),
+                  const SizedBox(height: 20),
+                  Container(
+                    child:  OutlinedButton(
+                      onPressed: () {},
+                      child: const Text('Next'),
+                      style: OutlinedButton.styleFrom(
+                        //Button size in order to take up the whole screen
+                        minimumSize: const Size.fromHeight(75),
+                        shape: const StadiumBorder(),
+                        //colors
+                        backgroundColor: Colors.white,
+                        foregroundColor: Colors.black,
+                        //width of the border for our button
+                        side: const BorderSide(width: 5.0, color: Colors.black),
+                        //centers text
+                        alignment: Alignment.center,
+                        textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
