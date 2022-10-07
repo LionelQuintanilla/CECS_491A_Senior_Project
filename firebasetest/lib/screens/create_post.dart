@@ -90,50 +90,60 @@ class _CreatePost extends State<CreatePost>{
                   ),
                   const SizedBox(height: 40),
                   Container(
-                    child:  OutlinedButton(
-                      onPressed: () {},
-                        child: const Text('Import Saved Post'),
-                        style: OutlinedButton.styleFrom(
-                          //Button size in order to take up the whole screen
-                          minimumSize: const Size.fromHeight(75),
-                          shape: const StadiumBorder(),
-                          //colors
-                          backgroundColor: Colors.white,
-                          foregroundColor: Colors.black,
-                          //width of the border for our button
-                          side: const BorderSide(width: 5.0, color: Colors.black),
-                          //centers text
-                          alignment: Alignment.center,
-                          textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
-                        ),
-                      ),
-                    ),
-                  const SizedBox(height: 20),
-                  Container(
-                    child:  OutlinedButton(
-                      onPressed: () {},
-                      child: const Text('Next'),
-                      style: OutlinedButton.styleFrom(
-                        //Button size in order to take up the whole screen
-                        minimumSize: const Size.fromHeight(75),
-                        shape: const StadiumBorder(),
-                        //colors
-                        backgroundColor: Colors.white,
-                        foregroundColor: Colors.black,
-                        //width of the border for our button
-                        side: const BorderSide(width: 5.0, color: Colors.black),
-                        //centers text
+                      child: Align(
                         alignment: Alignment.center,
-                        textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
-                      ),
-                    ),
+                        child: SizedBox(
+                          width: 250,
+                          height: 50,
+                          child: OutlinedButton(
+                            onPressed: () async{
+
+                            },
+                            child: const Text('Import Saved Post'),
+                            style: OutlinedButton.styleFrom(
+                              minimumSize: const Size.fromHeight(75),
+                              shape: const StadiumBorder(),
+                              backgroundColor: Colors.white,
+                              foregroundColor: Colors.black,
+                              side: const BorderSide(width: 5.0, color: Colors.black),
+                              alignment: Alignment.center,
+                              textStyle: const TextStyle( fontWeight: FontWeight.bold, fontSize: 20.0),
+                            ),
+                          ),
+                        ),
+                      )
                   ),
-                ],
+                  const SizedBox(height: 60),
+                  Container(
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: SizedBox(
+                          width: 200,
+                          height: 50,
+                          child: OutlinedButton(
+                            onPressed: () async{
+
+                            },
+                            child: const Text('Next'),
+                            style: OutlinedButton.styleFrom(
+                              minimumSize: const Size.fromHeight(75),
+                              shape: const StadiumBorder(),
+                              backgroundColor: Colors.white,
+                              foregroundColor: Colors.black,
+                              side: const BorderSide(width: 5.0, color: Colors.black),
+                              alignment: Alignment.center,
+                              textStyle: const TextStyle( fontWeight: FontWeight.bold, fontSize: 40.0),
+                            ),
+                          ),
+                        ),
+                      )
+                      ),
+                    ],
+                  ),
               ),
             ),
           ),
         ),
-      ),
     );
   }
 }
