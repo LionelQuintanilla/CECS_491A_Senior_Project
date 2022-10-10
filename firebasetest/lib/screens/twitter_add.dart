@@ -10,6 +10,12 @@ import '/utils/loader.dart';
 import '/utils/validator.dart';
 import 'package:flutter/material.dart';
 
+import 'package:twitter_api_v2/twitter_api_v2.dart';
+import 'package:twitter_oauth2_pkce/twitter_oauth2_pkce.dart';
+
+import 'dart:async';
+import 'dart:io';
+
 class TwitterAdd extends StatefulWidget{
   static const String id = 'twitter_add';
   const TwitterAdd({Key? key}) : super(key:key);
@@ -22,6 +28,9 @@ class TwitterAdd extends StatefulWidget{
 class _TwitterAdd extends State<TwitterAdd>{
   final _key = GlobalKey<FormState>();
   final _emailController = TextEditingController();
+
+  String? _accessToken;
+  String? _refreshToken;
 
   @override
   void dispose(){
@@ -114,30 +123,27 @@ class _TwitterAdd extends State<TwitterAdd>{
                         textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 45.0),
                       ),
                     ),
-                    const SizedBox(height: 15),
-                    Container(
-                        child: Align(
-                          alignment: Alignment.center,
-                          child: SizedBox(
-                            width: 300,
-                            height: 75,
-                            child: OutlinedButton(
-                              onPressed: () async{
-                                
-                              },
-                              child: const Text('Add'),
-                              style: OutlinedButton.styleFrom(
-                                minimumSize: const Size.fromHeight(60),
-                                shape: const StadiumBorder(),
-                                backgroundColor: Colors.white,
-                                foregroundColor: Colors.black,
-                                side: const BorderSide(width: 5.0, color: Colors.black),
-                                alignment: Alignment.center,
-                                textStyle: const TextStyle( fontWeight: FontWeight.bold, fontSize: 35.0),
-                              ),
-                            ),
-                          ),
-                        )
+                    Text('Access Token: $_accessToken'),
+                    Text('Refresh Token: $_refreshToken'),
+                    ElevatedButton(
+                      onPressed: () async {
+                        final oauth2 = TwitterOAuth2Client(
+                          clientId: 'WlJRWEF0Tm1PeGlnMy1wclljakI6MTpjaQ',
+                          clientSecret: '-b-Xr9HBV74Lqqie51-nep9OaHodODIvyF_I7RsUKXu9NUQiMh',
+                          redirectUri: 'org.example.android.oauth://callback/',
+                          customUriScheme: 'org.example.android.oauth',
+                        );
+
+                        final response = await oauth2.executeAuthCodeFlowWithPKCE(
+                          scopes: Scope.values,
+                        );
+
+                        super.setState(() {
+                          _accessToken = response.accessToken;
+                          _refreshToken = response.refreshToken;
+                        });
+                      },
+                      child: const Text('Add'),
                     ),
                     const SizedBox(height:100),
                     GestureDetector(
