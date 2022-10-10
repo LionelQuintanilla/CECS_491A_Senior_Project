@@ -7,6 +7,7 @@ import '/screens/login.dart';
 import '/screens/reset_password.dart';
 import '/screens/sign_up.dart';
 import '/screens/manage_accounts.dart';
+import '/screens/twitter_add.dart';
 import 'package:flutter/material.dart';
 
 class MyRouter {
@@ -30,6 +31,9 @@ class MyRouter {
 
       case ManageAccounts.id:
         return MaterialPageRoute(builder: (_) => const ManageAccounts());
+
+      case TwitterAdd.id:
+        return MaterialPageRoute(builder: (_) => const TwitterAdd());
 
       case VerifyScreen.id:
         return MaterialPageRoute(builder: (_) => const VerifyScreen());
