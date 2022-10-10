@@ -1,3 +1,5 @@
+import 'package:firebasetest/screens/manage_accounts.dart';
+
 import '/components/custom_button.dart';
 import '/core/authentication_service.dart';
 import '/screens/login.dart';
@@ -59,7 +61,7 @@ class HomeScreen extends StatelessWidget {
               ),
               const SizedBox(height: 60),
               OutlinedButton.icon(
-                onPressed: () {},
+                onPressed: () => Navigator.pushNamed(context, ManageAccounts.id),
                 icon: const Icon(
                   Icons.person,
                   size: 24.0,

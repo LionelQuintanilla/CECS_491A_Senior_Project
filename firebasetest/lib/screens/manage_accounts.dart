@@ -4,6 +4,7 @@ import '/screens/login.dart';
 import '/utils/loader.dart';
 import 'package:flutter/material.dart';
 import '/screens/create_post.dart';
+import '/screens/manage_accounts.dart';
 
 class ManageAccounts extends StatelessWidget {
   const ManageAccounts({Key? key}) : super(key: key);
@@ -25,7 +26,7 @@ class ManageAccounts extends StatelessWidget {
                   children: [
                     const Align(
                         child:  Text(
-                          'Home',
+                          'Manage Accounts',
                           style: TextStyle(
                             fontFamily: 'Cherry',
                             fontSize: 80,
@@ -35,14 +36,14 @@ class ManageAccounts extends StatelessWidget {
                           textAlign: TextAlign.center,
                         )
                     ),
-                    const SizedBox(height: 60),
+                    const SizedBox(height: 35),
                     OutlinedButton.icon(
                       onPressed: () => Navigator.pushNamed(context, CreatePost.id),
                       icon: const Icon(
-                        Icons.add,
+                        Icons.people,
                         size: 24.0,
                       ),
-                      label: const Text('Create a Post'),
+                      label: const Text('Twitter'),
                       style: OutlinedButton.styleFrom(
                         //Button size in order to take up the whole screen
                         minimumSize: const Size.fromHeight(100),
@@ -57,14 +58,14 @@ class ManageAccounts extends StatelessWidget {
                         textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
                       ),
                     ),
-                    const SizedBox(height: 60),
+                    const SizedBox(height: 35),
                     OutlinedButton.icon(
-                      onPressed: () {},
+                      onPressed: () => Navigator.pushNamed(context, ManageAccounts.id),
                       icon: const Icon(
-                        Icons.person,
+                        Icons.people,
                         size: 24.0,
                       ),
-                      label: const Text('Manage Accounts'),
+                      label: const Text('Facebook'),
                       style: OutlinedButton.styleFrom(
                         //Button size in order to take up the whole screen
                         minimumSize: const Size.fromHeight(100),
@@ -79,14 +80,14 @@ class ManageAccounts extends StatelessWidget {
                         textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
                       ),
                     ),
-                    const SizedBox(height: 60),
+                    const SizedBox(height: 35),
                     OutlinedButton.icon(
                       onPressed: (){},
                       icon: const Icon(
-                        Icons.settings,
+                        Icons.people,
                         size: 24.0,
                       ),
-                      label: const Text('App Settings'),
+                      label: const Text('Instagram'),
                       style: OutlinedButton.styleFrom(
                         //Button size in order to take up the whole screen
                         minimumSize: const Size.fromHeight(100),
@@ -101,30 +102,28 @@ class ManageAccounts extends StatelessWidget {
                         textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
                       ),
                     ),
-                    const SizedBox(height: 100),
-                    OutlinedButton(
-                        onPressed: () {},
-                        child: const Text(
-                          'Log Out',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20.0,
-                          ),
-                        ),
-                        style: OutlinedButton.styleFrom(
-                          //Button size in order to take up the whole screen
-                          minimumSize: const Size.fromHeight(75),
-                          shape: const StadiumBorder(),
-                          //colors
-                          backgroundColor: Colors.white,
-                          foregroundColor: Colors.black,
-                          //width of the border for our button
-                          side: const BorderSide(width: 5.0, color: Colors.black),
-                          //centers text
-                          alignment: Alignment.center,
-                          textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
-                        )
-                    )
+                    const SizedBox(height: 35),
+                    OutlinedButton.icon(
+                      onPressed: (){},
+                      icon: const Icon(
+                        Icons.people,
+                        size: 24.0,
+                      ),
+                      label: const Text('Snapchat'),
+                      style: OutlinedButton.styleFrom(
+                        //Button size in order to take up the whole screen
+                        minimumSize: const Size.fromHeight(100),
+                        shape: const StadiumBorder(),
+                        //colors
+                        backgroundColor: Colors.white,
+                        foregroundColor: Colors.black,
+                        //width of the border for our button
+                        side: const BorderSide(width: 5.0, color: Colors.black),
+                        //centers text
+                        alignment: Alignment.center,
+                        textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
+                      ),
+                    ),
                   ],
                 ),
 
