@@ -1,5 +1,6 @@
 import 'package:firebasetest/screens/create_post.dart';
 import 'package:firebasetest/screens/customer_support.dart';
+import 'package:firebasetest/screens/instagram_add.dart';
 import 'package:firebasetest/screens/verification_screen.dart';
 
 import '/screens/home_screen.dart';
@@ -34,6 +35,9 @@ class MyRouter {
 
       case TwitterAdd.id:
         return MaterialPageRoute(builder: (_) => const TwitterAdd());
+
+      case InstagramAdd.id:
+        return MaterialPageRoute(builder: (_) => const InstagramAdd());
 
       case VerifyScreen.id:
         return MaterialPageRoute(builder: (_) => const VerifyScreen());

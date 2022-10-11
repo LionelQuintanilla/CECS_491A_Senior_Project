@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '/screens/create_post.dart';
 import '/screens/manage_accounts.dart';
 import '/screens/twitter_add.dart';
+import '/screens/instagram_add.dart';
 
 class ManageAccounts extends StatelessWidget {
   const ManageAccounts({Key? key}) : super(key: key);
@@ -83,7 +84,7 @@ class ManageAccounts extends StatelessWidget {
                     ),
                     const SizedBox(height: 35),
                     OutlinedButton.icon(
-                      onPressed: (){},
+                      onPressed: () => Navigator.pushNamed(context, InstagramAdd.id),
                       icon: const Icon(
                         Icons.people,
                         size: 24.0,
