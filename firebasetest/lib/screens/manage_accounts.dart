@@ -7,6 +7,7 @@ import '/screens/create_post.dart';
 import '/screens/manage_accounts.dart';
 import '/screens/twitter_add.dart';
 import '/screens/instagram_add.dart';
+import '/screens/facebook_add.dart';
 
 class ManageAccounts extends StatelessWidget {
   const ManageAccounts({Key? key}) : super(key: key);
@@ -62,7 +63,7 @@ class ManageAccounts extends StatelessWidget {
                     ),
                     const SizedBox(height: 35),
                     OutlinedButton.icon(
-                      onPressed: () => Navigator.pushNamed(context, ManageAccounts.id),
+                      onPressed: () => Navigator.pushNamed(context, FacebookAdd.id),
                       icon: const Icon(
                         Icons.people,
                         size: 24.0,
