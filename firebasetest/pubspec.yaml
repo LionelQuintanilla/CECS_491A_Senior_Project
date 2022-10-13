@@ -43,6 +43,8 @@ dependencies:
   twitter_api_v2: ^4.1.1
   twitter_oauth2_pkce: ^0.4.0
 
+  flutter_facebook_auth: ^4.4.1+1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
