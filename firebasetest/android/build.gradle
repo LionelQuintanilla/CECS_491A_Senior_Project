@@ -31,3 +31,7 @@ subprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+defaultConfig{
+    miniSdkVersion 21
+}

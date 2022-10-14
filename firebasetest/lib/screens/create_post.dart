@@ -88,42 +88,51 @@ class _CreatePost extends State<CreatePost>{
                         ),
                             alignment: Alignment.center
                   ),
-                  Row(
-                    children: [
-                      ElevatedButton(
-                        onPressed: (){},
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor : Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(40),
-                              side: const BorderSide(color: Colors.black),
-                            )
-                        ),
-                        child: const Icon(
-                          Icons.camera_alt_outlined,
-                          color: Colors.black,
-                          size: 50,
+                      Row(
+                        children: [
+                          Align(
+                            alignment: Alignment.bottomLeft,
+                            child:
+                            ElevatedButton(
+                              onPressed: (){},
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor : Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(40),
+                                    side: const BorderSide(color: Colors.black),
+                                  )
+                              ),
+                              child: const Icon(
+                                Icons.camera_alt_outlined,
+                                color: Colors.black,
+                                size: 50,
 
-                        ),
-                      ),
-                      ElevatedButton(
-                        onPressed: (){},
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor : Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(40),
-                              side: const BorderSide(color: Colors.black),
-                            )
-                        ),
-                        child: const Icon(
-                          Icons.add_to_photos_outlined,
-                          color: Colors.black,
-                          size: 50,
+                              ),
+                            ),
+                          ),
+                          Spacer(),
+                          Align(
+                            alignment: Alignment.centerRight,
+                            child:
+                            ElevatedButton(
+                              onPressed: (){},
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor : Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(40),
+                                    side: const BorderSide(color: Colors.black),
+                                  )
+                              ),
+                              child: const Icon(
+                                Icons.add_to_photos_outlined,
+                                color: Colors.black,
+                                size: 50,
 
-                        ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
 
                   const SizedBox(height: 40),
                   Container(
