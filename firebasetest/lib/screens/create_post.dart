@@ -1,4 +1,5 @@
 import 'package:firebasetest/screens/verification_screen.dart';
+import 'package:flutter/services.dart';
 import '/components/custom_button.dart';
 import '/components/custom_textfield.dart';
 import '/components/snackbar.dart';
@@ -9,6 +10,8 @@ import '/screens/home_screen.dart';
 import '/utils/loader.dart';
 import '/utils/validator.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
 
 class CreatePost extends StatefulWidget{
   static const String id = 'create_post';
@@ -20,6 +23,24 @@ class CreatePost extends StatefulWidget{
 }
 
 class _CreatePost extends State<CreatePost>{
+  File? _image;
+
+  final _picker = ImagePicker();
+
+  Future _openPicker(ImageSource source) async{
+    try{
+      final image = await ImagePicker().pickImage(source: source);
+      if(image == null) return;
+      File? img = File(image.path);
+      setState(() {
+        _image = img;
+        Navigator.of(context).pop();
+      });
+    } on PlatformException catch (e) {
+      print(e);
+      Navigator.of(context).pop();
+    }
+  }
   final _key = GlobalKey<FormState>();
 
   @override
@@ -114,8 +135,8 @@ class _CreatePost extends State<CreatePost>{
                           Align(
                             alignment: Alignment.centerRight,
                             child:
-                            ElevatedButton(
-                              onPressed: (){},
+                            OutlinedButton(
+                              onPressed: () => _openPicker(ImageSource.gallery),
                               style: ElevatedButton.styleFrom(
                                   backgroundColor : Colors.white,
                                   shape: RoundedRectangleBorder(
