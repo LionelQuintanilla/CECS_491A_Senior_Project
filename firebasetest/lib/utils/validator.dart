@@ -10,8 +10,8 @@ class Validator {
   }
 
   static String? validatePassword(String value) {
-    if (value.length != 6) {
-      return '🚩 Password must be 6 digits';
+    if (value.length < 8) {
+      return '🚩 Password must be at least 8 characters';
     } else {
       return null;
     }
