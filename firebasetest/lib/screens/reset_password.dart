@@ -7,6 +7,8 @@ import '/screens/login.dart';
 import '/utils/loader.dart';
 import '/utils/validator.dart';
 import 'package:flutter/material.dart';
+import '/screens/customer_support.dart';
+import '/screens/sign_up.dart';
 
 class ResetPasswordScreen extends StatefulWidget {
   static const String id = 'reset_password';
@@ -51,22 +53,28 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                 const Text(
                   "Forgot Password",
                   style: TextStyle(
-                    fontSize: 35,
+                    fontSize: 75,
+                    fontFamily: 'Cherry',
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
                 ),
-                const SizedBox(height: 10),
-                const Text(
-                  'Please enter your email address to recover your password.',
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Colors.black,
+                const SizedBox(height: 25),
+                const Align(
+                  child:
+                  Text(
+                    "If your email is in our system, you will be sent email with a link to reset your password.",
+                    style: TextStyle(
+                      fontSize: 25.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
                 ),
                 const SizedBox(height: 40),
                 const Text(
-                  'Email address',
+                  'Email',
                   style: TextStyle(
                     fontSize: 15,
                     color: Colors.black,
@@ -81,33 +89,81 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   controller: _emailController,
                   validator: (value) => Validator.validateEmail(value ?? ""),
                 ),
-                const SizedBox(height: 16),
-                const Expanded(child: SizedBox()),
-                CustomButton(
-                  label: 'RECOVER PASSWORD',
-                  color: Colors.black,
-                  onPressed: () async {
-                    if (_key.currentState!.validate()) {
-                      LoaderX.show(context);
-                      final _status = await _authService.resetPassword(
-                          email: _emailController.text.trim());
-                      if (_status == AuthStatus.successful) {
-                        LoaderX.hide();
-                        Navigator.pushNamed(context, LoginScreen.id);
-                      } else {
-                        LoaderX.hide();
-                        final error =
-                        AuthExceptionHandler.generateErrorMessage(_status);
-                        CustomSnackBar.showErrorSnackBar(context,
-                            message: error);
-                      }
-                    }
-                  },
-                  size: size,
-                  textColor: Colors.white,
-                  borderSide: BorderSide.none,
+                const SizedBox(height: 100),
+                Container(
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: SizedBox(
+                        width: 300,
+                        height: 75,
+                        child: OutlinedButton(
+                          onPressed: () async {
+                            if (_key.currentState!.validate()) {
+                              LoaderX.show(context);
+                              final _status = await _authService.resetPassword(
+                                  email: _emailController.text.trim());
+                              if (_status == AuthStatus.successful) {
+                                LoaderX.hide();
+                                Navigator.pushNamed(context, LoginScreen.id);
+                              } else {
+                                LoaderX.hide();
+                                final error =
+                                AuthExceptionHandler.generateErrorMessage(_status);
+                                CustomSnackBar.showErrorSnackBar(context,
+                                    message: error);
+                              }
+                            }
+                          },
+                          child: const Text('Reset Password'),
+                          style: OutlinedButton.styleFrom(
+                            minimumSize: const Size.fromHeight(75),
+                            shape: const StadiumBorder(),
+                            backgroundColor: Colors.white,
+                            foregroundColor: Colors.black,
+                            side: const BorderSide(width: 5.0, color: Colors.black),
+                            alignment: Alignment.center,
+                            textStyle: const TextStyle( fontWeight: FontWeight.bold, fontSize: 35.0),
+                          ),
+                        ),
+                      ),
+                    )
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height:35),
+                GestureDetector(
+                    onTap: () => Navigator.pushNamed(context, SignUpScreen.id),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: RichText(
+                        textScaleFactor: .9,
+                        text: const TextSpan(
+                            text: "Create a New Account",
+                            style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              color: Colors.black,
+                              fontSize: 30,
+                            )
+                        ),
+                      ),
+                    )
+                ),
+                const SizedBox(height:20),
+                GestureDetector(
+                    onTap: () => Navigator.pushNamed(context, CustomerSupport.id),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: RichText(
+                        textScaleFactor: .9,
+                        text: const TextSpan(
+                            text: "Customer Support",
+                            style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              color: Colors.black,
+                              fontSize: 30,
+                            ),
+                        ),
+                      ),
+                    )
+                )
               ],
             ),
           ),

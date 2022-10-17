@@ -103,14 +103,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 10),
-                  const Text(
-                    'Log into your account.',
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.black,
-                    ),
-                  ),
                   const SizedBox(height: 40),
                   const Text(
                     'Email address',
