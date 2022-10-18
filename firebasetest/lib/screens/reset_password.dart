@@ -63,7 +63,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                 const Align(
                   child:
                   Text(
-                    "If your email is in our system, you will be sent email with a link to reset your password.",
+                    "If your email is in our system, you will be sent an email with a link to reset your password.",
                     style: TextStyle(
                       fontSize: 25.0,
                       fontWeight: FontWeight.bold,
