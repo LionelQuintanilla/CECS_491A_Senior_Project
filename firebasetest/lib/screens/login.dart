@@ -90,7 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     onTap: () => Navigator.pop(context),
                     child: const Icon(Icons.close),
                   ),*/
-                  const Expanded(child: SizedBox(height: 0)),
+                  const SizedBox(height: 30),
                   const Align(
                     alignment: Alignment.center,
                     child: Text(
@@ -103,7 +103,15 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 40),
+                  Container(
+                    alignment: Alignment.center,
+                    child:Container(
+                      child: Image.asset('assets/images/wuphf.jpg',
+                          ),
+                      height: 225.0,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
                   const Text(
                     'Email address',
                     style: TextStyle(
@@ -165,7 +173,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                  const Expanded(child: SizedBox()),
                   CustomButton(
                     label: 'LOG IN',
                     color: Colors.black,
