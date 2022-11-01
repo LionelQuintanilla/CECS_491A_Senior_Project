@@ -132,28 +132,6 @@ class _TwitterAdd extends State<TwitterAdd>{
                         textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 45.0),
                       ),
                     ),
-                    Text('Access Token: $_accessToken'),
-                    Text('Refresh Token: $_refreshToken'),
-                    ElevatedButton(
-                      onPressed: () async {
-                        final oauth2 = TwitterOAuth2Client(
-                          clientId: 'WlJRWEF0Tm1PeGlnMy1wclljakI6MTpjaQ',
-                          clientSecret: '-b-Xr9HBV74Lqqie51-nep9OaHodODIvyF_I7RsUKXu9NUQiMh',
-                          redirectUri: 'org.example.android.oauth://callback/',
-                          customUriScheme: 'org.example.android.oauth',
-                        );
-
-                        final response = await oauth2.executeAuthCodeFlowWithPKCE(
-                          scopes: Scope.values,
-                        );
-
-                        super.setState(() {
-                          _accessToken = response.accessToken;
-                          _refreshToken = response.refreshToken;
-                        });
-                      },
-                      child: const Text('Add'),
-                    ),
                     const SizedBox(height:100),
                     GestureDetector(
                         onTap: () => Navigator.pop(context),
