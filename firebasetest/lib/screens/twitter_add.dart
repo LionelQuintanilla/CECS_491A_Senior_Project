@@ -13,6 +13,10 @@ import 'package:flutter/material.dart';
 import 'package:twitter_api_v2/twitter_api_v2.dart';
 import 'package:twitter_oauth2_pkce/twitter_oauth2_pkce.dart';
 
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
+
+
 import 'dart:async';
 import 'dart:io';
 
@@ -103,7 +107,12 @@ class _TwitterAdd extends State<TwitterAdd>{
                     ),
                     const SizedBox(height: 35),
                     OutlinedButton.icon(
-                      onPressed: () {},
+                      onPressed: () async {
+                        const String twitterUrl = "https://twitter.com";
+                        if (await canLaunchUrlString(twitterUrl)) {
+                        await launchUrlString(twitterUrl);
+                        }
+                      },
                       icon: const Icon(
                         Icons.people,
                         size: 50.0,
