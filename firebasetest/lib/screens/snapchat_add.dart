@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
+
 class SnapchatAdd extends StatefulWidget{
   static const String id = 'snapchat_add';
   const SnapchatAdd({Key? key}) : super(key:key);
@@ -87,7 +90,14 @@ class _SnapchatAdd extends State<SnapchatAdd>{
                     ),
                     const SizedBox(height: 35),
                     OutlinedButton.icon(
-                      onPressed: () {},
+                      onPressed: () async {
+                        const String snapchatUrl = 'https://snapchat.com/';
+                        if (await canLaunchUrlString(snapchatUrl)) {
+                          await launchUrlString(snapchatUrl);
+                        } else {
+                          throw 'Could not launch $snapchatUrl';
+                        }
+                      },
                       icon: const Icon(
                         Icons.people,
                         size: 50.0,
