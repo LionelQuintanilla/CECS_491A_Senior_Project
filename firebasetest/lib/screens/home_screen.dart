@@ -6,6 +6,7 @@ import '/screens/login.dart';
 import '/utils/loader.dart';
 import 'package:flutter/material.dart';
 import '/screens/create_post.dart';
+import '/screens/login.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -61,7 +62,9 @@ class HomeScreen extends StatelessWidget {
               ),
               const SizedBox(height: 60),
               OutlinedButton.icon(
-                onPressed: () => Navigator.pushNamed(context, ManageAccounts.id),
+                onPressed: () => {
+                  Navigator.pushNamed(context, ManageAccounts.id),
+                },
                 icon: const Icon(
                   Icons.person,
                   size: 24.0,
@@ -105,7 +108,9 @@ class HomeScreen extends StatelessWidget {
               ),
               const SizedBox(height: 100),
               OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () => {
+                    Navigator.pushNamed(context, LoginScreen.id),
+                  },
                   child: const Text(
                       'Log Out',
                       style: TextStyle(

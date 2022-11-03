@@ -26,8 +26,16 @@ class ManageAccounts extends StatelessWidget {
               child: Padding(
                 padding:  const EdgeInsets.only(
                     left: 16.0, right: 16.0, top: 50.0, bottom: 25.0),
-                child:  Column(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
+                    GestureDetector(
+                        onTap: () => Navigator.pop(context),
+                        child: Image.asset('assets/images/backArrow.png',
+                            height: 40,
+                            width: 40)
+                    ),
                     const Align(
                         child:  Text(
                           'Manage Accounts',
