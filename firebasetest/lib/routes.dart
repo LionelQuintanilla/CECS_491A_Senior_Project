@@ -13,10 +13,13 @@ import '/screens/manage_accounts.dart';
 import '/screens/twitter_add.dart';
 import '/screens/snapchat_add.dart';
 import 'package:flutter/material.dart';
+import '/screens/select_accounts.dart';
 
 class MyRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case SelectAccounts.id:
+        return MaterialPageRoute(builder: (_) => const SelectAccounts());
       case PostDescription.id:
         return MaterialPageRoute(builder: (_) => const PostDescription());
       case CreatePost.id:

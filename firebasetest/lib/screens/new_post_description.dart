@@ -13,6 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import '/screens/create_post.dart';
+import '/screens/select_accounts.dart';
 
 
 class PostDescription extends StatefulWidget{
@@ -194,9 +195,7 @@ class _PostDescription extends State<PostDescription>{
                           width: 200,
                           height: 50,
                           child: OutlinedButton(
-                            onPressed: () async{
-
-                            },
+                            onPressed: () => Navigator.pushNamed(context, SelectAccounts.id),
                             child: const Text('Next'),
                             style: OutlinedButton.styleFrom(
                               minimumSize: const Size.fromHeight(75),
