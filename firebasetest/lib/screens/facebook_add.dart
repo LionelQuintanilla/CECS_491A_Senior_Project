@@ -31,6 +31,7 @@ class FacebookAdd extends StatefulWidget{
 class _FacebookAdd extends State<FacebookAdd>{
   final _key = GlobalKey<FormState>();
   final _emailController = TextEditingController();
+  final _postTextController = TextEditingController();
 
   String? _accessToken;
   String? _refreshToken;
@@ -143,10 +144,11 @@ class _FacebookAdd extends State<FacebookAdd>{
                       ),
                     ),
                     const SizedBox(height: 10),
-                    const CustomTextField(
+                    CustomTextField(
                       hintText: 'Example facebook post text',
                       keyboardType: TextInputType.text,
                       textCapitalization: TextCapitalization.sentences,
+                      controller: _postTextController,
                       //validator: (value) => Validator.validateEmail(value ?? ""),
                       //controller: _emailController,
                     ),
