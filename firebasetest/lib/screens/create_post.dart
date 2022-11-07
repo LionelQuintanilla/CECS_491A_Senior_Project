@@ -1,3 +1,4 @@
+import 'package:firebasetest/screens/new_post_description.dart';
 import 'package:firebasetest/screens/verification_screen.dart';
 import 'package:flutter/services.dart';
 import '/components/custom_button.dart';
@@ -12,6 +13,7 @@ import '/utils/validator.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
+import '/screens/new_post_description.dart';
 
 
 class CreatePost extends StatefulWidget{
@@ -195,9 +197,7 @@ class _CreatePost extends State<CreatePost>{
                           width: 200,
                           height: 50,
                           child: OutlinedButton(
-                            onPressed: () async{
-
-                            },
+                            onPressed: () => Navigator.pushNamed(context, PostDescription.id),
                             child: const Text('Next'),
                             style: OutlinedButton.styleFrom(
                               minimumSize: const Size.fromHeight(75),

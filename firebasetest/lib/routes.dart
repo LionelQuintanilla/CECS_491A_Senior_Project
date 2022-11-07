@@ -2,6 +2,7 @@ import 'package:firebasetest/screens/create_post.dart';
 import 'package:firebasetest/screens/customer_support.dart';
 import 'package:firebasetest/screens/facebook_add.dart';
 import 'package:firebasetest/screens/instagram_add.dart';
+import 'package:firebasetest/screens/new_post_description.dart';
 import 'package:firebasetest/screens/verification_screen.dart';
 
 import '/screens/home_screen.dart';
@@ -16,6 +17,8 @@ import 'package:flutter/material.dart';
 class MyRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case PostDescription.id:
+        return MaterialPageRoute(builder: (_) => const PostDescription());
       case CreatePost.id:
         return MaterialPageRoute(builder: (_) => const CreatePost());
       case CustomerSupport.id:
