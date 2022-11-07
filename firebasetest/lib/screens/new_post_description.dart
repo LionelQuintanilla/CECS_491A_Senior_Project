@@ -62,15 +62,13 @@ class _PostDescription extends State<PostDescription>{
                       'New Post',
                       style: TextStyle(
                         fontFamily: 'Cherry',
-                        fontSize: 70,
+                        fontSize: 60,
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
                       ),
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  const SizedBox(height: 10),
-                  const SizedBox(height: 20),
                   Align(
                       child: ConstrainedBox(
                         constraints: const BoxConstraints(minHeight: 200),
@@ -81,7 +79,78 @@ class _PostDescription extends State<PostDescription>{
                       ),
                       alignment: Alignment.center
                   ),
-                  const SizedBox(height: 20),
+                  const Align(
+                    alignment: Alignment(-.9, -1),
+                    child:
+                        Text(
+                          'Caption',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.black,
+                          ),
+                        ),
+                  ),
+                  TextFormField(
+                    minLines: 1,
+                    maxLines: 1,
+                    maxLength: 150,
+                    keyboardType: TextInputType.multiline,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: const BorderSide(
+                          color: Colors.black,
+                          width: 5,
+                        )
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: const BorderSide(color: Colors.black, width: 5),
+                      ),
+                      hintText: 'Enter the caption for your post here',
+                      hintStyle: const TextStyle(
+                        color: Colors.grey,
+                      )
+                    ),
+                  ),
+                  const Align(
+                    alignment: Alignment(-.9, -1),
+                    child:
+                    Text(
+                      'Hashtags',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  TextFormField(
+                    minLines: 1,
+                    maxLines: 1,
+                    maxLength: 100,
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.white,
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30),
+                            borderSide: const BorderSide(
+                              color: Colors.black,
+                              width: 5,
+                            )
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30),
+                          borderSide: const BorderSide(color: Colors.black, width: 5),
+                        ),
+                        hintText: 'Enter the tags for your post here',
+                        hintStyle: const TextStyle(
+                          color: Colors.grey,
+                        )
+                    ),
+                  ),
                   Container(
                       child: Align(
                         alignment: Alignment.center,
