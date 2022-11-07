@@ -13,6 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
+
 class CreatePost extends StatefulWidget{
   static const String id = 'create_post';
   const CreatePost({Key? key}) : super(key:key);
@@ -24,7 +25,6 @@ class CreatePost extends StatefulWidget{
 
 class _CreatePost extends State<CreatePost>{
   File? _image;
-
   final _picker = ImagePicker();
 
   Future _openPicker(ImageSource source) async{
@@ -115,7 +115,8 @@ class _CreatePost extends State<CreatePost>{
                             alignment: Alignment.bottomLeft,
                             child:
                             ElevatedButton(
-                              onPressed: (){},
+                              onPressed: () async {
+                              },
                               style: ElevatedButton.styleFrom(
                                   backgroundColor : Colors.white,
                                   shape: RoundedRectangleBorder(
