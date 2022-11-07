@@ -151,6 +151,42 @@ class _PostDescription extends State<PostDescription>{
                         )
                     ),
                   ),
+                  const Align(
+                    alignment: Alignment(-.9, -1),
+                    child:
+                    Text(
+                      'Tag Someone',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  TextFormField(
+                    minLines: 1,
+                    maxLines: 1,
+                    maxLength: 100,
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.white,
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30),
+                            borderSide: const BorderSide(
+                              color: Colors.black,
+                              width: 5,
+                            )
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30),
+                          borderSide: const BorderSide(color: Colors.black, width: 5),
+                        ),
+                        hintText: 'Enter the people included in your post here',
+                        hintStyle: const TextStyle(
+                          color: Colors.grey,
+                        )
+                    ),
+                  ),
                   Container(
                       child: Align(
                         alignment: Alignment.center,
