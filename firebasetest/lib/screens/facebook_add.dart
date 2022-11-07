@@ -133,6 +133,23 @@ class _FacebookAdd extends State<FacebookAdd>{
                         textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 45.0),
                       ),
                     ),
+                    const SizedBox(height: 10),
+                    const Text(
+                      'Post text',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    const CustomTextField(
+                      hintText: 'Example facebook post text',
+                      keyboardType: TextInputType.text,
+                      textCapitalization: TextCapitalization.sentences,
+                      //validator: (value) => Validator.validateEmail(value ?? ""),
+                      //controller: _emailController,
+                    ),
                     /*Text('Access Token: $_accessToken'),
                     Text('Refresh Token: $_refreshToken'),
                     ElevatedButton(
@@ -155,7 +172,7 @@ class _FacebookAdd extends State<FacebookAdd>{
                       },
                       child: const Text('Add'),
                     ),*/
-                    const SizedBox(height:100),
+                    const SizedBox(height:50),
                     GestureDetector(
                         onTap: () => Navigator.pop(context),
                         child: Align(
