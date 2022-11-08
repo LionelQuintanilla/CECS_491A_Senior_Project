@@ -108,7 +108,8 @@ class _FacebookAdd extends State<FacebookAdd>{
                     const SizedBox(height: 35),
                     OutlinedButton.icon(
                       onPressed: () async {
-                        const String facebookUrl = 'https://facebook.com/';
+                        //const String facebookUrl = 'https://facebook.com/sharer/sharer.php?u=$urlshare&t=$text';
+                        const String facebookUrl = 'https://facebook.com/sharer/sharer.php?u=wuphf.com&t=Download_WUPHF_today!_(Filler text)';
                         if (await canLaunchUrlString(facebookUrl)) {
                           await launchUrlString(facebookUrl);
                         } else {
