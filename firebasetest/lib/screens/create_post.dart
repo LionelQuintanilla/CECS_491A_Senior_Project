@@ -158,7 +158,7 @@ class _CreatePost extends State<CreatePost>{
                         ],
                       ),
 
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 30),
                   Container(
                       child: Align(
                         alignment: Alignment.center,
@@ -189,7 +189,7 @@ class _CreatePost extends State<CreatePost>{
                         ),
                       )
                   ),
-                  const SizedBox(height: 60),
+                  const SizedBox(height: 25),
                   Container(
                       child: Align(
                         alignment: Alignment.center,
