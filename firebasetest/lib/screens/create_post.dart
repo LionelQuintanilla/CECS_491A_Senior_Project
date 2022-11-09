@@ -36,11 +36,9 @@ class _CreatePost extends State<CreatePost>{
       File? img = File(image.path);
       setState(() {
         _image = img;
-        Navigator.of(context).pop();
       });
     } on PlatformException catch (e) {
       print(e);
-      Navigator.of(context).pop();
     }
   }
   final _key = GlobalKey<FormState>();
@@ -103,10 +101,20 @@ class _CreatePost extends State<CreatePost>{
                   Align(
                         child: ConstrainedBox(
                             constraints: const BoxConstraints(minHeight: 200),
-                            child: const Icon(
-                              Icons.add,
-                              size: 300,
-                              color: Colors.red,
+                            child: (
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Container(
+                                  height: 300,
+                                  width: 300,
+                                  child: CircleAvatar(
+                                    backgroundImage: _image == null
+                                    ? null
+                                    : FileImage(_image!,
+                                    )
+                                  )
+                                ),
+                              )
                             ),
                         ),
                             alignment: Alignment.center
