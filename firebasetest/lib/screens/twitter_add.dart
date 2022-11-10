@@ -108,7 +108,7 @@ class _TwitterAdd extends State<TwitterAdd>{
                     const SizedBox(height: 35),
                     OutlinedButton.icon(
                       onPressed: () async {
-                        const String twitterUrl = "https://twitter.com";
+                        const String twitterUrl = "https://twitter.com/i/flow/login";
                         if (await canLaunchUrlString(twitterUrl)) {
                         await launchUrlString(twitterUrl);
                         }
