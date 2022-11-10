@@ -9,6 +9,7 @@ import '/screens/login.dart';
 import '/utils/loader.dart';
 import '/utils/validator.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CustomerSupport extends StatefulWidget{
   static const String id = 'support_screen';
@@ -22,11 +23,20 @@ class CustomerSupport extends StatefulWidget{
 class _CustomerSupport extends State<CustomerSupport>{
   final _key = GlobalKey<FormState>();
   final _emailController = TextEditingController();
+  final _bodyController = TextEditingController();
 
   @override
   void dispose(){
     _emailController.dispose();
+    _bodyController.dispose();
     super.dispose();
+  }
+
+  String? encodeQueryParams(Map<String, String> params){
+    return params.entries.
+    map((MapEntry<String,String> e) =>
+    '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+        .join('&');
   }
 
   @override
@@ -131,6 +141,7 @@ class _CustomerSupport extends State<CustomerSupport>{
                     minLines: 6,
                     maxLines: 15,
                     keyboardType: TextInputType.multiline,
+                    controller: _bodyController,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
@@ -154,8 +165,16 @@ class _CustomerSupport extends State<CustomerSupport>{
                         width: 300,
                         height: 75,
                         child: OutlinedButton(
-                          onPressed: () async{
-
+                          onPressed: () async {
+                            Uri launchUri = Uri(
+                              scheme: 'mailto',
+                              path: 'wuphffeedback@gmail.com',
+                              query: encodeQueryParams(<String, String>{
+                                'subject' : 'Wuphf Customer Feedback',
+                                'body' : _bodyController.text,
+                              }),
+                            );
+                            await launchUrl(launchUri);
                           },
                           child: const Text('Submit'),
                           style: OutlinedButton.styleFrom(
