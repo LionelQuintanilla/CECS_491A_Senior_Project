@@ -10,6 +10,9 @@ import '/utils/loader.dart';
 import '/utils/validator.dart';
 import 'package:flutter/material.dart';
 
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
+
 import 'package:twitter_api_v2/twitter_api_v2.dart';
 import 'package:twitter_oauth2_pkce/twitter_oauth2_pkce.dart';
 
@@ -103,7 +106,12 @@ class _InstagramAdd extends State<InstagramAdd>{
                     ),
                     const SizedBox(height: 35),
                     OutlinedButton.icon(
-                      onPressed: () {},
+                      onPressed: () async {
+                        const String instaUrl = "https://www.instagram.com/accounts/login/";
+                        if (await canLaunchUrlString(instaUrl)) {
+                          await launchUrlString(instaUrl);
+                        }
+                      },
                       icon: const Icon(
                         Icons.people,
                         size: 50.0,

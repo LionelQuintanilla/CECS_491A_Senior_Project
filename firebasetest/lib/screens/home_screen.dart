@@ -14,6 +14,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _authService = AuthenticationService();
     var size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
@@ -106,13 +107,14 @@ class HomeScreen extends StatelessWidget {
                     textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
                   ),
               ),
-              const SizedBox(height: 100),
+              const SizedBox(height: 65),
               OutlinedButton(
-                  onPressed: () => {
-                    Navigator.pushNamed(context, LoginScreen.id),
+                  onPressed: () async {
+                    _authService.logout;
+                    Navigator.pushNamed(context, LoginScreen.id);
                   },
                   child: const Text(
-                      'Log Out',
+                      'LOG OUT',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20.0,

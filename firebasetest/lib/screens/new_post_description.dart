@@ -14,6 +14,7 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import '/screens/create_post.dart';
 import '/screens/select_accounts.dart';
+import '/screens/select_posted_accounts.dart';
 
 
 class PostDescription extends StatefulWidget{
@@ -55,8 +56,8 @@ class _PostDescription extends State<PostDescription>{
                   GestureDetector(
                       onTap: () => Navigator.pop(context),
                       child: Image.asset('assets/images/backArrow.png',
-                          height: 40,
-                          width: 40)
+                          height: 35,
+                          width: 35)
                   ),
                   const Align(
                     child: Text(
@@ -75,7 +76,7 @@ class _PostDescription extends State<PostDescription>{
                         constraints: const BoxConstraints(minHeight: 200),
                         child: const Icon(
                           Icons.image,
-                          size: 300,
+                          size: 250,
                         ),
                       ),
                       alignment: Alignment.center
@@ -195,7 +196,7 @@ class _PostDescription extends State<PostDescription>{
                           width: 200,
                           height: 50,
                           child: OutlinedButton(
-                            onPressed: () => Navigator.pushNamed(context, SelectAccounts.id),
+                            onPressed: () => Navigator.pushNamed(context, SelectPostedAccounts.id),
                             child: const Text('Next'),
                             style: OutlinedButton.styleFrom(
                               minimumSize: const Size.fromHeight(75),

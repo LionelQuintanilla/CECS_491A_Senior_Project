@@ -4,6 +4,7 @@ import 'package:firebasetest/screens/facebook_add.dart';
 import 'package:firebasetest/screens/instagram_add.dart';
 import 'package:firebasetest/screens/new_post_description.dart';
 import 'package:firebasetest/screens/verification_screen.dart';
+import 'package:firebasetest/screens/select_posted_accounts.dart';
 
 import '/screens/home_screen.dart';
 import '/screens/login.dart';
@@ -52,6 +53,9 @@ class MyRouter {
 
       case SnapchatAdd.id:
         return MaterialPageRoute(builder: (_) => const SnapchatAdd());
+
+      case SelectPostedAccounts.id:
+        return MaterialPageRoute(builder: (_) => const SelectPostedAccounts());
 
       case VerifyScreen.id:
         return MaterialPageRoute(builder: (_) => const VerifyScreen());

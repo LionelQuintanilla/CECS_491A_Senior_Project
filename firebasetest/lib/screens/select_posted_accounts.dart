@@ -10,9 +10,9 @@ import '/screens/instagram_add.dart';
 import '/screens/facebook_add.dart';
 import '/screens/snapchat_add.dart';
 
-class ManageAccounts extends StatelessWidget {
-  const ManageAccounts({Key? key}) : super(key: key);
-  static const String id = 'manage_accounts';
+class SelectPostedAccounts extends StatelessWidget {
+  const SelectPostedAccounts({Key? key}) : super(key: key);
+  static const String id = 'select_posted_accounts';
 
   @override
   Widget build(BuildContext context) {
@@ -38,10 +38,10 @@ class ManageAccounts extends StatelessWidget {
                     ),
                     const Align(
                         child:  Text(
-                          'Manage Accounts',
+                          'Select Accounts',
                           style: TextStyle(
                             fontFamily: 'Cherry',
-                            fontSize: 65,
+                            fontSize: 80,
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
                           ),
@@ -53,12 +53,12 @@ class ManageAccounts extends StatelessWidget {
                       onPressed: () => Navigator.pushNamed(context, TwitterAdd.id),
                       icon: const Icon(
                         Icons.people,
-                        size: 40.0,
+                        size: 24.0,
                       ),
                       label: const Text('Twitter'),
                       style: OutlinedButton.styleFrom(
                         //Button size in order to take up the whole screen
-                        minimumSize: const Size.fromHeight(90),
+                        minimumSize: const Size.fromHeight(100),
                         shape: const StadiumBorder(),
                         //colors
                         backgroundColor: Colors.white,
@@ -67,7 +67,7 @@ class ManageAccounts extends StatelessWidget {
                         side: const BorderSide(width: 5.0, color: Colors.black),
                         //centers text
                         alignment: Alignment.center,
-                        textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 40.0),
+                        textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
                       ),
                     ),
                     const SizedBox(height: 35),
@@ -75,12 +75,12 @@ class ManageAccounts extends StatelessWidget {
                       onPressed: () => Navigator.pushNamed(context, FacebookAdd.id),
                       icon: const Icon(
                         Icons.people,
-                        size: 40.0,
+                        size: 24.0,
                       ),
                       label: const Text('Facebook'),
                       style: OutlinedButton.styleFrom(
                         //Button size in order to take up the whole screen
-                        minimumSize: const Size.fromHeight(90),
+                        minimumSize: const Size.fromHeight(100),
                         shape: const StadiumBorder(),
                         //colors
                         backgroundColor: Colors.white,
@@ -89,7 +89,7 @@ class ManageAccounts extends StatelessWidget {
                         side: const BorderSide(width: 5.0, color: Colors.black),
                         //centers text
                         alignment: Alignment.center,
-                        textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 40.0),
+                        textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
                       ),
                     ),
                     const SizedBox(height: 35),
@@ -97,12 +97,12 @@ class ManageAccounts extends StatelessWidget {
                       onPressed: () => Navigator.pushNamed(context, InstagramAdd.id),
                       icon: const Icon(
                         Icons.people,
-                        size: 40.0,
+                        size: 24.0,
                       ),
                       label: const Text('Instagram'),
                       style: OutlinedButton.styleFrom(
                         //Button size in order to take up the whole screen
-                        minimumSize: const Size.fromHeight(90),
+                        minimumSize: const Size.fromHeight(100),
                         shape: const StadiumBorder(),
                         //colors
                         backgroundColor: Colors.white,
@@ -111,7 +111,7 @@ class ManageAccounts extends StatelessWidget {
                         side: const BorderSide(width: 5.0, color: Colors.black),
                         //centers text
                         alignment: Alignment.center,
-                        textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 40.0),
+                        textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
                       ),
                     ),
                     const SizedBox(height: 35),
@@ -119,12 +119,12 @@ class ManageAccounts extends StatelessWidget {
                       onPressed: () => Navigator.pushNamed(context, SnapchatAdd.id),
                       icon: const Icon(
                         Icons.people,
-                        size: 40.0,
+                        size: 24.0,
                       ),
                       label: const Text('Snapchat'),
                       style: OutlinedButton.styleFrom(
                         //Button size in order to take up the whole screen
-                        minimumSize: const Size.fromHeight(90),
+                        minimumSize: const Size.fromHeight(100),
                         shape: const StadiumBorder(),
                         //colors
                         backgroundColor: Colors.white,
@@ -133,7 +133,7 @@ class ManageAccounts extends StatelessWidget {
                         side: const BorderSide(width: 5.0, color: Colors.black),
                         //centers text
                         alignment: Alignment.center,
-                        textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 40.0),
+                        textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
                       ),
                     ),
                   ],
