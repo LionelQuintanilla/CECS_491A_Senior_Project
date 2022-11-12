@@ -90,11 +90,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     onTap: () => Navigator.pop(context),
                     child: const Icon(Icons.close),
                   ),*/
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 60),
                   const Align(
                     alignment: Alignment.center,
                     child: Text(
-                      'Wuphf',
+                      'WUFPH',
                       style: TextStyle(
                         fontSize: 100,
                         fontFamily: 'Cherry',

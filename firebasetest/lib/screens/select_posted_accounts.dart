@@ -1,3 +1,7 @@
+import 'dart:io';
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '/components/custom_button.dart';
 import '/core/authentication_service.dart';
 import '/screens/login.dart';
@@ -9,10 +13,72 @@ import '/screens/twitter_add.dart';
 import '/screens/instagram_add.dart';
 import '/screens/facebook_add.dart';
 import '/screens/snapchat_add.dart';
+import 'package:social_share_improvements_master/social_share.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:path_provider/path_provider.dart';
+import 'dart:async';
+import 'package:screenshot/screenshot.dart';
 
-class SelectPostedAccounts extends StatelessWidget {
+class SelectPostedAccounts extends StatefulWidget {
   const SelectPostedAccounts({Key? key}) : super(key: key);
   static const String id = 'select_posted_accounts';
+
+  @override
+  State<SelectPostedAccounts> createState() => _SelectPostedAccountsState();
+}
+
+class _SelectPostedAccountsState extends State<SelectPostedAccounts> {
+  String facebookId = "300563532117789";
+
+  var imageBackground = "image-background.jpg";
+  var videoBackground = "video-background.mp4";
+  String imageBackgroundPath = "";
+  String videoBackgroundPath = "";
+
+  @override
+  void initState() {
+    super.initState();
+    copyBundleAssets();
+  }
+
+  Future<void> copyBundleAssets() async {
+    imageBackgroundPath = await copyImage(imageBackground);
+    videoBackgroundPath = await copyImage(videoBackground);
+  }
+
+  Future<String> copyImage(String filename) async {
+    final tempDir = await getTemporaryDirectory();
+    ByteData bytes = await rootBundle.load("assets/$filename");
+    final assetPath = '${tempDir.path}/$filename';
+    File file = await File(assetPath).create();
+    await file.writeAsBytes(bytes.buffer.asUint8List());
+    return file.path;
+  }
+
+  Future<String?> pickImage() async {
+    final file = await ImagePicker().pickImage(
+      source: ImageSource.gallery,
+    );
+    var path = file?.path;
+    if (path == null) {
+      return null;
+    }
+    return file?.path;
+  }
+
+  Future<String?> screenshot() async {
+    var data = await screenshotController.capture();
+    if (data == null) {
+      return null;
+    }
+    final tempDir = await getTemporaryDirectory();
+    final assetPath = '${tempDir.path}/temp.png';
+    File file = await File(assetPath).create();
+    await file.writeAsBytes(data);
+    return file.path;
+  }
+
+  ScreenshotController screenshotController = ScreenshotController();
 
   @override
   Widget build(BuildContext context) {
@@ -49,8 +115,22 @@ class SelectPostedAccounts extends StatelessWidget {
                         )
                     ),
                     const SizedBox(height: 35),
-                    OutlinedButton.icon(
-                      onPressed: () => Navigator.pushNamed(context, TwitterAdd.id),
+                    ElevatedButton.icon(
+                      onPressed: () async {
+                        SocialShare.shareTwitter(
+                          "This is Social Share twitter example with link.  ",
+                          hashtags: [
+                            "SocialSharePlugin",
+                            "world",
+                            "foo",
+                            "bar"
+                          ],
+                          url: "https://google.com/hello",
+                          trailingText: "cool!!",
+                        ).then((data) {
+                          print(data);
+                        });
+                      },
                       icon: const Icon(
                         Icons.people,
                         size: 24.0,
@@ -71,8 +151,21 @@ class SelectPostedAccounts extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 35),
-                    OutlinedButton.icon(
-                      onPressed: () => Navigator.pushNamed(context, FacebookAdd.id),
+                    ElevatedButton.icon(
+                      onPressed: () async {
+                        var path = await pickImage();
+                        if (path == null) {
+                          return;
+                        }
+                        SocialShare.shareFacebookStory(
+                          appId: facebookId,
+                          imagePath: path,
+                          backgroundTopColor: "#ffffff",
+                          backgroundBottomColor: "#000000",
+                        ).then((data) {
+                          print(data);
+                        });
+                      },
                       icon: const Icon(
                         Icons.people,
                         size: 24.0,
@@ -93,8 +186,21 @@ class SelectPostedAccounts extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 35),
-                    OutlinedButton.icon(
-                      onPressed: () => Navigator.pushNamed(context, InstagramAdd.id),
+                    ElevatedButton.icon(
+                      onPressed: () async {
+                        var path = await pickImage();
+                        if (path == null) {
+                          return;
+                        }
+                        SocialShare.shareInstagramStory(
+                          appId: facebookId,
+                          imagePath: path,
+                          backgroundTopColor: "#ffffff",
+                          backgroundBottomColor: "#000000",
+                        ).then((data) {
+                          print(data);
+                        });
+                      },
                       icon: const Icon(
                         Icons.people,
                         size: 24.0,
