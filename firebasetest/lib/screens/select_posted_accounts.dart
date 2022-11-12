@@ -18,6 +18,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:async';
 import 'package:screenshot/screenshot.dart';
+import '/screens/new_post_description.dart';
+import '/utils/share_resources.dart';
 
 class SelectPostedAccounts extends StatefulWidget {
   const SelectPostedAccounts({Key? key}) : super(key: key);
@@ -117,7 +119,7 @@ class _SelectPostedAccountsState extends State<SelectPostedAccounts> {
                     const SizedBox(height: 35),
                     ElevatedButton.icon(
                       onPressed: () async {
-                        SocialShare.shareTwitter(
+                        /*SocialShare.shareTwitter(
                           "This is Social Share twitter example with link.  ",
                           hashtags: [
                             "SocialSharePlugin",
@@ -127,6 +129,17 @@ class _SelectPostedAccountsState extends State<SelectPostedAccounts> {
                           ],
                           url: "https://google.com/hello",
                           trailingText: "cool!!",
+                        ).then((data) {
+                          print(data);
+                        });
+                         */
+                        SocialShare.shareTwitter(
+                          getDesc(),
+                          hashtags: [
+                            getHashtags()
+                          ],
+                          //url: "https://google.com/hello",
+                          trailingText: getTags(),
                         ).then((data) {
                           print(data);
                         });

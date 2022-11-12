@@ -108,8 +108,7 @@ class _FacebookAdd extends State<FacebookAdd>{
                     const SizedBox(height: 35),
                     OutlinedButton.icon(
                       onPressed: () async {
-                        //const String facebookUrl = 'https://facebook.com/sharer/sharer.php?u=$urlshare&t=$text';
-                        const String facebookUrl = 'https://facebook.com/sharer/sharer.php?u=wuphf.com&t=Download_WUPHF_today!_(Filler text)';
+                        const String facebookUrl = 'https://www.facebook.com/login.php/';
                         if (await canLaunchUrlString(facebookUrl)) {
                           await launchUrlString(facebookUrl);
                         } else {
@@ -135,46 +134,6 @@ class _FacebookAdd extends State<FacebookAdd>{
                         textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 45.0),
                       ),
                     ),
-                    const SizedBox(height: 10),
-                    const Text(
-                      'Post text',
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    CustomTextField(
-                      hintText: 'Example facebook post text',
-                      keyboardType: TextInputType.text,
-                      textCapitalization: TextCapitalization.sentences,
-                      controller: _postTextController,
-                      //validator: (value) => Validator.validateEmail(value ?? ""),
-                      //controller: _emailController,
-                    ),
-                    /*Text('Access Token: $_accessToken'),
-                    Text('Refresh Token: $_refreshToken'),
-                    ElevatedButton(
-                      onPressed: () async {
-                        final oauth2 = TwitterOAuth2Client(
-                          clientId: 'WlJRWEF0Tm1PeGlnMy1wclljakI6MTpjaQ',
-                          clientSecret: '-b-Xr9HBV74Lqqie51-nep9OaHodODIvyF_I7RsUKXu9NUQiMh',
-                          redirectUri: 'org.example.android.oauth://callback/',
-                          customUriScheme: 'org.example.android.oauth',
-                        );
-
-                        final response = await oauth2.executeAuthCodeFlowWithPKCE(
-                          scopes: Scope.values,
-                        );
-
-                        super.setState(() {
-                          _accessToken = response.accessToken;
-                          _refreshToken = response.refreshToken;
-                        });
-                      },
-                      child: const Text('Add'),
-                    ),*/
                     const SizedBox(height:50),
                     GestureDetector(
                         onTap: () => Navigator.pop(context),

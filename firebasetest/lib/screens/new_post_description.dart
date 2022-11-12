@@ -15,7 +15,7 @@ import 'dart:io';
 import '/screens/create_post.dart';
 import '/screens/select_accounts.dart';
 import '/screens/select_posted_accounts.dart';
-
+import '/utils/share_resources.dart';
 
 class PostDescription extends StatefulWidget{
   static const String id = 'post_description';
@@ -29,6 +29,10 @@ class PostDescription extends StatefulWidget{
 class _PostDescription extends State<PostDescription>{
 
   final _key = GlobalKey<FormState>();
+
+  final _descriptionController = TextEditingController();
+  final _hashtagController = TextEditingController();
+  final _taggedPeopleController = TextEditingController();
 
   @override
   void dispose(){
@@ -97,6 +101,7 @@ class _PostDescription extends State<PostDescription>{
                     maxLines: 1,
                     maxLength: 150,
                     keyboardType: TextInputType.multiline,
+                    controller: _descriptionController,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
@@ -133,6 +138,7 @@ class _PostDescription extends State<PostDescription>{
                     maxLines: 1,
                     maxLength: 100,
                     keyboardType: TextInputType.text,
+                    controller: _hashtagController,
                     decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.white,
@@ -169,6 +175,7 @@ class _PostDescription extends State<PostDescription>{
                     maxLines: 1,
                     maxLength: 100,
                     keyboardType: TextInputType.text,
+                    controller: _taggedPeopleController,
                     decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.white,
@@ -196,7 +203,12 @@ class _PostDescription extends State<PostDescription>{
                           width: 200,
                           height: 50,
                           child: OutlinedButton(
-                            onPressed: () => Navigator.pushNamed(context, SelectPostedAccounts.id),
+                            onPressed: () {
+                              setDesc(_descriptionController.text);
+                              setHashtags(_hashtagController.text);
+                              setTags(_taggedPeopleController.text);
+                              Navigator.pushNamed(context, SelectPostedAccounts.id);
+                              },
                             child: const Text('Next'),
                             style: OutlinedButton.styleFrom(
                               minimumSize: const Size.fromHeight(75),
