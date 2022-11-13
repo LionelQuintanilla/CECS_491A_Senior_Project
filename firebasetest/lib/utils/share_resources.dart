@@ -20,6 +20,8 @@ String description = "";
 String hashtags = "";
 String tags = "";
 
+var postImagePath;
+
 void setDesc(String descInput) {
   description = descInput;
 }

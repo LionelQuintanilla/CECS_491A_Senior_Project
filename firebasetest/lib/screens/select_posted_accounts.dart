@@ -166,7 +166,7 @@ class _SelectPostedAccountsState extends State<SelectPostedAccounts> {
                     const SizedBox(height: 35),
                     ElevatedButton.icon(
                       onPressed: () async {
-                        var path = await pickImage();
+                        var path = postImagePath;
                         if (path == null) {
                           return;
                         }
@@ -201,7 +201,7 @@ class _SelectPostedAccountsState extends State<SelectPostedAccounts> {
                     const SizedBox(height: 35),
                     ElevatedButton.icon(
                       onPressed: () async {
-                        var path = await pickImage();
+                        var path = postImagePath;
                         if (path == null) {
                           return;
                         }

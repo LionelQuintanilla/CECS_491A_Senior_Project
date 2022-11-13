@@ -1,5 +1,6 @@
 import 'package:firebasetest/screens/new_post_description.dart';
 import 'package:firebasetest/screens/verification_screen.dart';
+import 'package:firebasetest/utils/share_resources.dart';
 import 'package:flutter/services.dart';
 import '/components/custom_button.dart';
 import '/components/custom_textfield.dart';
@@ -27,20 +28,21 @@ class CreatePost extends StatefulWidget{
 
 class _CreatePost extends State<CreatePost>{
   File? _image;
+
   final _picker = ImagePicker();
 
-  Future _openPicker(ImageSource source) async{
-    try{
-      final image = await ImagePicker().pickImage(source: source);
-      if(image == null) return;
-      File? img = File(image.path);
-      setState(() {
-        _image = img;
-      });
-    } on PlatformException catch (e) {
-      print(e);
+  Future<String?> pickImage() async {
+    final file = await ImagePicker().pickImage(
+      source: ImageSource.gallery,
+    );
+    var path = file?.path;
+    postImagePath = path;
+    if (path == null) {
+      return null;
     }
+    return file?.path;
   }
+
   final _key = GlobalKey<FormState>();
 
   @override
@@ -110,7 +112,7 @@ class _CreatePost extends State<CreatePost>{
                                   child: CircleAvatar(
                                     backgroundImage: _image == null
                                     ? null
-                                    : FileImage(_image!,
+                                    : FileImage(File(postImagePath)!,
                                     )
                                   )
                                 ),
@@ -147,7 +149,9 @@ class _CreatePost extends State<CreatePost>{
                             alignment: Alignment.centerRight,
                             child:
                             OutlinedButton(
-                              onPressed: () => _openPicker(ImageSource.gallery),
+                              onPressed: () async {
+                                pickImage();
+                              },
                               style: ElevatedButton.styleFrom(
                                   backgroundColor : Colors.white,
                                   shape: RoundedRectangleBorder(
