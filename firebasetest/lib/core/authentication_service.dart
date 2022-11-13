@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import '/core/firebase_exceptions.dart';
+import 'dart:async';
 
 class AuthenticationService {
   static final auth = FirebaseAuth.instance;

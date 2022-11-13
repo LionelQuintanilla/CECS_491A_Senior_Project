@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'package:firebase_auth/firebase_auth.dart';
+
 import '/components/custom_button.dart';
 import '/components/custom_textfield.dart';
 import '/components/snackbar.dart';
@@ -11,6 +13,7 @@ import '/screens/verification_screen.dart';
 import '/utils/loader.dart';
 import '/utils/validator.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String id = 'login_screen';
@@ -20,7 +23,38 @@ class LoginScreen extends StatefulWidget {
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
+int logOutState = 0;
+
 class _LoginScreenState extends State<LoginScreen> {
+
+  late StreamSubscription<User?> user;
+
+  void initState() {
+    super.initState();
+
+    checkManualLogout();
+
+    print("CURRENT LOGOUT STATE: " + logOutState.toString());
+
+    user = FirebaseAuth.instance.authStateChanges().listen((user) {
+
+      if (user == null) {
+        print('NO USER FOUND. PROCEED TO LOGIN.');
+      }
+      else {
+        if (logOutState == 1) {
+          print ('MANUAL LOGOUT. PROCEED TO LOGIN. CHECK VALUE: ' + logOutState.toString());
+          clearPersistentUser();
+        }
+        else {
+          print('USER FOUND. PROCEED TO HOME SCREEN.');
+          print(user.displayName);
+          Navigator.pushNamed(context, HomeScreen.id);
+        }
+      }
+    });
+  }
+
   final _key = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
@@ -33,12 +67,13 @@ class _LoginScreenState extends State<LoginScreen> {
     super.dispose();
   }
 
+  void clearPersistentUser() {
+    user.cancel();
+  }
+
   Timer? countdownTimer;
   Duration myDuration = Duration(minutes: 2);
-  @override
-  void initState() {
-    super.initState();
-  }
+
   /// Timer related methods ///
   // Step 3
   void startTimer() {
@@ -72,6 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+
     return Scaffold(
         resizeToAvoidBottomInset: false,
         body: Container(
@@ -261,4 +297,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
 
 
+}
+
+Future<void> checkManualLogout() async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  bool CheckValue = prefs.containsKey('logout');
+  print('LOGOUT KEY PRESENT IN STORAGE: ' + CheckValue.toString());
+  logOutState = await prefs.getInt('logout') ?? 0;
+  print('PERSISTENT STORAGE VALUE CHECK: ' + logOutState.toString());
 }

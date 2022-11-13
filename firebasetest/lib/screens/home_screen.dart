@@ -7,6 +7,7 @@ import '/utils/loader.dart';
 import 'package:flutter/material.dart';
 import '/screens/create_post.dart';
 import '/screens/login.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -110,11 +111,13 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 65),
               OutlinedButton(
                   onPressed: () async {
-                    _authService.logout;
+                    SharedPreferences prefs = await SharedPreferences.getInstance();
+                    await prefs.setInt('logout', 1);
+                    await _authService.logout();
                     Navigator.pushNamed(context, LoginScreen.id);
                   },
                   child: const Text(
-                      'LOG OUT',
+                      'Log Out',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20.0,
