@@ -16,6 +16,7 @@ import '/screens/snapchat_add.dart';
 import 'package:flutter/material.dart';
 import '/screens/select_accounts.dart';
 import '/screens/twitter_add_2.dart';
+import '/screens/instagram_add_2.dart';
 
 class MyRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -60,6 +61,9 @@ class MyRouter {
 
       case TwitterAdd2.id:
         return MaterialPageRoute(builder: (_) => const TwitterAdd2());
+
+      case InstagramAdd2.id:
+        return MaterialPageRoute(builder: (_) => const InstagramAdd2());
 
       case VerifyScreen.id:
         return MaterialPageRoute(builder: (_) => const VerifyScreen());

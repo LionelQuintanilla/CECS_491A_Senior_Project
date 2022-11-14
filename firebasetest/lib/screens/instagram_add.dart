@@ -19,6 +19,8 @@ import 'package:twitter_oauth2_pkce/twitter_oauth2_pkce.dart';
 import 'dart:async';
 import 'dart:io';
 
+import '/screens/instagram_add_2.dart';
+
 class InstagramAdd extends StatefulWidget{
   static const String id = 'instagram_add';
   const InstagramAdd({Key? key}) : super(key:key);
@@ -107,10 +109,7 @@ class _InstagramAdd extends State<InstagramAdd>{
                     const SizedBox(height: 35),
                     OutlinedButton.icon(
                       onPressed: () async {
-                        const String instaUrl = "https://www.instagram.com/accounts/login/";
-                        if (await canLaunchUrlString(instaUrl)) {
-                          await launchUrlString(instaUrl);
-                        }
+                        Navigator.pushNamed(context, InstagramAdd2.id);
                       },
                       icon: const Icon(
                         Icons.people,
