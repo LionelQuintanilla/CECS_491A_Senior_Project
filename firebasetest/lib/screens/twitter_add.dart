@@ -15,6 +15,7 @@ import 'package:twitter_oauth2_pkce/twitter_oauth2_pkce.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
+import '/screens/twitter_add_2.dart';
 
 
 import 'dart:async';
@@ -108,11 +109,7 @@ class _TwitterAdd extends State<TwitterAdd>{
                     const SizedBox(height: 35),
                     OutlinedButton.icon(
                       onPressed: () async {
-                        const String twitterUrl = "https://twitter.com/i/flow/login";
-                        if (await canLaunchUrlString(twitterUrl)) {
-                        await launchUrlString(twitterUrl);
-                        await closeInAppWebView();
-                        }
+                        Navigator.pushNamed(context, TwitterAdd2.id);
                       },
                       icon: const Icon(
                         Icons.people,
