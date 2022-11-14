@@ -20,6 +20,10 @@ String description = "";
 String hashtags = "";
 String tags = "";
 
+String? twitterPostStatus = "";
+String? facebookPostStatus = "";
+String? instagramPostStatus = "";
+
 var postImagePath;
 
 void setDesc(String descInput) {

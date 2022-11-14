@@ -111,6 +111,7 @@ class _TwitterAdd extends State<TwitterAdd>{
                         const String twitterUrl = "https://twitter.com/i/flow/login";
                         if (await canLaunchUrlString(twitterUrl)) {
                         await launchUrlString(twitterUrl);
+                        await closeInAppWebView();
                         }
                       },
                       icon: const Icon(

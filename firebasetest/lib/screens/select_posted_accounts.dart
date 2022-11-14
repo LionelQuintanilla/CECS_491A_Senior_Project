@@ -133,16 +133,15 @@ class _SelectPostedAccountsState extends State<SelectPostedAccounts> {
                           print(data);
                         });
                          */
-                        SocialShare.shareTwitter(
+                        twitterPostStatus = await SocialShare.shareTwitter(
                           getDesc(),
                           hashtags: [
                             getHashtags()
                           ],
                           //url: "https://google.com/hello",
                           trailingText: getTags(),
-                        ).then((data) {
-                          print(data);
-                        });
+                        );
+                        print('TWITTER STATUS: ' + twitterPostStatus!);
                       },
                       icon: const Icon(
                         Icons.people,
@@ -170,14 +169,13 @@ class _SelectPostedAccountsState extends State<SelectPostedAccounts> {
                         if (path == null) {
                           return;
                         }
-                        SocialShare.shareFacebookStory(
+                        facebookPostStatus = await SocialShare.shareFacebookStory(
                           appId: facebookId,
                           imagePath: path,
                           backgroundTopColor: "#ffffff",
                           backgroundBottomColor: "#000000",
-                        ).then((data) {
-                          print(data);
-                        });
+                        );
+                        print('FACEBOOK STATUS: ' + facebookPostStatus!);
                       },
                       icon: const Icon(
                         Icons.people,
@@ -205,14 +203,13 @@ class _SelectPostedAccountsState extends State<SelectPostedAccounts> {
                         if (path == null) {
                           return;
                         }
-                        SocialShare.shareInstagramStory(
+                        instagramPostStatus = await SocialShare.shareInstagramStory(
                           appId: facebookId,
                           imagePath: path,
                           backgroundTopColor: "#ffffff",
                           backgroundBottomColor: "#000000",
-                        ).then((data) {
-                          print(data);
-                        });
+                        );
+                        print('INSTAGRAM STATUS: ' + instagramPostStatus!);
                       },
                       icon: const Icon(
                         Icons.people,
