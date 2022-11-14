@@ -19,7 +19,8 @@ import '/utils/share_resources.dart';
 
 class PostDescription extends StatefulWidget{
   static const String id = 'post_description';
-  const PostDescription({Key? key}) : super(key:key);
+  final FileImage file;
+  const PostDescription({required this.file, Key? key,}) : super(key:key);
 
   @override
   State<PostDescription> createState() => _PostDescription();
@@ -32,6 +33,8 @@ class _PostDescription extends State<PostDescription>{
   final _descriptionController = TextEditingController();
   final _hashtagController = TextEditingController();
   final _taggedPeopleController = TextEditingController();
+
+
 
   @override
   void dispose(){
@@ -76,11 +79,10 @@ class _PostDescription extends State<PostDescription>{
                   ),
                   Align(
                       child: ConstrainedBox(
-                        constraints: const BoxConstraints(minHeight: 200),
-                        child: const Icon(
-                          Icons.image,
-                          size: 250,
-                        ),
+                        constraints: const BoxConstraints(minHeight: 50,maxHeight: 350),
+                        child: Image(
+                          image:  widget.file
+                        )
                       ),
                       alignment: Alignment.center
                   ),

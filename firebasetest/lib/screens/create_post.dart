@@ -38,8 +38,10 @@ class _CreatePost extends State<CreatePost>{
     );
     var path = file?.path;
     postImagePath = path;
-    if (path == null) {
-      return null;
+    if (file != null) {
+      setState(() {
+        _image = File(file.path);
+      });
     }
     return file?.path;
   }
@@ -55,6 +57,7 @@ class _CreatePost extends State<CreatePost>{
         _image = File(file.path);
       });
     }
+    return file?.path;
  }
 
   final _key = GlobalKey<FormState>();
@@ -224,7 +227,7 @@ class _CreatePost extends State<CreatePost>{
                           width: 200,
                           height: 50,
                           child: OutlinedButton(
-                            onPressed: () => Navigator.pushNamed(context, PostDescription.id),
+                            onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => PostDescription( file: FileImage(File(postImagePath))))),
                             child: const Text('Next'),
                             style: OutlinedButton.styleFrom(
                               minimumSize: const Size.fromHeight(75),
