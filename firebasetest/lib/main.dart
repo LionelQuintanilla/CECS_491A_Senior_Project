@@ -1,9 +1,17 @@
+import 'package:camera/camera.dart';
 import 'package:firebase_core/firebase_core.dart';
 import '/routes.dart';
 import '/screens/login.dart';
 import 'package:flutter/material.dart';
+List<CameraDescription> cameras = [];
 
-void main() async {
+Future<void> main() async {
+  try{
+    WidgetsFlutterBinding.ensureInitialized();
+    cameras = await availableCameras();
+  } on CameraException catch (e) {
+    print('Error retrieving cameras: $e');
+  }
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MyApp());

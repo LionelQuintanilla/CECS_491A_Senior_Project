@@ -6,6 +6,7 @@ import 'package:firebasetest/screens/new_post_description.dart';
 import 'package:firebasetest/screens/verification_screen.dart';
 import 'package:firebasetest/screens/select_posted_accounts.dart';
 
+import '/screens/camera_screen.dart';
 import '/screens/home_screen.dart';
 import '/screens/login.dart';
 import '/screens/reset_password.dart';
@@ -22,10 +23,11 @@ import '/screens/facebook_add_2.dart';
 class MyRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
+
       case SelectAccounts.id:
         return MaterialPageRoute(builder: (_) => const SelectAccounts());
       case PostDescription.id:
-        return MaterialPageRoute(builder: (_) => const PostDescription());
+        return MaterialPageRoute(builder: (_) =>   const PostDescription());
       case CreatePost.id:
         return MaterialPageRoute(builder: (_) => const CreatePost());
       case CustomerSupport.id:

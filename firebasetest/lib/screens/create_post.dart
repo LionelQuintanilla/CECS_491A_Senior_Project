@@ -1,3 +1,4 @@
+import 'package:camera/camera.dart';
 import 'package:firebasetest/screens/new_post_description.dart';
 import 'package:firebasetest/screens/verification_screen.dart';
 import 'package:firebasetest/utils/share_resources.dart';
@@ -42,6 +43,19 @@ class _CreatePost extends State<CreatePost>{
     }
     return file?.path;
   }
+
+ Future<String?> camera() async{
+    final file = await ImagePicker().pickImage(source: ImageSource.camera,
+    maxHeight: 1800,
+    maxWidth: 1800);
+    var path = file?.path;
+    postImagePath = path;
+    if (file != null){
+      setState(() {
+        _image = File(file.path);
+      });
+    }
+ }
 
   final _key = GlobalKey<FormState>();
 
@@ -127,31 +141,32 @@ class _CreatePost extends State<CreatePost>{
                             alignment: Alignment.bottomLeft,
                             child:
                             ElevatedButton(
-                              onPressed: () async {
-                              },
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor : Colors.white,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(40),
-                                    side: const BorderSide(color: Colors.black),
-                                  )
-                              ),
-                              child: const Icon(
+                              onPressed: () async{
+                                camera();
+                                },
+                                style: ElevatedButton.styleFrom(
+                                backgroundColor : Colors.white,
+                                shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(40),
+                                side: const BorderSide(color: Colors.black),
+                                )
+                                ),
+                                child: const Icon(
                                 Icons.camera_alt_outlined,
                                 color: Colors.black,
                                 size: 50,
 
-                              ),
-                            ),
-                          ),
-                          Spacer(),
-                          Align(
-                            alignment: Alignment.centerRight,
-                            child:
-                            OutlinedButton(
-                              onPressed: () async {
+                                ),
+                                ),
+                                ),
+                                Spacer(),
+                                Align(
+                                alignment: Alignment.centerRight,
+                                child:
+                                OutlinedButton(
+                                onPressed: () async {
                                 pickImage();
-                              },
+                                },
                               style: ElevatedButton.styleFrom(
                                   backgroundColor : Colors.white,
                                   shape: RoundedRectangleBorder(

@@ -27,7 +27,6 @@ class PostDescription extends StatefulWidget{
 }
 
 class _PostDescription extends State<PostDescription>{
-
   final _key = GlobalKey<FormState>();
 
   final _descriptionController = TextEditingController();
