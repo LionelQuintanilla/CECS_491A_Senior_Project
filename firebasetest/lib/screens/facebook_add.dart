@@ -19,6 +19,8 @@ import 'package:url_launcher/url_launcher_string.dart';
 import 'dart:async';
 import 'dart:io';
 
+import '/screens/facebook_add_2.dart';
+
 class FacebookAdd extends StatefulWidget{
   static const String id = 'facebook_add';
   const FacebookAdd({Key? key}) : super(key:key);
@@ -108,12 +110,7 @@ class _FacebookAdd extends State<FacebookAdd>{
                     const SizedBox(height: 35),
                     OutlinedButton.icon(
                       onPressed: () async {
-                        const String facebookUrl = 'https://www.facebook.com/login.php/';
-                        if (await canLaunchUrlString(facebookUrl)) {
-                          await launchUrlString(facebookUrl);
-                        } else {
-                          throw 'Could not launch $facebookUrl';
-                        }
+                        Navigator.pushNamed(context, FacebookAdd2.id);
                       },
                       icon: const Icon(
                         Icons.people,
