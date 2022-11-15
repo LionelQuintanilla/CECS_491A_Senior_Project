@@ -1,8 +1,4 @@
-import 'package:firebasetest/screens/verification_screen.dart';
-import 'package:flutter/services.dart';
 import '/components/custom_button.dart';
-import '/components/custom_textfield.dart';
-import '/components/snackbar.dart';
 import '/core/authentication_service.dart';
 import '/core/firebase_exceptions.dart';
 import '/screens/login.dart';
@@ -78,13 +74,23 @@ class _PostDescription extends State<PostDescription>{
                     ),
                   ),
                   Align(
-                      child: ConstrainedBox(
-                        constraints: const BoxConstraints(minHeight: 50,maxHeight: 350),
+                      alignment: Alignment.center,
+                      child: Container(
+                        constraints: const BoxConstraints(minHeight: 50,maxHeight: 275,minWidth: 100, maxWidth: 250),
+                        decoration: BoxDecoration(
+                          border: Border.all(width: 10,color: Colors.black),
+                          borderRadius: BorderRadius.circular(5) ,
+                          boxShadow: const [BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 15,
+                              offset: Offset(1, 5)
+                          )]
+                        ),
+
                         child: Image(
                           image:  widget.file //displays the image from the previous page
                         )
-                      ),
-                      alignment: Alignment.center
+                      )
                   ),
                   const Align(
                     alignment: Alignment(-.9, -1),
@@ -98,8 +104,8 @@ class _PostDescription extends State<PostDescription>{
                         ),
                   ),
                   TextFormField(
-                    minLines: 1,
-                    maxLines: 1,
+                    minLines: 2,
+                    maxLines: 2,
                     maxLength: 150,
                     keyboardType: TextInputType.multiline,
                     controller: _descriptionController,
@@ -143,12 +149,15 @@ class _PostDescription extends State<PostDescription>{
                     decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.white,
+                        prefixIcon: const Icon(
+                            Icons.add_circle_outline
+                        ),
                         enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
                             borderSide: const BorderSide(
                               color: Colors.black,
                               width: 5,
-                            )
+                            ),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
@@ -180,6 +189,9 @@ class _PostDescription extends State<PostDescription>{
                     decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.white,
+                        prefixIcon: const Icon(
+                            Icons.add_circle_outline
+                        ),
                         enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
                             borderSide: const BorderSide(
