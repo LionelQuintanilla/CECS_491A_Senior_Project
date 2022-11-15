@@ -19,8 +19,8 @@ import '/utils/share_resources.dart';
 
 class PostDescription extends StatefulWidget{
   static const String id = 'post_description';
-  final FileImage file;
-  const PostDescription({required this.file, Key? key,}) : super(key:key);
+  final FileImage file; //image file needed to be able to use previous image
+  const PostDescription({required this.file, Key? key,}) : super(key:key); //requires file to be able to use
 
   @override
   State<PostDescription> createState() => _PostDescription();
@@ -81,7 +81,7 @@ class _PostDescription extends State<PostDescription>{
                       child: ConstrainedBox(
                         constraints: const BoxConstraints(minHeight: 50,maxHeight: 350),
                         child: Image(
-                          image:  widget.file
+                          image:  widget.file //displays the image from the previous page
                         )
                       ),
                       alignment: Alignment.center
