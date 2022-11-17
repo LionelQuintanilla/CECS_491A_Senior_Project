@@ -30,6 +30,7 @@ class CreatePost extends StatefulWidget{
 class _CreatePost extends State<CreatePost>{
   File? _image;
 
+
   final _picker = ImagePicker();
 
   Future<String?> pickImage() async {
@@ -43,6 +44,7 @@ class _CreatePost extends State<CreatePost>{
         _image = File(file.path);
       });
     }
+
     return file?.path;
   }
 
@@ -120,7 +122,7 @@ class _CreatePost extends State<CreatePost>{
                   Align(
                       alignment: Alignment.center,
                       child: Container(
-                          constraints: const BoxConstraints(minHeight: 200,maxHeight: 400,minWidth: 200, maxWidth: 250),
+                          constraints: const BoxConstraints(minHeight: 100,maxHeight: 300,minWidth: 200, maxWidth: 350),
                           decoration: BoxDecoration(
                               border: Border.all(width: 10,color: Colors.black),
                               borderRadius: BorderRadius.circular(5) ,
@@ -131,8 +133,8 @@ class _CreatePost extends State<CreatePost>{
                               )]
                           ),
 
-                          child: Image.file(
-                              File(_image!.path)//displays the image from the previous page
+                          child: _image == null ? Image.asset('assets/images/No_Image_Available.jpg') : Image.file(
+                              File(_image!.path) //displays the image from the previous page
                           )
                       )
                   ),
