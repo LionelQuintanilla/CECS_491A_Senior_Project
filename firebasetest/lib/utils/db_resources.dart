@@ -9,9 +9,16 @@ String socialMediaID = "";
 String socialMediaEmail = "";
 String socialMediaAppName = "";
 
+String twitterID = "";
 bool hasTwitter = false;
+
+String instagramID = "";
 bool hasInstagram = false;
+
+String facebookID = "";
 bool hasFacebook = false;
+
+String snapchatID = "";
 bool hasSnapchat = false;
 
 Future<String> getUser() async {
@@ -28,24 +35,28 @@ getSocials() async {
 
   for (int i = 0; i < jsonResponse.length; i++) {
     String currApp = jsonResponse[i]['SocialMediaAppName'];
+    String currAppID = jsonResponse[i]['SocialMediaID'];
 
     print("Current App: " + currApp);
 
     if (currApp == 'twitter') {
       hasTwitter = true;
+      twitterID = currAppID;
     }
     else if (currApp == 'facebook') {
       hasFacebook = true;
+      facebookID = currAppID;
     }
     else if (currApp == 'instagram') {
       hasInstagram = true;
+      instagramID = currAppID;
     }
   }
 
-  print("hasTwitter: " + hasTwitter.toString());
-  print("hasFacebook: " + hasFacebook.toString());
-  print("hasInstagram: " + hasInstagram.toString());
-  print("hasSnapchat: " + hasSnapchat.toString());
+  //print("hasTwitter: " + hasTwitter.toString());
+  //print("hasFacebook: " + hasFacebook.toString());
+  //print("hasInstagram: " + hasInstagram.toString());
+  //print("hasSnapchat: " + hasSnapchat.toString());
 
 }
 

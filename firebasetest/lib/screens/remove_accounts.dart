@@ -10,6 +10,7 @@ import '/screens/instagram_add.dart';
 import '/screens/facebook_add.dart';
 import '/screens/snapchat_add.dart';
 import '/utils/db_resources.dart';
+import '/screens/twitter_remove.dart';
 
 class RemoveAccounts extends StatelessWidget {
   const RemoveAccounts({Key? key}) : super(key: key);
@@ -22,7 +23,7 @@ class RemoveAccounts extends StatelessWidget {
 
       if (hasTwitter == true) {
         return OutlinedButton.icon(
-          onPressed: () => Navigator.pushNamed(context, TwitterAdd.id),
+          onPressed: () => Navigator.pushNamed(context, TwitterRemove.id),
           icon: const Icon(
             Icons.people,
             size: 40.0,

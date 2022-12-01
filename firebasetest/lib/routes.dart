@@ -20,6 +20,7 @@ import '/screens/instagram_add_2.dart';
 import '/screens/facebook_add_2.dart';
 import '/screens/add_accounts.dart';
 import '/screens/remove_accounts.dart';
+import '/screens/twitter_remove.dart';
 
 class MyRouter {
   static get file => null;
@@ -79,6 +80,9 @@ class MyRouter {
 
       case RemoveAccounts.id:
         return MaterialPageRoute(builder: (_) => const RemoveAccounts());
+
+      case TwitterRemove.id:
+        return MaterialPageRoute(builder: (_) => const TwitterRemove());
 
       case VerifyScreen.id:
         return MaterialPageRoute(builder: (_) => const VerifyScreen());
