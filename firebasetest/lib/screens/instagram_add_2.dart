@@ -1,4 +1,6 @@
+import 'package:firebasetest/screens/home_screen.dart';
 import 'package:firebasetest/screens/verification_screen.dart';
+import 'package:firebasetest/utils/db_resources.dart';
 
 import '/components/custom_button.dart';
 import '/components/custom_textfield.dart';
@@ -108,7 +110,11 @@ class _InstagramAdd2 extends State<InstagramAdd2>{
                       });
                       if (this.url == "https://www.instagram.com/") {
                         // This can also be used with https://www.instagram.com/accounts/onetap/?next=%2F
-                        Navigator.pushNamed(context, ManageAccounts.id);
+                        socialMediaAppName='instagram';
+                        insertNewSocial();
+                        getSocials();
+                        print("UserID: " + userID + " UserEmail: " + userEmail + " AppName: " + socialMediaAppName);
+                        Navigator.pushNamed(context, HomeScreen.id);
                       }
                     },
                   ),

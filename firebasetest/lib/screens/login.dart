@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebasetest/utils/db_resources.dart';
 
 import '/components/custom_button.dart';
 import '/components/custom_textfield.dart';
@@ -49,6 +50,10 @@ class _LoginScreenState extends State<LoginScreen> {
         else {
           print('USER FOUND. PROCEED TO HOME SCREEN.');
           print(user.displayName);
+          userName = user.displayName!;
+          print(user.email);
+          userEmail = user.email!;
+          getUserIDAsyncWrapper();
           Navigator.pushNamed(context, HomeScreen.id);
         }
       }
@@ -227,6 +232,11 @@ class _LoginScreenState extends State<LoginScreen> {
                           );
 
                           if (_status == AuthStatus.successful) {
+
+                            userEmail = _emailController.text.trim();
+                            userID = await getUser();
+                            getSocials();
+
                             LoaderX.hide();
                             if (AuthenticationService.auth.currentUser!
                                 .emailVerified == true) {
@@ -305,4 +315,10 @@ Future<void> checkManualLogout() async {
   print('LOGOUT KEY PRESENT IN STORAGE: ' + CheckValue.toString());
   logOutState = await prefs.getInt('logout') ?? 0;
   print('PERSISTENT STORAGE VALUE CHECK: ' + logOutState.toString());
+}
+
+Future<void> getUserIDAsyncWrapper() async {
+  userID = await getUser();
+  print(userID);
+  getSocials();
 }

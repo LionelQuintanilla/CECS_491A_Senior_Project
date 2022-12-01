@@ -1,4 +1,5 @@
 import 'package:firebasetest/screens/verification_screen.dart';
+import 'package:firebasetest/utils/db_resources.dart';
 
 import '/components/custom_button.dart';
 import '/components/custom_textfield.dart';
@@ -109,6 +110,7 @@ class _TwitterAdd2 extends State<TwitterAdd2>{
                         this.url = url.toString();
                       });
                       if (this.url == "https://mobile.twitter.com/home") {
+                        getSocials();
                         Navigator.pushNamed(context, ManageAccounts.id);
                       }
                     },

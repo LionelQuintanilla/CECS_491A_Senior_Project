@@ -8,15 +8,23 @@ import 'package:flutter/material.dart';
 import '/screens/create_post.dart';
 import '/screens/login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '/utils/db_resources.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
   static const String id = 'home_screen';
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
     final _authService = AuthenticationService();
     var size = MediaQuery.of(context).size;
+
     return Scaffold(
       body: Container(
         width: size.width,

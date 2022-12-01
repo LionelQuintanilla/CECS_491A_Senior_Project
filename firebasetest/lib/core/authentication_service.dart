@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import '/core/firebase_exceptions.dart';
 import 'dart:async';
+import '/utils/db_resources.dart';
 
 class AuthenticationService {
   static final auth = FirebaseAuth.instance;
@@ -39,6 +40,12 @@ class AuthenticationService {
     } on FirebaseAuthException catch (e) {
       _status = AuthExceptionHandler.handleAuthException(e);
     }
+
+    userEmail = email;
+    userName = name;
+
+    insertNewUser();
+
     return _status;
   }
 

@@ -1,4 +1,5 @@
 import 'package:firebasetest/screens/verification_screen.dart';
+import 'package:firebasetest/utils/db_resources.dart';
 
 import '/components/custom_button.dart';
 import '/components/custom_textfield.dart';
@@ -107,6 +108,7 @@ class _FacebookAdd2 extends State<FacebookAdd2>{
                         this.url = url.toString();
                       });
                       if (this.url == "https://www.facebook.com/") {
+                        getSocials();
                         Navigator.pushNamed(context, ManageAccounts.id);
                       }
                     },
