@@ -21,6 +21,7 @@ import '/screens/facebook_add_2.dart';
 import '/screens/add_accounts.dart';
 import '/screens/remove_accounts.dart';
 import '/screens/twitter_remove.dart';
+import '/screens/finished_screen.dart';
 
 class MyRouter {
   static get file => null;
@@ -83,6 +84,9 @@ class MyRouter {
 
       case TwitterRemove.id:
         return MaterialPageRoute(builder: (_) => const TwitterRemove());
+
+      case FinishedScreen.id:
+        return MaterialPageRoute(builder: (_) => const FinishedScreen());
 
       case VerifyScreen.id:
         return MaterialPageRoute(builder: (_) => const VerifyScreen());

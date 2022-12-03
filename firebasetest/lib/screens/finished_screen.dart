@@ -1,3 +1,4 @@
+import 'package:firebasetest/utils/share_resources.dart';
 import 'package:flutter/material.dart';
 import '/screens/twitter_add.dart';
 import '/screens/instagram_add.dart';
@@ -12,6 +13,103 @@ class FinishedScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    Widget conditionalTwitterStatus() {
+      if (twitterPostStatus == "") {
+        return const SizedBox(height: 0);
+      }
+      else if (twitterPostStatus == "success") {
+        return OutlinedButton.icon(
+          onPressed: () => Navigator.pushNamed(context, TwitterAdd.id),
+          icon: const Icon(
+            Icons.people,
+            size: 24.0,
+          ),
+          label: const Text('Twitter'),
+          style: OutlinedButton.styleFrom(
+            //Button size in order to take up the whole screen
+            minimumSize: const Size.fromHeight(100),
+            shape: const StadiumBorder(),
+            //colors
+            backgroundColor: Colors.white,
+            foregroundColor: Colors.black,
+            //width of the border for our button
+            side: const BorderSide(width: 5.0, color: Colors.black),
+            //centers text
+            alignment: Alignment.center,
+            textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
+          ),
+        );
+      }
+      else {
+        return const SizedBox(height: 0);
+      }
+    }
+
+    Widget conditionalFacebookStatus() {
+      if (facebookPostStatus == "") {
+        return const SizedBox(height: 0);
+      }
+      else if (facebookPostStatus == "success") {
+        return OutlinedButton.icon(
+          onPressed: () => Navigator.pushNamed(context, FacebookAdd.id),
+          icon: const Icon(
+            Icons.people,
+            size: 24.0,
+          ),
+          label: const Text('Facebook'),
+          style: OutlinedButton.styleFrom(
+            //Button size in order to take up the whole screen
+            minimumSize: const Size.fromHeight(100),
+            shape: const StadiumBorder(),
+            //colors
+            backgroundColor: Colors.white,
+            foregroundColor: Colors.black,
+            //width of the border for our button
+            side: const BorderSide(width: 5.0, color: Colors.black),
+            //centers text
+            alignment: Alignment.center,
+            textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
+          ),
+        );
+      }
+      else {
+        return const SizedBox(height: 0);
+      }
+    }
+
+    Widget conditionalInstagramStatus() {
+      if (instagramPostStatus == "") {
+        return SizedBox(height: 0);
+      }
+      else if (instagramPostStatus == "success") {
+        return OutlinedButton.icon(
+          onPressed: () => Navigator.pushNamed(context, InstagramAdd.id),
+          icon: const Icon(
+            Icons.people,
+            size: 24.0,
+          ),
+          label: const Text('Instagram'),
+          style: OutlinedButton.styleFrom(
+            //Button size in order to take up the whole screen
+            minimumSize: const Size.fromHeight(100),
+            shape: const StadiumBorder(),
+            //colors
+            backgroundColor: Colors.white,
+            foregroundColor: Colors.black,
+            //width of the border for our button
+            side: const BorderSide(width: 5.0, color: Colors.black),
+            //centers text
+            alignment: Alignment.center,
+            textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
+          ),
+        );
+      }
+      else {
+        return SizedBox(height: 0);
+      }
+    }
+
     var size = MediaQuery.of(context).size;
     return Scaffold(
         body: Container(
@@ -36,6 +134,9 @@ class FinishedScreen extends StatelessWidget {
                           textAlign: TextAlign.center,
                         )
                     ),
+
+                    const SizedBox(height: 35),
+                    
                     const Text(
                       'The post was successfully posted to these apps:',
                       style: TextStyle(
@@ -46,97 +147,14 @@ class FinishedScreen extends StatelessWidget {
                       )
                     ),
 
-                    // apps that were logged into by user will show true  
-
+                    // apps that were logged into by user will show true
                     const SizedBox(height: 35),
-                    OutlinedButton.icon(
-                      onPressed: () => Navigator.pushNamed(context, TwitterAdd.id),
-                      icon: const Icon(
-                        Icons.people,
-                        size: 24.0,
-                      ),
-                      label: const Text('Twitter'),
-                      style: OutlinedButton.styleFrom(
-                        //Button size in order to take up the whole screen
-                        minimumSize: const Size.fromHeight(100),
-                        shape: const StadiumBorder(),
-                        //colors
-                        backgroundColor: Colors.white,
-                        foregroundColor: Colors.black,
-                        //width of the border for our button
-                        side: const BorderSide(width: 5.0, color: Colors.black),
-                        //centers text
-                        alignment: Alignment.center,
-                        textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
-                      ),
-                    ),
+                    Container(child: conditionalTwitterStatus()),
                     const SizedBox(height: 35),
-                    OutlinedButton.icon(
-                      onPressed: () => Navigator.pushNamed(context, FacebookAdd.id),
-                      icon: const Icon(
-                        Icons.people,
-                        size: 24.0,
-                      ),
-                      label: const Text('Facebook'),
-                      style: OutlinedButton.styleFrom(
-                        //Button size in order to take up the whole screen
-                        minimumSize: const Size.fromHeight(100),
-                        shape: const StadiumBorder(),
-                        //colors
-                        backgroundColor: Colors.white,
-                        foregroundColor: Colors.black,
-                        //width of the border for our button
-                        side: const BorderSide(width: 5.0, color: Colors.black),
-                        //centers text
-                        alignment: Alignment.center,
-                        textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
-                      ),
-                    ),
+                    Container(child: conditionalFacebookStatus()),
                     const SizedBox(height: 35),
-                    OutlinedButton.icon(
-                      onPressed: () => Navigator.pushNamed(context, InstagramAdd.id),
-                      icon: const Icon(
-                        Icons.people,
-                        size: 24.0,
-                      ),
-                      label: const Text('Instagram'),
-                      style: OutlinedButton.styleFrom(
-                        //Button size in order to take up the whole screen
-                        minimumSize: const Size.fromHeight(100),
-                        shape: const StadiumBorder(),
-                        //colors
-                        backgroundColor: Colors.white,
-                        foregroundColor: Colors.black,
-                        //width of the border for our button
-                        side: const BorderSide(width: 5.0, color: Colors.black),
-                        //centers text
-                        alignment: Alignment.center,
-                        textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
-                      ),
-                    ),
+                    Container(child: conditionalInstagramStatus()),
                     const SizedBox(height: 35),
-                    OutlinedButton.icon(
-                      onPressed: () => Navigator.pushNamed(context, SnapchatAdd.id),
-                      icon: const Icon(
-                        Icons.people,
-                        size: 24.0,
-                      ),
-                      label: const Text('Snapchat'),
-                      style: OutlinedButton.styleFrom(
-                        //Button size in order to take up the whole screen
-                        minimumSize: const Size.fromHeight(100),
-                        shape: const StadiumBorder(),
-                        //colors
-                        backgroundColor: Colors.white,
-                        foregroundColor: Colors.black,
-                        //width of the border for our button
-                        side: const BorderSide(width: 5.0, color: Colors.black),
-                        //centers text
-                        alignment: Alignment.center,
-                        textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
-                      ),
-                    ),
-
                     const Text(
                         'Want to post again?',
                         style: TextStyle(
