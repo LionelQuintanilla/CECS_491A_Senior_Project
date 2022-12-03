@@ -136,7 +136,7 @@ class FinishedScreen extends StatelessWidget {
                     ),
 
                     const SizedBox(height: 35),
-                    
+
                     const Text(
                       'The post was successfully posted to these apps:',
                       style: TextStyle(

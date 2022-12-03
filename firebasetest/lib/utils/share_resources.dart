@@ -16,6 +16,10 @@ import '/screens/create_post.dart';
 import '/screens/select_accounts.dart';
 import '/screens/select_posted_accounts.dart';
 
+final descriptionController = TextEditingController();
+final hashtagController = TextEditingController();
+final taggedPeopleController = TextEditingController();
+
 String description = "";
 String hashtags = "";
 String tags = "";

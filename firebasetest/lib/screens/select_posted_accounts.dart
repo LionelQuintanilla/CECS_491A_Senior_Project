@@ -22,6 +22,8 @@ import '/screens/new_post_description.dart';
 import '/utils/share_resources.dart';
 import '/utils/db_resources.dart';
 import '/screens/finished_screen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 class SelectPostedAccounts extends StatefulWidget {
   const SelectPostedAccounts({Key? key}) : super(key: key);
@@ -267,6 +269,30 @@ class _SelectPostedAccountsState extends State<SelectPostedAccounts> {
                         alignment: Alignment.center,
                         textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
                       ),
+                    ),
+                    const SizedBox(height: 35),
+                    OutlinedButton.icon(
+                      onPressed: () {
+                        savePost();
+                      },
+                      icon: const Icon(
+                        Icons.people,
+                        size: 24.0,
+                      ),
+                      label: const Text('Save Post'),
+                      style: OutlinedButton.styleFrom(
+                        //Button size in order to take up the whole screen
+                        minimumSize: const Size.fromHeight(100),
+                        shape: const StadiumBorder(),
+                        //colors
+                        backgroundColor: Colors.white,
+                        foregroundColor: Colors.black,
+                        //width of the border for our button
+                        side: const BorderSide(width: 5.0, color: Colors.black),
+                        //centers text
+                        alignment: Alignment.center,
+                        textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
+                      ),
                     )
                   ],
                 ),
@@ -276,4 +302,20 @@ class _SelectPostedAccountsState extends State<SelectPostedAccounts> {
         )
     );
   }
+}
+
+savePost() {
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
+
+  CollectionReference posts = FirebaseFirestore.instance.collection('posts');
+  return posts
+      .add({
+        'userid': userID,
+        'description': description,
+        'hashtags': hashtags,
+        'tags': tags,
+        'postImagePath': postImagePath
+      })
+      .then((value) => print("Post Saved"))
+      .catchError((error) => print("Failed to save post: $error"));
 }

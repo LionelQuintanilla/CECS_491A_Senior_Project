@@ -1,6 +1,7 @@
 import 'package:camera/camera.dart';
 import 'package:firebasetest/screens/new_post_description.dart';
 import 'package:firebasetest/screens/verification_screen.dart';
+import 'package:firebasetest/utils/db_resources.dart';
 import 'package:firebasetest/utils/share_resources.dart';
 import 'package:flutter/services.dart';
 import '/components/custom_button.dart';
@@ -16,7 +17,8 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import '/screens/new_post_description.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
+import '/utils/share_resources.dart';
 
 class CreatePost extends StatefulWidget{
   static const String id = 'create_post';
@@ -196,7 +198,17 @@ class _CreatePost extends State<CreatePost>{
                           width: 250,
                           height: 50,
                           child: OutlinedButton.icon(
-                            onPressed: () => Navigator.pushNamed(context, CreatePost.id),
+                            onPressed: () async {
+                              bool foundSavedPost = await getSavedPost();
+                              if (foundSavedPost == true) {
+                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => PostDescription( file: FileImage(File(postImagePath)))));
+                              }
+                              else {
+                                CustomSnackBar.showErrorSnackBar(
+                                  context, message: ("No saved post found."),
+                                );
+                              }
+                            },
                             icon: const Icon(
                               Icons.upload,
                               size: 24.0,
@@ -250,4 +262,37 @@ class _CreatePost extends State<CreatePost>{
         ),
     );
   }
+}
+
+Future<bool> getSavedPost() async {
+
+  bool result = false;
+
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
+
+  CollectionReference posts = firestore.collection('posts');
+
+  await posts.where("userid", isEqualTo: userID).get().then(
+      (res) {
+        print("Got saved post");
+        var savedPost = res.docs[0];
+        description = savedPost.get("description");
+        hashtags = savedPost.get("hashtags");
+        tags = savedPost.get("tags");
+        postImagePath = savedPost.get("postImagePath");
+        print("description: " + description);
+        descriptionController.text = description;
+        print("hashtags: " + hashtags);
+        hashtagController.text = hashtags;
+        print("tags: " + tags);
+        taggedPeopleController.text = tags;
+        result = true;
+      },
+      onError: (e) {
+        print("Couldn't get saved post: $e");
+            result = false;
+      }
+  );
+  print("Guillotine: " + result.toString());
+  return result;
 }

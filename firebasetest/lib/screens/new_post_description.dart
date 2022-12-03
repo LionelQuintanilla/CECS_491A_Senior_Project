@@ -26,12 +26,6 @@ class PostDescription extends StatefulWidget{
 class _PostDescription extends State<PostDescription>{
   final _key = GlobalKey<FormState>();
 
-  final _descriptionController = TextEditingController();
-  final _hashtagController = TextEditingController();
-  final _taggedPeopleController = TextEditingController();
-
-
-
   @override
   void dispose(){
     super.dispose();
@@ -108,7 +102,7 @@ class _PostDescription extends State<PostDescription>{
                     maxLines: 2,
                     maxLength: 150,
                     keyboardType: TextInputType.multiline,
-                    controller: _descriptionController,
+                    controller: descriptionController,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
@@ -145,7 +139,7 @@ class _PostDescription extends State<PostDescription>{
                     maxLines: 1,
                     maxLength: 100,
                     keyboardType: TextInputType.text,
-                    controller: _hashtagController,
+                    controller: hashtagController,
                     decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.white,
@@ -185,7 +179,7 @@ class _PostDescription extends State<PostDescription>{
                     maxLines: 1,
                     maxLength: 100,
                     keyboardType: TextInputType.text,
-                    controller: _taggedPeopleController,
+                    controller: taggedPeopleController,
                     decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.white,
@@ -217,9 +211,9 @@ class _PostDescription extends State<PostDescription>{
                           height: 50,
                           child: OutlinedButton(
                             onPressed: () {
-                              setDesc(_descriptionController.text);
-                              setHashtags(_hashtagController.text);
-                              setTags(_taggedPeopleController.text);
+                              setDesc(descriptionController.text.trim());
+                              setHashtags(hashtagController.text.trim());
+                              setTags(taggedPeopleController.text.trim());
                               Navigator.pushNamed(context, SelectPostedAccounts.id);
                               },
                             child: const Text('Next'),
