@@ -304,10 +304,35 @@ class _SelectPostedAccountsState extends State<SelectPostedAccounts> {
   }
 }
 
-savePost() {
+savePost() async {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
 
-  CollectionReference posts = FirebaseFirestore.instance.collection('posts');
+  CollectionReference posts = firestore.collection('posts');
+
+  String savedPostID = "";
+
+  await posts.where("userid", isEqualTo: userID).get().then(
+          (res) {
+            if (res.size == 1) {
+              print("Found saved post to overwrite");
+              var savedPost = res.docs[0];
+              savedPostID = savedPost.id;
+            }
+            else print("No saved post to overwrite");
+      },
+      onError: (e) {
+        print("No saved post to overwrite");
+      }
+  );
+
+  if (savedPostID != "") {
+    await posts
+        .doc(savedPostID)
+        .delete()
+        .then((value) => print("Saved post deleted"))
+        .catchError((error) => print("Couldn't delete saved post"));
+  }
+
   return posts
       .add({
         'userid': userID,

@@ -274,25 +274,30 @@ Future<bool> getSavedPost() async {
 
   await posts.where("userid", isEqualTo: userID).get().then(
       (res) {
-        print("Got saved post");
-        var savedPost = res.docs[0];
-        description = savedPost.get("description");
-        hashtags = savedPost.get("hashtags");
-        tags = savedPost.get("tags");
-        postImagePath = savedPost.get("postImagePath");
-        print("description: " + description);
-        descriptionController.text = description;
-        print("hashtags: " + hashtags);
-        hashtagController.text = hashtags;
-        print("tags: " + tags);
-        taggedPeopleController.text = tags;
-        result = true;
+        if (res.size == 1) {
+          print("userid: " + userID);
+          print("Got saved post");
+          var savedPost = res.docs[0];
+          description = savedPost.get("description");
+          hashtags = savedPost.get("hashtags");
+          tags = savedPost.get("tags");
+          postImagePath = savedPost.get("postImagePath");
+          print("description: " + description);
+          descriptionController.text = description;
+          print("hashtags: " + hashtags);
+          hashtagController.text = hashtags;
+          print("tags: " + tags);
+          taggedPeopleController.text = tags;
+          result = true;
+        }
+        else {
+          print("Couldn't get saved post");
+        }
       },
       onError: (e) {
-        print("Couldn't get saved post: $e");
+        print("Couldn't get saved post");
             result = false;
       }
   );
-  print("Guillotine: " + result.toString());
   return result;
 }
