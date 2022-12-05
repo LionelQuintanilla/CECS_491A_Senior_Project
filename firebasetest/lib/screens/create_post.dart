@@ -1,3 +1,5 @@
+
+
 import 'package:camera/camera.dart';
 import 'package:firebasetest/screens/new_post_description.dart';
 import 'package:firebasetest/screens/verification_screen.dart';
@@ -142,51 +144,44 @@ class _CreatePost extends State<CreatePost>{
                   ),
                       Row(
                         children: [
-                          Align(
-                            alignment: Alignment.bottomLeft,
-                            child:
-                            ElevatedButton(
-                              onPressed: () async{
-                                camera();
-                                },
-                                style: ElevatedButton.styleFrom(
-                                backgroundColor : Colors.white,
-                                shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40),
-                                side: const BorderSide(color: Colors.black),
+                          const SizedBox(width: 40),
+                           FloatingActionButton(
+                              shape: const StadiumBorder(
+                                side: BorderSide(
+                                  color: Colors.black,width: 5,
                                 )
-                                ),
-                                child: const Icon(
+                              ),
+                              backgroundColor: Colors.white,
+
+                              child:  const Icon(
                                 Icons.camera_alt_outlined,
                                 color: Colors.black,
-                                size: 50,
+                                size: 40,
+                              ),
+                              onPressed:() async{
+                            camera();
+                          }
 
-                                ),
-                                ),
-                                ),
-                                Spacer(),
-                                Align(
-                                alignment: Alignment.centerRight,
-                                child:
-                                OutlinedButton(
-                                onPressed: () async {
-                                pickImage();
-                                },
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor : Colors.white,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(40),
-                                    side: const BorderSide(color: Colors.black),
+                          ),
+                                const Spacer(),
+                          FloatingActionButton(
+                              shape: const StadiumBorder(
+                                  side: BorderSide(
+                                    color: Colors.black,width: 5,
                                   )
                               ),
+                              backgroundColor: Colors.white,
                               child: const Icon(
-                                Icons.add_to_photos_outlined,
+                                Icons.photo_library_rounded,
                                 color: Colors.black,
-                                size: 50,
-
+                                size: 40,
                               ),
-                            ),
+                              onPressed:() async{
+                                pickImage();
+                              }
+
                           ),
+                          const SizedBox(width: 40),
                         ],
                       ),
 
