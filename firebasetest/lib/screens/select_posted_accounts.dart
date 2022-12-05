@@ -26,10 +26,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 class SelectPostedAccounts extends StatefulWidget {
-  const SelectPostedAccounts({required this.file, Key? key,}) : super(key:key); //requires file to be able to use
+  const SelectPostedAccounts({Key? key,}) : super(key:key); //requires file to be able to use
   static const String id = 'select_posted_accounts';
 
-  final FileImage file; //image file needed to be able to use previous image
+  //final FileImage file; //image file needed to be able to use previous image
 
   @override
   State<SelectPostedAccounts> createState() => _SelectPostedAccountsState();
@@ -238,7 +238,7 @@ class _SelectPostedAccountsState extends State<SelectPostedAccounts> {
                     Align(
                         alignment: Alignment.center,
                         child: Container(
-                            constraints: const BoxConstraints(minHeight: 50,maxHeight: 275,minWidth: 100, maxWidth: 250),
+                            constraints: const BoxConstraints(minHeight: 200,maxHeight: 250,minWidth: 100, maxWidth: 150),
                             decoration: BoxDecoration(
                                 border: Border.all(width: 10,color: Colors.black),
                                 borderRadius: BorderRadius.circular(5) ,
@@ -248,9 +248,8 @@ class _SelectPostedAccountsState extends State<SelectPostedAccounts> {
                                     offset: Offset(1, 5)
                                 )]
                             ),
-
-                            child: Image(
-                                image:  widget.file //displays the image from the previous page
+                            child: Image.file(
+                              File(imageBackgroundPath),
                             )
                         )
                     ),
