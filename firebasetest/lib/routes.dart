@@ -73,8 +73,9 @@ class MyRouter {
       case SnapchatAdd.id:
         return MaterialPageRoute(builder: (_) => const SnapchatAdd());
 
+        /*
       case SelectPostedAccounts.id:
-        return MaterialPageRoute(builder: (_) =>  SelectPostedAccounts());
+        return MaterialPageRoute(builder: (_) =>  const SelectPostedAccounts());*/
 
       case TwitterAdd2.id:
         return MaterialPageRoute(builder: (_) => const TwitterAdd2());
