@@ -214,7 +214,8 @@ class _PostDescription extends State<PostDescription>{
                               setDesc(descriptionController.text.trim());
                               setHashtags(hashtagController.text.trim());
                               setTags(taggedPeopleController.text.trim());
-                              Navigator.pushNamed(context, SelectPostedAccounts.id);
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => SelectPostedAccounts( file: FileImage(File(postImagePath)))));
+                              ///Navigator.pushNamed(context, SelectPostedAccounts.id);
                               },
                             child: const Text('Next'),
                             style: OutlinedButton.styleFrom(

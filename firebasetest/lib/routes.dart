@@ -23,6 +23,7 @@ import '/screens/remove_accounts.dart';
 import '/screens/twitter_remove.dart';
 import '/screens/finished_screen.dart';
 import '/screens/app_settings.dart';
+import '/screens/personal_information.dart';
 
 class MyRouter {
   static get file => null;
@@ -46,6 +47,8 @@ class MyRouter {
       case LoginScreen.id:
         return MaterialPageRoute(builder: (_) => const LoginScreen());
 
+      case PersonalInformation.id:
+        return MaterialPageRoute(builder: (_) => const PersonalInformation());
       case ResetPasswordScreen.id:
         return MaterialPageRoute(builder: (_) => const ResetPasswordScreen());
 
