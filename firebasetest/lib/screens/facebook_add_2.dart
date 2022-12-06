@@ -87,7 +87,7 @@ class _FacebookAdd2 extends State<FacebookAdd2>{
                       setState(() {
                         this.url = url.toString();
                       });
-                      if (this.url == "https://www.facebook.com/") {
+                      if (this.url == "https://m.facebook.com/") {
                         getSocials();
                         Navigator.pushNamed(context, ManageAccounts.id);
                       }
