@@ -43,7 +43,7 @@ class _FacebookAdd2 extends State<FacebookAdd2>{
               Container(
                 padding: EdgeInsets.all(20.0),
                 child: Text(
-                    "CURRENT URL\n${(url.length > 50) ? url.substring(0, 50) + "..." : url}"),
+                    "CURRENT URL\n${(url.length > 50) ? "${url.substring(0, 50)}..." : url}"),
               ),
               const SizedBox(height: 50),
               GestureDetector(

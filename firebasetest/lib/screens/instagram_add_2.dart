@@ -1,30 +1,8 @@
 import 'package:firebasetest/screens/home_screen.dart';
-import 'package:firebasetest/screens/verification_screen.dart';
 import 'package:firebasetest/utils/db_resources.dart';
-
-import '/components/custom_button.dart';
-import '/components/custom_textfield.dart';
-import '/components/snackbar.dart';
-import '/core/authentication_service.dart';
-import '/core/firebase_exceptions.dart';
-import '/screens/login.dart';
-import '/utils/loader.dart';
-import '/utils/validator.dart';
 import 'package:flutter/material.dart';
 
-import 'package:twitter_api_v2/twitter_api_v2.dart';
-import 'package:twitter_oauth2_pkce/twitter_oauth2_pkce.dart';
-
-import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
-
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
-
-import '/screens/manage_accounts.dart';
-
-
-import 'dart:async';
-import 'dart:io';
 
 class InstagramAdd2 extends StatefulWidget{
   static const String id = 'instagram_add_2';
@@ -36,11 +14,11 @@ class InstagramAdd2 extends StatefulWidget{
 }
 
 class _InstagramAdd2 extends State<InstagramAdd2>{
-  final _key = GlobalKey<FormState>();
+  // final _key = GlobalKey<FormState>();
   final _emailController = TextEditingController();
 
-  String? _accessToken;
-  String? _refreshToken;
+  // String? _accessToken;
+  // String? _refreshToken;
 
   @override
   void dispose(){
@@ -64,7 +42,7 @@ class _InstagramAdd2 extends State<InstagramAdd2>{
               Container(
                 padding: EdgeInsets.all(20.0),
                 child: Text(
-                    "CURRENT URL\n${(url.length > 50) ? url.substring(0, 50) + "..." : url}"),
+                    "CURRENT URL\n${(url.length > 50) ? "${url.substring(0, 50)}..." : url}"),
               ),
               const SizedBox(height: 50),
               GestureDetector(
