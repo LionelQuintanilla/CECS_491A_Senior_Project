@@ -122,6 +122,7 @@ class _CreatePost extends State<CreatePost>{
                   ),
                   const SizedBox(height: 20),
                   Align(
+<<<<<<< Updated upstream
                       alignment: Alignment.center,
                       child: Container(
                           constraints: const BoxConstraints(minHeight: 100,maxHeight: 300,minWidth: 200, maxWidth: 350),
@@ -139,6 +140,26 @@ class _CreatePost extends State<CreatePost>{
                               File(_image!.path) //displays the image from the previous page
                           )
                       )
+=======
+                        child: ConstrainedBox(
+                            constraints: const BoxConstraints(minHeight: 200),
+                            child: (
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Container(
+                                  height: 300,
+                                  width: 300,
+                                  child: CircleAvatar(
+                                    backgroundImage: _image == null
+                                    ? null
+                                    : FileImage(File(postImagePath))
+                                  )
+                                ),
+                              )
+                            ),
+                        ),
+                            alignment: Alignment.center
+>>>>>>> Stashed changes
                   ),
                   Row(
                     children: [
