@@ -160,7 +160,7 @@ class _PostDescription extends State<PostDescription>{
                         hintText: 'Enter the tags for your post here',
                         hintStyle: const TextStyle(
                           color: Colors.grey,
-                        )
+                        ),
                     ),
                   ),
                   const Align(

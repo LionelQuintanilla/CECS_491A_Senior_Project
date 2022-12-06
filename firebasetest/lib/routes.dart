@@ -22,6 +22,7 @@ import '/screens/add_accounts.dart';
 import '/screens/remove_accounts.dart';
 import '/screens/twitter_remove.dart';
 import '/screens/finished_screen.dart';
+import '/screens/app_settings.dart';
 
 class MyRouter {
   static get file => null;
@@ -51,6 +52,9 @@ class MyRouter {
       case HomeScreen.id:
         return MaterialPageRoute(builder: (_) => const HomeScreen());
 
+      case AppSettings.id:
+        return MaterialPageRoute(builder: (_) => const AppSettings());
+
       case ManageAccounts.id:
         return MaterialPageRoute(builder: (_) => const ManageAccounts());
 
@@ -67,7 +71,7 @@ class MyRouter {
         return MaterialPageRoute(builder: (_) => const SnapchatAdd());
 
       case SelectPostedAccounts.id:
-        return MaterialPageRoute(builder: (_) => const SelectPostedAccounts());
+        return MaterialPageRoute(builder: (_) =>  SelectPostedAccounts());
 
       case TwitterAdd2.id:
         return MaterialPageRoute(builder: (_) => const TwitterAdd2());

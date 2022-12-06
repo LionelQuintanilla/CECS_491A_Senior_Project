@@ -10,6 +10,8 @@ import '/screens/login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '/utils/db_resources.dart';
 
+import '/screens/app_settings.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
   static const String id = 'home_screen';
@@ -96,7 +98,9 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               const SizedBox(height: 60),
               OutlinedButton.icon(
-                  onPressed: (){},
+                onPressed: () => {
+                  Navigator.pushNamed(context, AppSettings.id),
+                },
                   icon: const Icon(
                     Icons.settings,
                     size: 24.0,
