@@ -1,3 +1,4 @@
+
 import 'package:firebasetest/screens/manage_accounts.dart';
 
 import '/components/custom_button.dart';
@@ -10,6 +11,7 @@ import '/screens/login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '/utils/db_resources.dart';
 
+import '/screens/personal_information.dart';
 
 
 class AppSettings extends StatefulWidget {
@@ -38,6 +40,12 @@ class _AppSettingsState extends State<AppSettings> {
                     left: 16.0, right: 16.0, top: 50.0, bottom: 25.0),
                 child:  Column(
                   children: [
+                    GestureDetector(
+                        onTap: () => Navigator.pop(context),
+                        child: Image.asset('assets/images/backArrow.png',
+                            height: 40,
+                            width: 40)
+                    ),
                     const Align(
                         child:  Text(
                           'Account Settings',
