@@ -18,12 +18,9 @@ class _FacebookAdd2 extends State<FacebookAdd2>{
   // final _key = GlobalKey<FormState>();
   final _emailController = TextEditingController();
 
-<<<<<<< HEAD
-=======
   // String? _accessToken;
   // String? _refreshToken;
 
->>>>>>> 5500124c2d4aa3dee66f8ac58ca4c9d6629e5347
   @override
   void dispose(){
     _emailController.dispose();
@@ -90,15 +87,13 @@ class _FacebookAdd2 extends State<FacebookAdd2>{
                       setState(() {
                         this.url = url.toString();
                       });
-<<<<<<< HEAD
                       if (this.url == "https://www.facebook.com/") {
-                        socialMediaAppName='facebook';
+                        socialMediaAppName = 'facebook';
                         insertNewSocial();
-=======
-                      if (this.url == "https://m.facebook.com/") {
->>>>>>> 5500124c2d4aa3dee66f8ac58ca4c9d6629e5347
-                        getSocials();
-                        Navigator.pushNamed(context, ManageAccounts.id);
+                        if (this.url == "https://m.facebook.com/") {
+                          getSocials();
+                          Navigator.pushNamed(context, ManageAccounts.id);
+                        }
                       }
                     },
                   ),

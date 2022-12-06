@@ -13,13 +13,11 @@ class FacebookAdd extends StatefulWidget{
 class _FacebookAdd extends State<FacebookAdd>{
   final _key = GlobalKey<FormState>();
   final _emailController = TextEditingController();
-<<<<<<< HEAD
-=======
+
   // final _postTextController = TextEditingController();
 
   // String? _accessToken;
   // String? _refreshToken;
->>>>>>> 5500124c2d4aa3dee66f8ac58ca4c9d6629e5347
 
   @override
   void dispose(){
