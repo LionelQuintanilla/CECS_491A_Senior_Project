@@ -40,13 +40,15 @@ class _AppSettingsState extends State<AppSettings> {
                     left: 16.0, right: 16.0, top: 50.0, bottom: 25.0),
                 child:  Column(
                   children: [
-                    GestureDetector(
+                     Align (
+                      child: GestureDetector(
                         onTap: () => Navigator.pop(context),
                         child: Image.asset('assets/images/backArrow.png',
                             height: 40,
                             width: 40)
+                    )
                     ),
-                    const Align(
+                     Align(
                         child:  Text(
                           'Account Settings',
                           style: TextStyle(
@@ -105,7 +107,9 @@ class _AppSettingsState extends State<AppSettings> {
                     ),
                     const SizedBox(height: 65),
                     OutlinedButton.icon(
-                      onPressed: (){},
+                      onPressed: (){
+                        Navigator.pushNamed(context, PersonalInformation.id);
+                      },
                       icon: const Icon(
                         Icons.person,
                         size: 24.0,
