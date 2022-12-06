@@ -22,6 +22,10 @@ class CustomerSupport extends StatefulWidget{
 
 class _CustomerSupport extends State<CustomerSupport>{
   final _key = GlobalKey<FormState>();
+
+  /* Controllers are used to handle text inputted into form fields. There are
+  two form fields: one for the user's email, and another for the body of the
+  customer service email. */
   final _emailController = TextEditingController();
   final _bodyController = TextEditingController();
 
@@ -32,6 +36,7 @@ class _CustomerSupport extends State<CustomerSupport>{
     super.dispose();
   }
 
+  /* Used to format text inputs to URI parameters */
   String? encodeQueryParams(Map<String, String> params){
     return params.entries.
     map((MapEntry<String,String> e) =>
@@ -58,6 +63,7 @@ class _CustomerSupport extends State<CustomerSupport>{
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   GestureDetector(
+                    // Returns the user to the last page they visited
                     onTap: () => Navigator.pop(context),
                     child: Image.asset('assets/images/backArrow.png',
                            height: 40,
@@ -120,7 +126,9 @@ class _CustomerSupport extends State<CustomerSupport>{
                       hintText: '',
                       keyboardType: TextInputType.emailAddress,
                       textCapitalization: TextCapitalization.none,
+                      // Checks if the email the user inputs is valid
                       validator: (value) => Validator.validateEmail(value ?? ""),
+                      // Saves the user's input to the email input controller
                       controller: _emailController,
                     )
                   ),
@@ -141,6 +149,7 @@ class _CustomerSupport extends State<CustomerSupport>{
                     minLines: 6,
                     maxLines: 15,
                     keyboardType: TextInputType.multiline,
+                    // Saves the user's input to the email body controller
                     controller: _bodyController,
                     decoration: InputDecoration(
                       filled: true,
@@ -165,15 +174,22 @@ class _CustomerSupport extends State<CustomerSupport>{
                         width: 300,
                         height: 75,
                         child: OutlinedButton(
+                          /* When the button is pressed, the URL Launcher widget is used to format an email to
+                          the designated customer service email and sends it to the user's email application. */
                           onPressed: () async {
+                            // Creates a URI link to the user's email application
                             Uri launchUri = Uri(
+                              // Formats the URI as an email link
                               scheme: 'mailto',
+                              // Sets the destination email
                               path: 'wuphffeedback@gmail.com',
+                              // Sets the subject line and body of the email
                               query: encodeQueryParams(<String, String>{
                                 'subject' : 'Wuphf Customer Feedback',
                                 'body' : _bodyController.text,
                               }),
                             );
+                            // Opens the URI link to the user's email application
                             await launchUrl(launchUri);
                           },
                           child: const Text('Submit'),
@@ -192,6 +208,7 @@ class _CustomerSupport extends State<CustomerSupport>{
                   ),
                   const SizedBox(height:20),
                   GestureDetector(
+                    // Sends the user back to the last page they visited
                     onTap: () => Navigator.pop(context),
                     child: Align(
                       alignment: Alignment.center,

@@ -110,6 +110,8 @@ class _TwitterAdd2 extends State<TwitterAdd2>{
                         this.url = url.toString();
                       });
                       if (this.url == "https://mobile.twitter.com/home") {
+                        socialMediaAppName='twitter';
+                        insertNewSocial();
                         getSocials();
                         Navigator.pushNamed(context, ManageAccounts.id);
                       }

@@ -1,29 +1,9 @@
-import 'package:firebasetest/screens/verification_screen.dart';
 import 'package:firebasetest/utils/db_resources.dart';
-
-import '/components/custom_button.dart';
-import '/components/custom_textfield.dart';
-import '/components/snackbar.dart';
-import '/core/authentication_service.dart';
-import '/core/firebase_exceptions.dart';
-import '/screens/login.dart';
-import '/utils/loader.dart';
-import '/utils/validator.dart';
 import 'package:flutter/material.dart';
-
-import 'package:twitter_api_v2/twitter_api_v2.dart';
-import 'package:twitter_oauth2_pkce/twitter_oauth2_pkce.dart';
-
-import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
 import '/screens/manage_accounts.dart';
-
-
-import 'dart:async';
-import 'dart:io';
 
 class FacebookAdd2 extends StatefulWidget{
   static const String id = 'facebook_add_2';
@@ -35,12 +15,15 @@ class FacebookAdd2 extends StatefulWidget{
 }
 
 class _FacebookAdd2 extends State<FacebookAdd2>{
-  final _key = GlobalKey<FormState>();
+  // final _key = GlobalKey<FormState>();
   final _emailController = TextEditingController();
 
-  String? _accessToken;
-  String? _refreshToken;
+<<<<<<< HEAD
+=======
+  // String? _accessToken;
+  // String? _refreshToken;
 
+>>>>>>> 5500124c2d4aa3dee66f8ac58ca4c9d6629e5347
   @override
   void dispose(){
     _emailController.dispose();
@@ -107,7 +90,13 @@ class _FacebookAdd2 extends State<FacebookAdd2>{
                       setState(() {
                         this.url = url.toString();
                       });
+<<<<<<< HEAD
                       if (this.url == "https://www.facebook.com/") {
+                        socialMediaAppName='facebook';
+                        insertNewSocial();
+=======
+                      if (this.url == "https://m.facebook.com/") {
+>>>>>>> 5500124c2d4aa3dee66f8ac58ca4c9d6629e5347
                         getSocials();
                         Navigator.pushNamed(context, ManageAccounts.id);
                       }

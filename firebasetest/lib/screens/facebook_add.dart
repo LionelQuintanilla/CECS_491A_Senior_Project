@@ -1,24 +1,4 @@
-import 'package:firebasetest/screens/verification_screen.dart';
-
-import '/components/custom_button.dart';
-import '/components/custom_textfield.dart';
-import '/components/snackbar.dart';
-import '/core/authentication_service.dart';
-import '/core/firebase_exceptions.dart';
-import '/screens/login.dart';
-import '/utils/loader.dart';
-import '/utils/validator.dart';
 import 'package:flutter/material.dart';
-
-import 'package:twitter_api_v2/twitter_api_v2.dart';
-import 'package:twitter_oauth2_pkce/twitter_oauth2_pkce.dart';
-
-import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
-
-import 'dart:async';
-import 'dart:io';
-
 import '/screens/facebook_add_2.dart';
 
 class FacebookAdd extends StatefulWidget{
@@ -33,10 +13,13 @@ class FacebookAdd extends StatefulWidget{
 class _FacebookAdd extends State<FacebookAdd>{
   final _key = GlobalKey<FormState>();
   final _emailController = TextEditingController();
-  final _postTextController = TextEditingController();
+<<<<<<< HEAD
+=======
+  // final _postTextController = TextEditingController();
 
-  String? _accessToken;
-  String? _refreshToken;
+  // String? _accessToken;
+  // String? _refreshToken;
+>>>>>>> 5500124c2d4aa3dee66f8ac58ca4c9d6629e5347
 
   @override
   void dispose(){
@@ -46,6 +29,8 @@ class _FacebookAdd extends State<FacebookAdd>{
 
   @override
   Widget build(BuildContext context){
+
+    // Gets the size of the current device's screen
     var size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
@@ -63,6 +48,7 @@ class _FacebookAdd extends State<FacebookAdd>{
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     GestureDetector(
+                        // Sends the user back to the last screen they visited
                         onTap: () => Navigator.pop(context),
                         child: Image.asset('assets/images/backArrow.png',
                             height: 40,
@@ -109,6 +95,8 @@ class _FacebookAdd extends State<FacebookAdd>{
                     ),
                     const SizedBox(height: 35),
                     OutlinedButton.icon(
+                      /* If this button is pressed, the user is sent to the second page
+                      in the Facebook account process */
                       onPressed: () async {
                         Navigator.pushNamed(context, FacebookAdd2.id);
                       },
@@ -133,6 +121,7 @@ class _FacebookAdd extends State<FacebookAdd>{
                     ),
                     const SizedBox(height:50),
                     GestureDetector(
+                        // Sends the user back to the last screen they visited
                         onTap: () => Navigator.pop(context),
                         child: Align(
                           alignment: Alignment.center,

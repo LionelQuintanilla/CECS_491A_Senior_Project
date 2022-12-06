@@ -121,11 +121,19 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
               ),
               const SizedBox(height: 65),
+              /* If this button is pressed, the user is logged out and returned
+              to the login screen. */
               OutlinedButton(
                   onPressed: () async {
+                    // Opens the device's local cookie store
                     SharedPreferences prefs = await SharedPreferences.getInstance();
+                    /* Adds a cookie to indicate the user is logged out. This will be
+                    used to properly redirect the user back to the login screen when the
+                    app is reopened */
                     await prefs.setInt('logout', 1);
+                    // Logs the user our of Firebase
                     await _authService.logout();
+                    // Sends the user back to the login screen
                     Navigator.pushNamed(context, LoginScreen.id);
                   },
                   child: const Text(

@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
+/* This file is not used. It has been m */
 class FireAuth {
   // For registering a new user
   static Future<User?> registerUsingEmailPassword({
