@@ -33,10 +33,6 @@ class FacebookAdd extends StatefulWidget{
 class _FacebookAdd extends State<FacebookAdd>{
   final _key = GlobalKey<FormState>();
   final _emailController = TextEditingController();
-  final _postTextController = TextEditingController();
-
-  String? _accessToken;
-  String? _refreshToken;
 
   @override
   void dispose(){
@@ -46,6 +42,8 @@ class _FacebookAdd extends State<FacebookAdd>{
 
   @override
   Widget build(BuildContext context){
+
+    // Gets the size of the current device's screen
     var size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
@@ -63,6 +61,7 @@ class _FacebookAdd extends State<FacebookAdd>{
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     GestureDetector(
+                        // Sends the user back to the last screen they visited
                         onTap: () => Navigator.pop(context),
                         child: Image.asset('assets/images/backArrow.png',
                             height: 40,
@@ -109,6 +108,8 @@ class _FacebookAdd extends State<FacebookAdd>{
                     ),
                     const SizedBox(height: 35),
                     OutlinedButton.icon(
+                      /* If this button is pressed, the user is sent to the second page
+                      in the Facebook account process */
                       onPressed: () async {
                         Navigator.pushNamed(context, FacebookAdd2.id);
                       },
@@ -133,6 +134,7 @@ class _FacebookAdd extends State<FacebookAdd>{
                     ),
                     const SizedBox(height:50),
                     GestureDetector(
+                        // Sends the user back to the last screen they visited
                         onTap: () => Navigator.pop(context),
                         child: Align(
                           alignment: Alignment.center,

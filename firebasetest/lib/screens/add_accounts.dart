@@ -18,10 +18,14 @@ class AddAccounts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    /* Returns the button for adding a Twitter account depending on if the user
+    has a Twitter account linked to their user profile */
     Widget twitterConditional() {
 
+      // Checks if the user has a Twitter account linked to their account
       if (hasTwitter == false) {
         return OutlinedButton.icon(
+          // Redirects the user to first page of Twitter account process
           onPressed: () => Navigator.pushNamed(context, TwitterAdd.id),
           icon: const Icon(
             Icons.people,
@@ -45,10 +49,13 @@ class AddAccounts extends StatelessWidget {
         );
       }
       else {
+        /* If the user already has a Twitter account linked to their profile,
+        an empty spaceholder widget is returned */
         return const SizedBox(height: 0);
       }
     }
 
+    // Works the same as the "twitterConditional" widget. See above.
     Widget facebookConditional() {
 
       if (hasFacebook == false) {
@@ -80,6 +87,7 @@ class AddAccounts extends StatelessWidget {
       }
     }
 
+    // Works the same as the "twitterConditional" widget. See above.
     Widget instagramConditional() {
 
       if (hasInstagram == false) {
@@ -111,6 +119,7 @@ class AddAccounts extends StatelessWidget {
       }
     }
 
+    // Works the same as the "twitterConditional" widget. See above.
     Widget snapchatConditional() {
 
       if (hasSnapchat == false) {
@@ -142,7 +151,9 @@ class AddAccounts extends StatelessWidget {
       }
     }
 
+    // Get the size of the current device's screen
     var size = MediaQuery.of(context).size;
+
     return Scaffold(
         body: Container(
             width: size.width,
@@ -157,6 +168,7 @@ class AddAccounts extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     GestureDetector(
+                        // Returns the user to the last screen they visited
                         onTap: () => Navigator.pop(context),
                         child: Image.asset('assets/images/backArrow.png',
                             height: 40,
@@ -176,18 +188,22 @@ class AddAccounts extends StatelessWidget {
                     ),
                     const SizedBox(height: 35),
                     Container (
+                      // Renders the result of the twitterConditional widget
                       child: twitterConditional()
                     ),
                     const SizedBox(height: 35),
                     Container(
+                      // Renders the result of the facebookConditional widget
                       child: facebookConditional()
                     ),
                     const SizedBox(height: 35),
                     Container(
+                      // Renders the result of the instagramConditional widget
                       child: instagramConditional()
                     ),
                     const SizedBox(height: 35),
                     Container(
+                      // Renders the result of the snapchatConditional widget
                       child: snapchatConditional()
                     ),
                   ],

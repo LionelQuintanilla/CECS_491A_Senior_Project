@@ -14,13 +14,19 @@ class FinishedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    /* This widget checks if a post was submitted to Twitter, and if it was,
+    returns the status of the post */
     Widget conditionalTwitterStatus() {
+      /* Checks the status of the Twitter post. If the status is empty, there was
+      no post submitted to Twitter and an empty placeholder is returned */
       if (twitterPostStatus == "") {
         return const SizedBox(height: 0);
       }
       else if (twitterPostStatus == "success") {
+        /* If the post status is marked "success", a badge labelled "Twitter" is
+        returned to indicate a Twitter post was successfully sent */
         return OutlinedButton.icon(
-          onPressed: () => Navigator.pushNamed(context, TwitterAdd.id),
+          onPressed: () => null,
           icon: const Icon(
             Icons.people,
             size: 24.0,
@@ -41,11 +47,14 @@ class FinishedScreen extends StatelessWidget {
           ),
         );
       }
+      /* If the status is not empty and is not "success", then it assumes an
+      error occurred and returns an empty placeholder */
       else {
         return const SizedBox(height: 0);
       }
     }
 
+    // Works the same as the conditionalTwitterStatus() widget
     Widget conditionalFacebookStatus() {
       if (facebookPostStatus == "") {
         return const SizedBox(height: 0);
@@ -78,6 +87,7 @@ class FinishedScreen extends StatelessWidget {
       }
     }
 
+    // Works the same as the conditionalTwitterStatus() widget
     Widget conditionalInstagramStatus() {
       if (instagramPostStatus == "") {
         return SizedBox(height: 0);
@@ -110,6 +120,7 @@ class FinishedScreen extends StatelessWidget {
       }
     }
 
+    // Gets the size of the current device's screen
     var size = MediaQuery.of(context).size;
     return Scaffold(
         body: Container(
@@ -149,10 +160,13 @@ class FinishedScreen extends StatelessWidget {
 
                     // apps that were logged into by user will show true
                     const SizedBox(height: 35),
+                    // Renders the widget returned by the conditionalTwitterStatus() method
                     Container(child: conditionalTwitterStatus()),
                     const SizedBox(height: 35),
+                    // Renders the widget returned by the conditionalFacebookStatus() method
                     Container(child: conditionalFacebookStatus()),
                     const SizedBox(height: 35),
+                    // Renders the widget returned by the conditionalInstagramStatus() method
                     Container(child: conditionalInstagramStatus()),
                     const SizedBox(height: 35),
                     const Text(
@@ -165,6 +179,8 @@ class FinishedScreen extends StatelessWidget {
                         )
                     ),
                     const SizedBox(height: 20),
+                    /* If thus button is pressed, the user is sent back to the
+                    post creation page */
                     OutlinedButton(
                       onPressed: () => Navigator.pushNamed(context, CreatePost.id),
                       child: const Text('Re-post'),
@@ -181,6 +197,7 @@ class FinishedScreen extends StatelessWidget {
                     ),
 
                     const SizedBox(height: 20),
+                    /* If this button is pressed, the user is sent to th home screen */
                     OutlinedButton(
                       onPressed: () => Navigator.pushNamed(context, HomeScreen.id),
                       child: const Text('Finish'),

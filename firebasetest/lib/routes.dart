@@ -29,6 +29,8 @@ class MyRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
 
+      /* If the Navigator calls the ID of a page, the app renders the main class
+      of that page (basically, opens the page) */
       case SelectAccounts.id:
         return MaterialPageRoute(builder: (_) => const SelectAccounts());
       case PostDescription.id:
