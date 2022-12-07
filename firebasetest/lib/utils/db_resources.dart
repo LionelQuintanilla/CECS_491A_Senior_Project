@@ -46,6 +46,7 @@ Future<String> getUser() async {
 
 // Queries the social media DB to get the accounts linked to the user's profile
 getSocials() async {
+  print("GOING BACK TO CALI");
   /* Fetches the user's data via a PHP script. The user's profile ID is passed
   as the parameter. The user's profile ID is then used in the SQL statement.
   Since user profile IDs are unique and social media accounts are linked to users
@@ -57,6 +58,11 @@ getSocials() async {
   var response = await http.get(getSocialsURL);
   // The JSON file is converted into a array so it can be operated on.
   var jsonResponse = convert.jsonDecode(response.body);
+
+  hasTwitter = false;
+  hasInstagram = false;
+  hasFacebook = false;
+  hasSnapchat = false;
 
   /* Each social media profile returned is checked for which application it links.
   The status of each app is recorded for use in the sharing API */

@@ -122,7 +122,6 @@ class _CreatePost extends State<CreatePost>{
                   ),
                   const SizedBox(height: 20),
                   Align(
-/*
                       alignment: Alignment.center,
                       child: Container(
                           constraints: const BoxConstraints(minHeight: 100,maxHeight: 300,minWidth: 200, maxWidth: 350),
@@ -140,44 +139,6 @@ class _CreatePost extends State<CreatePost>{
                               File(_image!.path) //displays the image from the previous page
                           )
                       )
-*/
-                        alignment: Alignment.center,
-/*
-                      alignment: Alignment.center,
-                      child: Container(
-                          constraints: const BoxConstraints(minHeight: 100,maxHeight: 300,minWidth: 200, maxWidth: 350),
-                          decoration: BoxDecoration(
-                              border: Border.all(width: 10,color: Colors.black),
-                              borderRadius: BorderRadius.circular(5) ,
-                              boxShadow: const [BoxShadow(
-                                  color: Colors.grey,
-                                  blurRadius: 15,
-                                  offset: Offset(1, 5)
-                              )]
-                          ),
-
-                          child: _image == null ? Image.asset('assets/images/No_Image_Available.jpg') : Image.file(
-                              File(_image!.path) //displays the image from the previous page
-                          )
-                      )
-*/
-                        child: ConstrainedBox(
-                            constraints: const BoxConstraints(minHeight: 200),
-                            child: (
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(20),
-                                child: Container(
-                                  height: 300,
-                                  width: 300,
-                                  child: CircleAvatar(
-                                    backgroundImage: _image == null
-                                    ? null
-                                    : FileImage(File(postImagePath))
-                                  )
-                                ),
-                              )
-                            ),
-                        )
                   ),
                   Row(
                     children: [

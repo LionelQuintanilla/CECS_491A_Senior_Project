@@ -17,6 +17,7 @@ import 'package:twitter_oauth2_pkce/twitter_oauth2_pkce.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import '/screens/twitter_add_2.dart';
+import '/screens/home_screen.dart';
 
 import '/utils/db_resources.dart';
 
@@ -24,16 +25,16 @@ import '/utils/db_resources.dart';
 import 'dart:async';
 import 'dart:io';
 
-class TwitterRemove extends StatefulWidget{
-  static const String id = 'twitter_remove';
-  const TwitterRemove({Key? key}) : super(key:key);
+class InstagramRemove extends StatefulWidget{
+  static const String id = 'instagram_remove';
+  const InstagramRemove({Key? key}) : super(key:key);
 
   @override
-  State<TwitterRemove> createState() => _TwitterRemove();
+  State<InstagramRemove> createState() => _InstagramRemove();
 
 }
 
-class _TwitterRemove extends State<TwitterRemove>{
+class _InstagramRemove extends State<InstagramRemove>{
   final _key = GlobalKey<FormState>();
   final _emailController = TextEditingController();
 
@@ -73,7 +74,7 @@ class _TwitterRemove extends State<TwitterRemove>{
                     const Align(
                       child:
                       Text(
-                        'Remove Twitter',
+                        'Remove Instagram',
                         style: TextStyle(
                           fontFamily: 'Cherry',
                           fontSize: 60,
@@ -100,7 +101,7 @@ class _TwitterRemove extends State<TwitterRemove>{
                     const Align(
                       child:
                       Text(
-                        "Clicking 'Remove' will permanently unlink your Twitter account from your personal store. If you would like post to Twitter in the future, you will have to re-add it using the 'Add Account' feature.",
+                        "Clicking 'Remove' will permanently unlink your Instagram account from your personal store. If you would like post to Instagram in the future, you will have to re-add it using the 'Add Account' feature.",
                         style: TextStyle(
                           fontSize: 25.0,
                           fontWeight: FontWeight.bold,
@@ -112,7 +113,7 @@ class _TwitterRemove extends State<TwitterRemove>{
                     const SizedBox(height: 35),
                     OutlinedButton.icon(
                       onPressed: () async {
-                        socialMediaID = twitterID;
+                        socialMediaID = instagramID;
                         await deleteUserSocial();
                         await getSocials();
                         Navigator.pushNamed(context, ManageAccounts.id);

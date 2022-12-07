@@ -3,6 +3,7 @@ import 'package:firebasetest/utils/db_resources.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import '/screens/manage_accounts.dart';
 
 class InstagramAdd2 extends StatefulWidget{
   static const String id = 'instagram_add_2';
@@ -65,6 +66,7 @@ class _InstagramAdd2 extends State<InstagramAdd2>{
                     initialUrlRequest:
                     URLRequest(url: Uri.parse("https://www.instagram.com/accounts/login/")),
                     onWebViewCreated: (InAppWebViewController controller) {
+                      print("When the page first loads: " + this.url);
                       _webViewController = controller;
                     },
                     onLoadStart: (InAppWebViewController controller, Uri? url) {
@@ -83,6 +85,7 @@ class _InstagramAdd2 extends State<InstagramAdd2>{
                       });
                     },
                     onUpdateVisitedHistory: (InAppWebViewController controller, Uri? url, enableHistory) async {
+                      print("When the page finishes loading: " + this.url);
                       setState(() {
                         this.url = url.toString();
                       });
@@ -90,9 +93,10 @@ class _InstagramAdd2 extends State<InstagramAdd2>{
                         // This can also be used with https://www.instagram.com/accounts/onetap/?next=%2F
                         socialMediaAppName='instagram';
                         insertNewSocial();
-                        getSocials();
+                        print("WHAT IS YOUR MAJOR MALFUNCTION? DID MOMMY AND DADDY NOT LOVE YOU ENOUGH AS A CHILD?");
+                        await getSocials();
                         print("UserID: " + userID + " UserEmail: " + userEmail + " AppName: " + socialMediaAppName);
-                        Navigator.pushNamed(context, HomeScreen.id);
+                        Navigator.pushNamed(context, ManageAccounts.id);
                       }
                     },
                   ),

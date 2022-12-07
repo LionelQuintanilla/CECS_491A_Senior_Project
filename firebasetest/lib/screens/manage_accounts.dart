@@ -23,29 +23,31 @@ class ManageAccounts extends StatelessWidget {
   Widget build(BuildContext context) {
 
     Widget twitterConditional() {
-
       if (hasTwitter == true) {
-        return OutlinedButton.icon(
-          onPressed: null,
-          icon: const Icon(
-            Icons.people,
-            size: 40.0,
-          ),
-          label: const Text("Twitter"),
-          style: OutlinedButton.styleFrom(
-            //Button size in order to take up the whole screen
-            minimumSize: const Size.fromHeight(90),
-            shape: const StadiumBorder(),
-            //colors
-            backgroundColor: Colors.white,
-            foregroundColor: Colors.black,
-            //width of the border for our button
-            side: const BorderSide(width: 5.0, color: Colors.black),
-            //centers text
-            alignment: Alignment.center,
-            textStyle: const TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 40.0),
-          ),
+        return Container(
+            margin: const EdgeInsets.only(bottom: 35.0),
+            child: OutlinedButton.icon(
+              onPressed: null,
+              icon: const Icon(
+                Icons.people,
+                size: 40.0,
+              ),
+              label: const Text("Twitter"),
+              style: OutlinedButton.styleFrom(
+                //Button size in order to take up the whole screen
+                minimumSize: const Size.fromHeight(90),
+                shape: const StadiumBorder(),
+                //colors
+                backgroundColor: Colors.white,
+                foregroundColor: Colors.black,
+                //width of the border for our button
+                side: const BorderSide(width: 5.0, color: Colors.black),
+                //centers text
+                alignment: Alignment.center,
+                textStyle: const TextStyle(
+                    fontWeight: FontWeight.bold, fontSize: 40.0),
+              ),
+            )
         );
       }
       else {
@@ -54,29 +56,31 @@ class ManageAccounts extends StatelessWidget {
     }
 
     Widget facebookConditional() {
-
       if (hasFacebook == true) {
-        return OutlinedButton.icon(
-          onPressed: null,
-          icon: const Icon(
-            Icons.people,
-            size: 40.0,
-          ),
-          label: const Text("Facebook"),
-          style: OutlinedButton.styleFrom(
-            //Button size in order to take up the whole screen
-            minimumSize: const Size.fromHeight(90),
-            shape: const StadiumBorder(),
-            //colors
-            backgroundColor: Colors.white,
-            foregroundColor: Colors.black,
-            //width of the border for our button
-            side: const BorderSide(width: 5.0, color: Colors.black),
-            //centers text
-            alignment: Alignment.center,
-            textStyle: const TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 40.0),
-          ),
+        return Container(
+            margin: const EdgeInsets.only(bottom: 35.0),
+            child: OutlinedButton.icon(
+              onPressed: null,
+              icon: const Icon(
+                Icons.people,
+                size: 40.0,
+              ),
+              label: const Text("Facebook"),
+              style: OutlinedButton.styleFrom(
+                //Button size in order to take up the whole screen
+                minimumSize: const Size.fromHeight(90),
+                shape: const StadiumBorder(),
+                //colors
+                backgroundColor: Colors.white,
+                foregroundColor: Colors.black,
+                //width of the border for our button
+                side: const BorderSide(width: 5.0, color: Colors.black),
+                //centers text
+                alignment: Alignment.center,
+                textStyle: const TextStyle(
+                    fontWeight: FontWeight.bold, fontSize: 40.0),
+              ),
+            )
         );
       }
       else {
@@ -85,29 +89,31 @@ class ManageAccounts extends StatelessWidget {
     }
 
     Widget instagramConditional() {
-
       if (hasInstagram == true) {
-        return OutlinedButton.icon(
-          onPressed: null,
-          icon: const Icon(
-            Icons.people,
-            size: 40.0,
-          ),
-          label: const Text("Instagram"),
-          style: OutlinedButton.styleFrom(
-            //Button size in order to take up the whole screen
-            minimumSize: const Size.fromHeight(90),
-            shape: const StadiumBorder(),
-            //colors
-            backgroundColor: Colors.white,
-            foregroundColor: Colors.black,
-            //width of the border for our button
-            side: const BorderSide(width: 5.0, color: Colors.black),
-            //centers text
-            alignment: Alignment.center,
-            textStyle: const TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 40.0),
-          ),
+        return Container(
+            margin: const EdgeInsets.only(bottom: 35.0),
+            child: OutlinedButton.icon(
+              onPressed: null,
+              icon: const Icon(
+                Icons.people,
+                size: 40.0,
+              ),
+              label: const Text("Instagram"),
+              style: OutlinedButton.styleFrom(
+                //Button size in order to take up the whole screen
+                minimumSize: const Size.fromHeight(90),
+                shape: const StadiumBorder(),
+                //colors
+                backgroundColor: Colors.white,
+                foregroundColor: Colors.black,
+                //width of the border for our button
+                side: const BorderSide(width: 5.0, color: Colors.black),
+                //centers text
+                alignment: Alignment.center,
+                textStyle: const TextStyle(
+                    fontWeight: FontWeight.bold, fontSize: 40.0),
+              ),
+            )
         );
       }
       else {
@@ -116,29 +122,31 @@ class ManageAccounts extends StatelessWidget {
     }
 
     Widget snapchatConditional() {
-
       if (hasSnapchat == true) {
-        return OutlinedButton.icon(
-          onPressed: null,
-          icon: const Icon(
-            Icons.people,
-            size: 40.0,
-          ),
-          label: const Text("SnapChat"),
-          style: OutlinedButton.styleFrom(
-            //Button size in order to take up the whole screen
-            minimumSize: const Size.fromHeight(90),
-            shape: const StadiumBorder(),
-            //colors
-            backgroundColor: Colors.white,
-            foregroundColor: Colors.black,
-            //width of the border for our button
-            side: const BorderSide(width: 5.0, color: Colors.black),
-            //centers text
-            alignment: Alignment.center,
-            textStyle: const TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 40.0),
-          ),
+        return Container(
+            margin: const EdgeInsets.only(bottom: 35.0),
+            child: OutlinedButton.icon(
+              onPressed: null,
+              icon: const Icon(
+                Icons.people,
+                size: 40.0,
+              ),
+              label: const Text("SnapChat"),
+              style: OutlinedButton.styleFrom(
+                //Button size in order to take up the whole screen
+                minimumSize: const Size.fromHeight(90),
+                shape: const StadiumBorder(),
+                //colors
+                backgroundColor: Colors.white,
+                foregroundColor: Colors.black,
+                //width of the border for our button
+                side: const BorderSide(width: 5.0, color: Colors.black),
+                //centers text
+                alignment: Alignment.center,
+                textStyle: const TextStyle(
+                    fontWeight: FontWeight.bold, fontSize: 40.0),
+              ),
+            )
         );
       }
       else {
@@ -147,29 +155,31 @@ class ManageAccounts extends StatelessWidget {
     }
 
     Widget addAccountButton() {
-
       if (hasTwitter == false || hasFacebook == false || hasInstagram == false || hasSnapchat == false) {
-        return OutlinedButton.icon(
-          onPressed: () => Navigator.pushNamed(context, AddAccounts.id),
-          icon: const Icon(
-            Icons.people,
-            size: 40.0,
-          ),
-          label: const Text("Add Account"),
-          style: OutlinedButton.styleFrom(
-            //Button size in order to take up the whole screen
-            minimumSize: const Size.fromHeight(90),
-            shape: const StadiumBorder(),
-            //colors
-            backgroundColor: Colors.white,
-            foregroundColor: Colors.black,
-            //width of the border for our button
-            side: const BorderSide(width: 5.0, color: Colors.black),
-            //centers text
-            alignment: Alignment.center,
-            textStyle: const TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 30.0),
-          ),
+        return Container(
+            margin: const EdgeInsets.only(bottom: 35.0),
+            child: OutlinedButton.icon(
+              onPressed: () => Navigator.pushNamed(context, AddAccounts.id),
+              icon: const Icon(
+                Icons.people,
+                size: 40.0,
+              ),
+              label: const Text("Add Account"),
+              style: OutlinedButton.styleFrom(
+                //Button size in order to take up the whole screen
+                minimumSize: const Size.fromHeight(90),
+                shape: const StadiumBorder(),
+                //colors
+                backgroundColor: Colors.white,
+                foregroundColor: Colors.black,
+                //width of the border for our button
+                side: const BorderSide(width: 5.0, color: Colors.black),
+                //centers text
+                alignment: Alignment.center,
+                textStyle: const TextStyle(
+                    fontWeight: FontWeight.bold, fontSize: 30.0),
+              ),
+            )
         );
       }
       else {
@@ -180,35 +190,36 @@ class ManageAccounts extends StatelessWidget {
     Widget removeAccountButton() {
 
       if (hasTwitter == true || hasFacebook == true || hasInstagram == true || hasSnapchat == true) {
-        return OutlinedButton.icon(
-          onPressed: () => Navigator.pushNamed(context, RemoveAccounts.id),
-          icon: const Icon(
-            Icons.people,
-            size: 40.0,
-          ),
-          label: const Text("Remove Account"),
-          style: OutlinedButton.styleFrom(
-            //Button size in order to take up the whole screen
-            minimumSize: const Size.fromHeight(90),
-            shape: const StadiumBorder(),
-            //colors
-            backgroundColor: Colors.white,
-            foregroundColor: Colors.black,
-            //width of the border for our button
-            side: const BorderSide(width: 5.0, color: Colors.black),
-            //centers text
-            alignment: Alignment.center,
-            textStyle: const TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 30.0),
-          ),
+        return Container(
+            margin: const EdgeInsets.only(bottom: 35.0),
+            child: OutlinedButton.icon(
+              onPressed: () => Navigator.pushNamed(context, RemoveAccounts.id),
+              icon: const Icon(
+                Icons.people,
+                size: 40.0,
+              ),
+              label: const Text("Remove Account"),
+              style: OutlinedButton.styleFrom(
+                //Button size in order to take up the whole screen
+                minimumSize: const Size.fromHeight(90),
+                shape: const StadiumBorder(),
+                //colors
+                backgroundColor: Colors.white,
+                foregroundColor: Colors.black,
+                //width of the border for our button
+                side: const BorderSide(width: 5.0, color: Colors.black),
+                //centers text
+                alignment: Alignment.center,
+                textStyle: const TextStyle(
+                    fontWeight: FontWeight.bold, fontSize: 30.0),
+              ),
+            )
         );
       }
       else {
         return const SizedBox(height: 0);
       }
     }
-
-
 
     var size = MediaQuery.of(context).size;
     return Scaffold(
@@ -246,26 +257,21 @@ class ManageAccounts extends StatelessWidget {
                     Container (
                       child: twitterConditional()
                     ),
-                    const SizedBox(height: 35),
                     Container(
                       child: facebookConditional()
                     ),
-                    const SizedBox(height: 35),
                     Container(
                       child: instagramConditional()
                     ),
-                    const SizedBox(height: 35),
                     Container(
                       child: snapchatConditional()
                     ),
-                    const SizedBox(height: 35),
                     Container(
                         child: addAccountButton()
                     ),
-                    const SizedBox(height: 35),
                     Container(
                         child: removeAccountButton()
-                    ),
+                    )
                   ],
                 ),
 

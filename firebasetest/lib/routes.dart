@@ -21,6 +21,8 @@ import '/screens/facebook_add_2.dart';
 import '/screens/add_accounts.dart';
 import '/screens/remove_accounts.dart';
 import '/screens/twitter_remove.dart';
+import '/screens/facebook_remove.dart';
+import '/screens/instagram_remove.dart';
 import '/screens/finished_screen.dart';
 import '/screens/app_settings.dart';
 import '/screens/personal_information.dart';
@@ -94,6 +96,12 @@ class MyRouter {
 
       case TwitterRemove.id:
         return MaterialPageRoute(builder: (_) => const TwitterRemove());
+
+      case FacebookRemove.id:
+        return MaterialPageRoute(builder: (_) => const FacebookRemove());
+
+      case InstagramRemove.id:
+        return MaterialPageRoute(builder: (_) => const InstagramRemove());
 
       case FinishedScreen.id:
         return MaterialPageRoute(builder: (_) => const FinishedScreen());

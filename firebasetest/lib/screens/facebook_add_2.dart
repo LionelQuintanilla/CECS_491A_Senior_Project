@@ -89,9 +89,11 @@ class _FacebookAdd2 extends State<FacebookAdd2>{
                       });
                       if (this.url == "https://www.facebook.com/") {
                         socialMediaAppName = 'facebook';
-                        insertNewSocial();
                         if (this.url == "https://m.facebook.com/") {
-                          getSocials();
+                          socialMediaAppName='facebook';
+                          insertNewSocial();
+                          await getSocials();
+                          print("UserID: " + userID + " UserEmail: " + userEmail + " AppName: " + socialMediaAppName);
                           Navigator.pushNamed(context, ManageAccounts.id);
                         }
                       }
