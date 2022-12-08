@@ -26,6 +26,7 @@ class _AppSettingsState extends State<AppSettings> {
 
   @override
   Widget build(BuildContext context) {
+    ///see if user is logged in, in order to retrieve information
     final _authService = AuthenticationService();
     var size = MediaQuery.of(context).size;
 
@@ -41,6 +42,7 @@ class _AppSettingsState extends State<AppSettings> {
                 child:  Column(
                   children: [
                      Align (
+                       alignment: Alignment.topLeft,
                       child: GestureDetector(
                         onTap: () => Navigator.pop(context),
                         child: Image.asset('assets/images/backArrow.png',
@@ -48,7 +50,7 @@ class _AppSettingsState extends State<AppSettings> {
                             width: 40)
                     )
                     ),
-                     Align(
+                     const Align(
                         child:  Text(
                           'Account Settings',
                           style: TextStyle(

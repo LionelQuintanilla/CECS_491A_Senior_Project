@@ -29,6 +29,7 @@ class _PersonalInformationState extends State<PersonalInformation> {
         .of(context)
         .size;
     final _key = GlobalKey<FormState>();
+    ///checks if user has a valid email or username
     final _authService = AuthenticationService();
     final _emailController = TextEditingController();
     final _usernameController = TextEditingController();
@@ -94,7 +95,7 @@ class _PersonalInformationState extends State<PersonalInformation> {
                     controller: _usernameController,
                   ),
                   const SizedBox(height: 16),
-
+                  ///reset password button
                    OutlinedButton(
                     onPressed: () async {
                       if (_key.currentState!.validate()) {
@@ -111,18 +112,19 @@ class _PersonalInformationState extends State<PersonalInformation> {
                         }
                       }
                     },
-                       child: Text(
-                         'Reset Password'
-                       ),
                        style: OutlinedButton.styleFrom(
-                   minimumSize: const Size.fromHeight(75),
-              shape: const StadiumBorder(),
-              backgroundColor: Colors.white,
-              foregroundColor: Colors.black,
-              side: const BorderSide(width: 5.0, color: Colors.black),
-              alignment: Alignment.center,
-              textStyle: const TextStyle( fontWeight: FontWeight.bold, fontSize: 35.0),
-                  )
+
+                        minimumSize: const Size.fromHeight(75),
+                        shape: const StadiumBorder(),
+                        backgroundColor: Colors.white,
+                        foregroundColor: Colors.black,
+                        side: const BorderSide(width: 5.0, color: Colors.black),
+                        alignment: Alignment.center,
+                        textStyle: const TextStyle( fontWeight: FontWeight.bold, fontSize: 35.0),
+                       ),
+                       child: const Text(
+                         'Reset Password'
+                       )
                    )],
               ),
 

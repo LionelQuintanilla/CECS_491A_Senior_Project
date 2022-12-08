@@ -245,7 +245,7 @@ class _SelectPostedAccountsState extends State<SelectPostedAccounts> {
                           textAlign: TextAlign.center,
                         )
                     ),
-
+///image shows up on select_posted_accounts
                    Align(
                         alignment: Alignment.center,
                         child: Container(
@@ -260,13 +260,13 @@ class _SelectPostedAccountsState extends State<SelectPostedAccounts> {
                                 )]
                             ),
                             child: Image(
-                              image: widget.file,
+                              image: widget.file, ///used this to display the image, grabs file from new post screen
                             )
                         )
                     ),
 
 
-
+///buttons only appear for users that signed up
                     const SizedBox(height: 35),
                     Container(child: conditionalTwitterPost()),
                     const SizedBox(height: 35),
