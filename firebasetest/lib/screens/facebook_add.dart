@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '/screens/facebook_add_2.dart';
+import '/screens/add_accounts.dart';
 
 class FacebookAdd extends StatefulWidget{
   static const String id = 'facebook_add';
@@ -47,7 +48,7 @@ class _FacebookAdd extends State<FacebookAdd>{
                   children: [
                     GestureDetector(
                         // Sends the user back to the last screen they visited
-                        onTap: () => Navigator.pop(context),
+                        onTap: () => Navigator.pushNamed(context, AddAccounts.id),
                         child: Image.asset('assets/images/backArrow.png',
                             height: 40,
                             width: 40)
@@ -120,7 +121,7 @@ class _FacebookAdd extends State<FacebookAdd>{
                     const SizedBox(height:50),
                     GestureDetector(
                         // Sends the user back to the last screen they visited
-                        onTap: () => Navigator.pop(context),
+                        onTap: () => Navigator.pushNamed(context, AddAccounts.id),
                         child: Align(
                           alignment: Alignment.center,
                           child: RichText(

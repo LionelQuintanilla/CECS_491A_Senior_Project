@@ -146,7 +146,7 @@ class AddAccounts extends StatelessWidget {
                   children: [
                     GestureDetector(
                         // Returns the user to the last screen they visited
-                        onTap: () => Navigator.pop(context),
+                        onTap: () => Navigator.pushNamed(context, ManageAccounts.id),
                         child: Image.asset('assets/images/backArrow.png',
                             height: 40,
                             width: 40)

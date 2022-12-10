@@ -16,6 +16,7 @@ import 'package:twitter_oauth2_pkce/twitter_oauth2_pkce.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import '/screens/twitter_add_2.dart';
+import '/screens/add_accounts.dart';
 
 
 import 'dart:async';
@@ -62,7 +63,7 @@ class _TwitterAdd extends State<TwitterAdd>{
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     GestureDetector(
-                        onTap: () => Navigator.pop(context),
+                        onTap: () => Navigator.pushNamed(context, AddAccounts.id),
                         child: Image.asset('assets/images/backArrow.png',
                             height: 40,
                             width: 40)
@@ -132,7 +133,7 @@ class _TwitterAdd extends State<TwitterAdd>{
                     ),
                     const SizedBox(height:100),
                     GestureDetector(
-                        onTap: () => Navigator.pop(context),
+                        onTap: () => Navigator.pushNamed(context, AddAccounts.id),
                         child: Align(
                           alignment: Alignment.center,
                           child: RichText(

@@ -1,4 +1,5 @@
 import 'package:firebasetest/screens/add_accounts.dart';
+import 'package:firebasetest/screens/home_screen.dart';
 
 import '/components/custom_button.dart';
 import '/core/authentication_service.dart';
@@ -120,7 +121,7 @@ class ManageAccounts extends StatelessWidget {
         return const SizedBox(height: 0);
       }
     }
-
+/*
     Widget snapchatConditional() {
       if (hasSnapchat == true) {
         return Container(
@@ -154,8 +155,10 @@ class ManageAccounts extends StatelessWidget {
       }
     }
 
+ */
+
     Widget addAccountButton() {
-      if (hasTwitter == false || hasFacebook == false || hasInstagram == false || hasSnapchat == false) {
+      if (hasTwitter == false || hasFacebook == false || hasInstagram == false) {
         return Container(
             margin: const EdgeInsets.only(bottom: 35.0),
             child: OutlinedButton.icon(
@@ -236,7 +239,7 @@ class ManageAccounts extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     GestureDetector(
-                        onTap: () => Navigator.pop(context),
+                        onTap: () => Navigator.pushNamed(context, HomeScreen.id),
                         child: Image.asset('assets/images/backArrow.png',
                             height: 40,
                             width: 40)
@@ -262,9 +265,6 @@ class ManageAccounts extends StatelessWidget {
                     ),
                     Container(
                       child: instagramConditional()
-                    ),
-                    Container(
-                      child: snapchatConditional()
                     ),
                     Container(
                         child: addAccountButton()

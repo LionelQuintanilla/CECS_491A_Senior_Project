@@ -1,3 +1,4 @@
+import 'package:firebasetest/screens/twitter_add.dart';
 import 'package:firebasetest/screens/verification_screen.dart';
 import 'package:firebasetest/utils/db_resources.dart';
 
@@ -60,16 +61,14 @@ class _TwitterAdd2 extends State<TwitterAdd2>{
       home: Scaffold(
         body: Container(
             child: Column(children: <Widget>[
-              /*
               Container(
                 padding: EdgeInsets.all(20.0),
                 child: Text(
                     "CURRENT URL\n${(url.length > 50) ? url.substring(0, 50) + "..." : url}"),
               ),
-               */
               const SizedBox(height: 50),
               GestureDetector(
-                  onTap: () => Navigator.pop(context),
+                  onTap: () => Navigator.pushNamed(context, TwitterAdd.id),
                   child: Image.asset('assets/images/backArrow.png',
                       height: 40,
                       width: 40)

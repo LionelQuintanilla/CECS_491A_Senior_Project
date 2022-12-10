@@ -20,6 +20,7 @@ import 'dart:async';
 import 'dart:io';
 
 import '/screens/instagram_add_2.dart';
+import '/screens/add_accounts.dart';
 
 class InstagramAdd extends StatefulWidget{
   static const String id = 'instagram_add';
@@ -62,7 +63,7 @@ class _InstagramAdd extends State<InstagramAdd>{
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     GestureDetector(
-                        onTap: () => Navigator.pop(context),
+                        onTap: () => Navigator.pushNamed(context, AddAccounts.id),
                         child: Image.asset('assets/images/backArrow.png',
                             height: 40,
                             width: 40)
@@ -154,7 +155,7 @@ class _InstagramAdd extends State<InstagramAdd>{
                     ),*/
                     const SizedBox(height:100),
                     GestureDetector(
-                        onTap: () => Navigator.pop(context),
+                        onTap: () => Navigator.pushNamed(context, AddAccounts.id),
                         child: Align(
                           alignment: Alignment.center,
                           child: RichText(

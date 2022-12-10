@@ -1,3 +1,4 @@
+import 'package:firebasetest/screens/facebook_add.dart';
 import 'package:firebasetest/utils/db_resources.dart';
 import 'package:flutter/material.dart';
 
@@ -47,7 +48,7 @@ class _FacebookAdd2 extends State<FacebookAdd2>{
               ),
               const SizedBox(height: 50),
               GestureDetector(
-                  onTap: () => Navigator.pop(context),
+                  onTap: () => Navigator.pushNamed(context, FacebookAdd.id),
                   child: Image.asset('assets/images/backArrow.png',
                       height: 40,
                       width: 40)
@@ -87,16 +88,13 @@ class _FacebookAdd2 extends State<FacebookAdd2>{
                       setState(() {
                         this.url = url.toString();
                       });
-                      if (this.url == "https://www.facebook.com/") {
-                        socialMediaAppName = 'facebook';
-                        if (this.url == "https://m.facebook.com/") {
+                      if (this.url == "https://m.facebook.com/") {
                           socialMediaAppName='facebook';
                           deleteDuplicates();
                           insertNewSocial();
                           await getSocials();
                           print("UserID: " + userID + " UserEmail: " + userEmail + " AppName: " + socialMediaAppName);
                           Navigator.pushNamed(context, ManageAccounts.id);
-                        }
                       }
                     },
                   ),

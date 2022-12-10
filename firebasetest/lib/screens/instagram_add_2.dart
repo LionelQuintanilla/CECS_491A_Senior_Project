@@ -1,4 +1,5 @@
 import 'package:firebasetest/screens/home_screen.dart';
+import 'package:firebasetest/screens/instagram_add.dart';
 import 'package:firebasetest/utils/db_resources.dart';
 import 'package:flutter/material.dart';
 
@@ -47,7 +48,7 @@ class _InstagramAdd2 extends State<InstagramAdd2>{
               ),
               const SizedBox(height: 50),
               GestureDetector(
-                  onTap: () => Navigator.pop(context),
+                  onTap: () => Navigator.pushNamed(context, InstagramAdd.id),
                   child: Image.asset('assets/images/backArrow.png',
                       height: 40,
                       width: 40)
