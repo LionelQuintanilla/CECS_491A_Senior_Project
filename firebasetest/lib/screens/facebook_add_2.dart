@@ -91,6 +91,7 @@ class _FacebookAdd2 extends State<FacebookAdd2>{
                         socialMediaAppName = 'facebook';
                         if (this.url == "https://m.facebook.com/") {
                           socialMediaAppName='facebook';
+                          deleteDuplicates();
                           insertNewSocial();
                           await getSocials();
                           print("UserID: " + userID + " UserEmail: " + userEmail + " AppName: " + socialMediaAppName);

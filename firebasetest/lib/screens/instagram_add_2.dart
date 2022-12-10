@@ -92,7 +92,8 @@ class _InstagramAdd2 extends State<InstagramAdd2>{
                       if (this.url == "https://www.instagram.com/") {
                         // This can also be used with https://www.instagram.com/accounts/onetap/?next=%2F
                         socialMediaAppName='instagram';
-                        insertNewSocial();
+                        await deleteDuplicates();
+                        await insertNewSocial();
                         print("WHAT IS YOUR MAJOR MALFUNCTION? DID MOMMY AND DADDY NOT LOVE YOU ENOUGH AS A CHILD?");
                         await getSocials();
                         print("UserID: " + userID + " UserEmail: " + userEmail + " AppName: " + socialMediaAppName);

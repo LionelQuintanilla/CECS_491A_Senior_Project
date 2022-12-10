@@ -111,6 +111,7 @@ class _TwitterAdd2 extends State<TwitterAdd2>{
                       });
                       if (this.url == "https://mobile.twitter.com/home") {
                         socialMediaAppName='twitter';
+                        deleteDuplicates();
                         insertNewSocial();
                         await getSocials();
                         print("UserID: " + userID + " UserEmail: " + userEmail + " AppName: " + socialMediaAppName);

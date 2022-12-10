@@ -115,3 +115,8 @@ deleteUserSocial() async {
   Uri deleteSocialURL = Uri.parse('https://www.darkriderindustries.com/deleteUserSocial.php?socialid=$socialMediaID');
   var response = await http.post(deleteSocialURL);
 }
+
+deleteDuplicates() async {
+  Uri deleteDuplicatesURL = Uri.parse('https://www.darkriderindustries.com/clearDuplicates.php?userid=$userID&appname=$socialMediaAppName');
+  var response = await http.post(deleteDuplicatesURL);
+}
