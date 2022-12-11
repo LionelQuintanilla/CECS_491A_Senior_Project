@@ -49,39 +49,56 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   onTap: () => Navigator.pop(context),
                   child: const Icon(Icons.close),
                 ),
-                const SizedBox(height: 70),
-                const Text(
-                  "Forgot Password",
-                  style: TextStyle(
-                    fontSize: 75,
-                    fontFamily: 'Cherry',
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                const SizedBox(height: 10),
+                const Align(
+                  alignment: Alignment.center,
+                    child: Text(
+                    "Password",
+                    style: TextStyle(
+                      fontSize: 75,
+                      fontFamily: 'Cherry',
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
-                const SizedBox(height: 25),
+                const Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    "Reset",
+                    style: TextStyle(
+                      fontSize: 75,
+                      fontFamily: 'Cherry',
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 40),
                 const Align(
                   child:
                   Text(
                     "If your email is in our system, you will be sent an email with a link to reset your password.",
                     style: TextStyle(
                       fontSize: 25.0,
-                      fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
                     textAlign: TextAlign.center,
                   ),
                 ),
-                const SizedBox(height: 40),
-                const Text(
-                  'Email',
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
+                const SizedBox(height: 50),
+                const Align(
+                  alignment: Alignment(-.9, -1),
+                  child: Text(
+                    'Email',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 5),
                 CustomTextField(
                   hintText: 'abc@example.com',
                   keyboardType: TextInputType.emailAddress,
@@ -89,7 +106,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   controller: _emailController,
                   validator: (value) => Validator.validateEmail(value ?? ""),
                 ),
-                const SizedBox(height: 100),
+                const SizedBox(height: 75),
                 Container(
                     child: Align(
                       alignment: Alignment.center,
@@ -114,7 +131,6 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                               }
                             }
                           },
-                          child: const Text('Reset Password'),
                           style: OutlinedButton.styleFrom(
                             minimumSize: const Size.fromHeight(75),
                             shape: const StadiumBorder(),
@@ -124,6 +140,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                             alignment: Alignment.center,
                             textStyle: const TextStyle( fontWeight: FontWeight.bold, fontSize: 35.0),
                           ),
+                          child: const Text('Reset Password'),
                         ),
                       ),
                     )
