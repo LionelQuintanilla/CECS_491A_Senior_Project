@@ -183,6 +183,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   const SizedBox(height: 30),
                   Container(
+                    decoration: const BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 15,
+                              offset: Offset(1, 5)
+                          )
+                        ]
+                    ),
                     child:  OutlinedButton(
                       onPressed: () async {
                         if (_key.currentState!.validate()) {
@@ -208,8 +217,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           }
                         }
                       },
-                      //Creates the text within the button
-                      child: const Text('CREATE ACCOUNT'),
                       //Button style, outlined to match our figma
                       style: OutlinedButton.styleFrom(
                         //Button size in order to take up the whole screen
@@ -224,16 +231,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         alignment: Alignment.center,
                         textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
                       ),
+                      //Creates the text within the button
+                      child: const Text('CREATE ACCOUNT'),
 
-                    ),
-                    decoration: const BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.grey,
-                              blurRadius: 15,
-                              offset: Offset(1, 5)
-                          )
-                        ]
                     ),
                   ),
 

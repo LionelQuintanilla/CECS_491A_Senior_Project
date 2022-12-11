@@ -153,12 +153,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 10),
-                  const Text(
-                    'Email address',
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
+                  const Align(
+                    alignment: Alignment(-.9,-1),
+                    child:
+                    Text(
+                      'Email',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 10),
@@ -170,12 +174,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: _emailController,
                   ),
                   const SizedBox(height: 16),
-                  const Text(
-                    'Password',
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
+                  const Align(
+                    alignment: Alignment(-.9,-1),
+                    child:
+                    Text(
+                      'Password',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 10),
@@ -188,35 +196,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     textCapitalization: TextCapitalization.none,
                   ),
                   const SizedBox(height: 16),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 4.0, vertical: 0.0),
-                    child: Text(
-                      'Have you forgotten your password?',
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () =>
-                        Navigator.pushNamed(context, ResetPasswordScreen.id),
-                    style: TextButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 4.0, vertical: 0.0),
-                    ),
-                    child: const Text(
-                      'Click here to recover it.',
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  CustomButton(
-                    label: 'LOG IN',
-                    color: Colors.black,
+                  Row(
+                      children: [
+                        const Spacer(),
+                        Container(
+                          width: 225,
+                          child:
+                          OutlinedButton(
                     onPressed: () async {
                       if (myDuration == Duration(minutes: 2) || myDuration == Duration(seconds: 0)){
 
@@ -270,31 +256,66 @@ class _LoginScreenState extends State<LoginScreen> {
                         );
                       }
                     },
-                    size: size,
-                    textColor: Colors.white,
-                    borderSide: BorderSide.none,
-                  ),
-                  const SizedBox(height: 20),
-                  GestureDetector(
-                    onTap: () => Navigator.pushNamed(context, SignUpScreen.id),
-                    child: RichText(
-                      textScaleFactor: 0.8,
-                      text: const TextSpan(
-                        text: "Don't have an acccount? ",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 15,
-                        ),
-                        children: [
-                          TextSpan(
-                            text: 'Sign up here',
-                            style: TextStyle(
-                              color: Colors.blue,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ),
+                    //Button style, outlined to match our figma
+                    style: OutlinedButton.styleFrom(
+                      //Button size in order to take up the whole screen
+                      minimumSize: const Size.fromHeight(75),
+                      shape: const StadiumBorder(),
+                      //colors
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.black,
+                      //width of the border for our button
+                      side: const BorderSide(width: 5.0, color: Colors.black),
+                      //centers text
+                      alignment: Alignment.center,
+                      textStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
+                      ),
+                    child: const Text('LOGIN'),
                           ),
-                        ],
+                        ),
+                        const Spacer()
+                    ],
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 4.0, vertical: 0.0),
+                  ),
+                  const SizedBox(height: 29),
+                  Align(
+                    alignment: Alignment.center,
+                    child:
+                    GestureDetector(
+                      onTap: () => Navigator.pushNamed(context, SignUpScreen.id),
+                      child: RichText(
+                        text: const TextSpan(
+                          text: "Create New Account",
+                          style: TextStyle(
+                            decoration: TextDecoration.underline,
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.center,
+                    child:
+                    TextButton(
+                      onPressed: () =>
+                          Navigator.pushNamed(context, ResetPasswordScreen.id),
+                      style: TextButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 4.0, vertical: 0.0),
+                      ),
+                      child: const Text(
+                        'Forgot Password?',
+                        style: TextStyle(
+                          decoration: TextDecoration.underline,
+                          fontSize: 20,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
